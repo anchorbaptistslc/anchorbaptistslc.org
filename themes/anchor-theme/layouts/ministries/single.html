@@ -1,0 +1,149 @@
+{{ define "main" }}
+<article class="bg-gray-50">
+    <!-- Ministry Header -->
+    <div class="relative h-48 md:h-64 overflow-hidden">
+        {{ with .Params.featured_image }}
+        <img src="{{ . }}" 
+             alt="{{ $.Title }}" 
+             class="absolute inset-0 w-full h-full object-cover">
+        {{ else }}
+        <div class="absolute inset-0 bg-brand-dark">
+            <img src="/images/default-ministry.jpg" 
+                 alt="{{ $.Title }}" 
+                 class="w-full h-full object-cover opacity-50">
+        </div>
+        {{ end }}
+        <div class="absolute inset-0 bg-gray-900 bg-opacity-60"></div>
+        <div class="absolute inset-0 flex items-center">
+            <div class="container mx-auto px-4">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">{{ .Title }}</h1>
+                {{ with .Params.tagline }}
+                <p class="text-lg md:text-xl text-white opacity-90">{{ . }}</p>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="text-sm text-gray-500" aria-label="Breadcrumb">
+                <ol class="flex flex-wrap items-center">
+                    <li class="flex items-center">
+                        <a href="/" class="hover:text-brand-link">Home</a>
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="h-4 w-4 mx-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                        <a href="/ministries/" class="hover:text-brand-link">Ministries</a>
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="h-4 w-4 mx-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                        <span class="text-gray-700">{{ .Title }}</span>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-12">
+        <div class="flex flex-col lg:flex-row gap-12">
+            <!-- Main Content -->
+            <div class="flex-grow">
+                <!-- Quick Info Box -->
+                {{ if or .Params.meeting_time .Params.location .Params.age_group }}
+                <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {{ with .Params.meeting_time }}
+                        <div>
+                            <h3 class="font-semibold text-gray-600 mb-1">Meeting Time</h3>
+                            <p class="text-lg">{{ . }}</p>
+                        </div>
+                        {{ end }}
+                        {{ with .Params.location }}
+                        <div>
+                            <h3 class="font-semibold text-gray-600 mb-1">Location</h3>
+                            <p class="text-lg">{{ . }}</p>
+                        </div>
+                        {{ end }}
+                        {{ with .Params.age_group }}
+                        <div>
+                            <h3 class="font-semibold text-gray-600 mb-1">Age Group</h3>
+                            <p class="text-lg">{{ . }}</p>
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+
+                <!-- Content -->
+                <div class="prose max-w-none">
+                    {{ .Content }}
+                </div>
+
+                <!-- Leaders Section -->
+                {{ with .Params.leaders }}
+                <div class="mt-12">
+                    <h2 class="text-2xl font-bold mb-6">Ministry Leaders</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {{ range . }}
+                        <div class="flex items-start space-x-4">
+                            {{ with .photo }}
+                            <img src="{{ . }}" alt="{{ $.Name }}" class="w-24 h-24 rounded-lg object-cover">
+                            {{ end }}
+                            <div>
+                                <h3 class="font-bold text-xl">{{ .name }}</h3>
+                                {{ with .role }}
+                                <p class="text-gray-600 mb-2">{{ . }}</p>
+                                {{ end }}
+                                {{ with .bio }}
+                                <p class="text-gray-700">{{ . }}</p>
+                                {{ end }}
+                            </div>
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:w-1/3">
+                <!-- Get Involved Box -->
+                <div class="bg-brand-dark text-white rounded-lg p-8 mb-8">
+                    <h2 class="text-2xl font-bold mb-4">Get Involved</h2>
+                    <p class="mb-6">Interested in joining or learning more about this ministry?</p>
+                    {{ with .Params.contact_email }}
+                    <a href="mailto:{{ . }}" class="inline-block bg-white text-brand-dark px-6 py-2 rounded-lg font-semibold hover:bg-gray-100">
+                        Contact Ministry Leader
+                    </a>
+                    {{ else }}
+                    <a href="mailto:{{ .Site.Params.email }}" class="inline-block bg-white text-brand-dark px-6 py-2 rounded-lg font-semibold hover:bg-gray-100">
+                        Contact Us
+                    </a>
+                    {{ end }}
+                </div>
+
+                <!-- Other Ministries -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h2 class="text-xl font-bold mb-4">Other Ministries</h2>
+                    <ul class="space-y-3">
+                        {{ range where .Site.RegularPages "Section" "ministries" }}
+                        {{ if ne .RelPermalink $.RelPermalink }}
+                        <li>
+                            <a href="{{ .RelPermalink }}" class="hover:text-brand-link">
+                                {{ .Title }}
+                            </a>
+                        </li>
+                        {{ end }}
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+{{ end }} 

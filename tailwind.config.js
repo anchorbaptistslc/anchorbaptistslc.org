@@ -24,6 +24,10 @@ module.exports = {
     'hover:text-[#4267B2]',
     'hover:text-[#FF0000]',
     'whitespace-nowrap',
+    'h-48',
+    'h-64',
+    'md:h-48',
+    'md:h-64',
     {
       pattern: /bg-(brand|gray|white)-(light|dark|900)/,
       variants: ['hover']

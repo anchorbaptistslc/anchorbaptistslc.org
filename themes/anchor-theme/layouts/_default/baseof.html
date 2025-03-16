@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    {{ $css := resources.Get "css/main.css" }}
     {{ if eq hugo.Environment "production" }}
-        {{ $css = resources.Get "css/main.processed.css" | minify | fingerprint }}
+        {{ $css := resources.Get "css/main.processed.css" | minify | fingerprint }}
+        <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
     {{ else }}
+        {{ $css := resources.Get "css/main.css" }}
         {{ $opts := dict "inlineImports" true }}
         {{ $css = $css | css.PostCSS $opts }}
+        <link rel="stylesheet" href="{{ $css.RelPermalink }}">
     {{ end }}
-    <link rel="stylesheet" href="{{ $css.RelPermalink }}" {{ if eq hugo.Environment "production" }}integrity="{{ $css.Data.Integrity }}"{{ end }}>
     {{ $js := resources.Get "js/main.js" }}
     <script src="{{ $js.RelPermalink }}"></script>
 </head>
