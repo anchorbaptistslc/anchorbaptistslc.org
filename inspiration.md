@@ -1,11 +1,12 @@
-Sites as inspiration
-====================
+# Design Inspiration
 
-https://cbcfarmington.com
-https://www.parksidebaptist.org
-https://northsidetx.com
-https://www.regencybaptistchurch.org
-https://www.capitolcitybaptist.org
-https://www.graceos.org
+The following church websites served as inspiration for this project:
+
+- [Calvary Baptist Church](https://cbcfarmington.com)
+- [Parkside Baptist Church](https://www.parksidebaptist.org)
+- [Northside Baptist Church](https://northsidetx.com)
+- [Regency Baptist Church](https://www.regencybaptistchurch.org)
+- [Capitol City Baptist Church](https://www.capitolcitybaptist.org)
+- [Grace Baptist Church](https://www.graceos.org)
 
 
