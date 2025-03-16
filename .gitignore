@@ -2,6 +2,7 @@
 /public/
 /resources/_gen/
 /assets/jsconfig.json
+/assets/css/main.processed.css
 hugo_stats.json
 .hugo_build.lock
 

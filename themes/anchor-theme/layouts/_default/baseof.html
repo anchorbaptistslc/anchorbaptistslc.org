@@ -8,6 +8,9 @@
     {{ $css := resources.Get "css/main.css" }}
     {{ if eq hugo.Environment "production" }}
         {{ $css = resources.Get "css/main.processed.css" | minify | fingerprint }}
+    {{ else }}
+        {{ $opts := dict "inlineImports" true }}
+        {{ $css = $css | css.PostCSS $opts }}
     {{ end }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" {{ if eq hugo.Environment "production" }}integrity="{{ $css.Data.Integrity }}"{{ end }}>
     {{ $js := resources.Get "js/main.js" }}
