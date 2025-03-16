@@ -1,6 +1,11 @@
 ---
 title: "Welcome to Anchor Baptist Church"
 description: "Learn about Anchor Baptist Church, a Bible-believing church in Salt Lake City, Utah"
+featured_image: "/images/horizontal/harvest-day-2023-10-1171.jpg"
+menu:
+  about:
+    name: "Our Church"
+    weight: 10
 ---
 
 # Welcome to Anchor Baptist Church

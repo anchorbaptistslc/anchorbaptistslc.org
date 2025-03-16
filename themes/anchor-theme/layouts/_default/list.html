@@ -1,27 +1,80 @@
 {{ define "main" }}
-<div class="container mx-auto px-4 py-12">
-    {{ with .Content }}
-    <div class="prose max-w-none mb-12">
-        {{ . }}
+<article class="bg-gray-50">
+    <!-- Header Image (if available) -->
+    {{ with .Params.featured_image }}
+    <div class="relative h-48 md:h-64 overflow-hidden">
+        <img src="{{ . }}" 
+             alt="{{ $.Title }}" 
+             class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gray-900 bg-opacity-60"></div>
+        <div class="absolute inset-0 flex items-center">
+            <div class="container mx-auto px-4">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">{{ $.Title }}</h1>
+                {{ with $.Params.tagline }}
+                <p class="text-lg md:text-xl text-white opacity-90">{{ . }}</p>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    {{ else }}
+    <!-- Text-only header if no image -->
+    <div class="bg-white border-b">
+        <div class="container mx-auto px-4 py-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900">{{ .Title }}</h1>
+        </div>
     </div>
     {{ end }}
-    
-    {{ if .Pages }}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {{ range .Pages }}
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <div class="p-6">
-                <h2 class="text-2xl font-bold mb-4">
-                    <a href="{{ .RelPermalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a>
-                </h2>
-                {{ with .Description }}
-                <p class="text-gray-600 mb-4">{{ . }}</p>
-                {{ end }}
-                <a href="{{ .RelPermalink }}" class="text-blue-600 hover:text-blue-800 font-semibold">Read More →</a>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="text-sm text-gray-500" aria-label="Breadcrumb">
+                <ol class="flex flex-wrap items-center">
+                    <li class="flex items-center">
+                        <a href="/" class="hover:text-brand-link">Home</a>
+                    </li>
+                    {{ $sections := split .RelPermalink "/" }}
+                    {{ range $i, $section := $sections }}
+                        {{ if and (ne $section "") (ne $i (sub (len $sections) 1)) }}
+                            <li class="flex items-center">
+                                <svg class="h-4 w-4 mx-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <a href="/{{ range $j := seq 1 (add $i 1) }}{{ index $sections $j }}/{{ end }}" class="hover:text-brand-link">
+                                    {{ humanize $section }}
+                                </a>
+                            </li>
+                        {{ end }}
+                    {{ end }}
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-12">
+        {{ with .Content }}
+        <div class="prose max-w-none mb-12">
+            {{ . }}
+        </div>
+        {{ end }}
+        
+        {{ if .Pages }}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {{ range .Pages }}
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-4">
+                        <a href="{{ .RelPermalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a>
+                    </h2>
+                    {{ with .Description }}
+                    <p class="text-gray-600 mb-4">{{ . }}</p>
+                    {{ end }}
+                    <a href="{{ .RelPermalink }}" class="text-blue-600 hover:text-blue-800 font-semibold">Read More →</a>
+                </div>
             </div>
+            {{ end }}
         </div>
         {{ end }}
     </div>
-    {{ end }}
-</div>
+</article>
 {{ end }} 

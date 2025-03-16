@@ -1,7 +1,11 @@
 ---
-title: "Our Beliefs"
-description: "The fundamental beliefs and doctrinal positions of Anchor Baptist Church"
-weight: 10
+title: "What We Believe"
+description: "Our Statement of Faith and Core Beliefs"
+featured_image: "/images/horizontal/anchor-missions-sunday-am-2024-10-2134.jpg"
+menu:
+  about:
+    name: "Our Beliefs"
+    weight: 20
 ---
 
 # Our Beliefs
