@@ -1,0 +1,28 @@
+en:
+  languageName: English
+  weight: 1
+  ### copyright (markdown can be used) ###
+  copyright: "© 2025 Anchor Baptist Church. All rights reserved."
+  title: "Anchor Baptist Church"
+  params:
+    description: "A Bible-believing church in Salt Lake City, Utah"
+    ### accessibility ###
+    accessibility:
+      skip_text: "Skip to content"
+      help_text: "Accessibility Statement"
+      help_url: "/accessibility/"
+    ### calls to action ###
+    main_cta:
+      text: "Plan Your Visit"
+      link: "/plan-your-visit/"
+    footer_cta:
+      text: "Join us this Sunday"
+      link: "/plan-your-visit/"
+    github_edit: "Edit this page on GitHub"
+es:
+  languageName: Spanish
+  contentDir: content/es
+  weight: 2
+  title: "Anchor Baptist Church"
+  params:
+    description: "Una iglesia que cree en la Biblia en Salt Lake City, Utah"

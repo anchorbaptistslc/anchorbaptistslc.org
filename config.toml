@@ -1,0 +1,11 @@
+[outputs]
+home = ["HTML", "RSS", "JSON", "WEBMANIFEST"]
+
+[mediaTypes]
+[mediaTypes."application/manifest+json"]
+suffixes = ["webmanifest"]
+
+[outputFormats]
+[outputFormats.WEBMANIFEST]
+mediaType = "application/manifest+json"
+rel = "manifest" 

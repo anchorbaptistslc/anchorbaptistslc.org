@@ -1,0 +1,77 @@
+######################## custom scripts & styles ####################
+
+# Add custom assets relative to /static or via https
+logo_on_white: "/img/logo-b.svg"
+logo_on_black: "/img/logo-w.svg"
+custom_js: []
+custom_css: []
+
+######################## custom config ####################
+
+### default social share image (can also be set per lang) ###
+images: ["/img/social-share.png"]
+
+# Makes the header sticky on tall screens
+sticky_header: true
+# Enable search in header UI
+show_search: true
+
+# Site parameters
+# Meta Data
+description: "A Bible-believing church in Salt Lake City, Utah"
+author: "Anchor Baptist Church"
+
+# Church Information
+address: "1880 East 5600 South, Salt Lake City, UT 84121"
+phone: "(801) 272-9405"
+email: "office@anchorbaptistslc.org"
+
+# Service Times
+services:
+  sunday_school: "10:00 AM"
+  sunday_morning: "11:00 AM"
+  sunday_evening: "6:00 PM"
+  wednesday: "7:00 PM"
+
+# Social Media Links (leave empty if not used)
+social:
+  facebook: "https://www.facebook.com/anchorbaptistchurchslc/"
+  youtube: "https://www.youtube.com/@anchorbaptistchurchslc/streams"
+
+# Navigation
+main_sections:
+  - "about"
+  - "ministries"
+  - "sermons"
+  - "contact"
+
+# SEO Configuration
+seo:
+  # Open Graph
+  og_image: "/img/social-share.png"
+  og_image_width: "1200"
+  og_image_height: "630"
+  
+  # Schema.org
+  local_business:
+    type: "Church"
+    name: "Anchor Baptist Church"
+    address:
+      streetAddress: "1880 East 5600 South"
+      addressLocality: "Salt Lake City"
+      addressRegion: "UT"
+      postalCode: "84121"
+      addressCountry: "US"
+    geo:
+      latitude: "40.6500"
+      longitude: "-111.8422"
+    telephone: "(801) 272-9405"
+    url: "https://anchorbaptistslc.org"
+
+# Image Optimization
+images:
+  quality: 85
+  sizes: [300, 600, 900, 1200]
+  formats: ["webp", "jpg"]
+  loading: "lazy"
+  decoding: "async"

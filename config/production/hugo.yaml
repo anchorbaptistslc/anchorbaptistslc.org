@@ -1,0 +1,48 @@
+######################## production configuration ####################
+# The base URL of your site (required). This will be prepended to all relative URLs.
+baseURL:
+googleAnalytics:
+enableRobotsTXT: true
+build:
+  writeStats: true
+  useResourceCacheWhen: always
+  cachebusting: true
+
+imaging:
+  quality: 85
+  resampleFilter: lanczos
+  anchor: smart
+  bgColor: "#ffffff"
+  formats: ["webp", "original"]  # Generate WebP versions alongside originals
+
+minify:
+  minifyOutput: true
+  tdewolff:
+    html:
+      keepWhitespace: false
+    css:
+      keepCSS2: true
+    js:
+      keepVarNames: false
+    json:
+      keepWhitespace: false
+    svg:
+      keepComments: false
+
+outputs:
+  home:
+    - HTML
+    - JSON
+    - WebAppManifest
+  section:
+    - HTML
+
+outputFormats:
+  WebAppManifest:
+    mediaType: application/manifest+json
+    rel: manifest
+
+mediaTypes:
+  application/manifest+json:
+    suffixes:
+      - webmanifest
