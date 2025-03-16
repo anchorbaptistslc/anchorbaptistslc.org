@@ -1,0 +1,126 @@
+<header class="bg-white shadow-md">
+    <nav class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <a href="/" class="logo-container">
+                <img src="/images/logo.jpg" 
+                     alt="Anchor Baptist Church" 
+                     class="h-28 object-contain"
+                     style="aspect-ratio: auto;"
+                     aria-hidden="true">
+                <span class="sr-only">{{ .Site.Title }}</span>
+            </a>
+
+            <!-- Search -->
+            {{ if .Site.Params.show_search }}
+            <div class="hidden xl:block w-1/3 max-w-md mx-8">
+                <div class="search-container w-full">
+                    <input type="text" 
+                           id="search-input" 
+                           class="search-input" 
+                           placeholder="Search..."
+                           aria-label="Search">
+                    <div id="search-results" class="search-results"></div>
+                </div>
+            </div>
+            {{ end }}
+
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center space-x-8">
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                    {{ if .HasChildren }}
+                        <div class="relative group">
+                            <button class="flex items-center text-gray-700 hover:text-blue-600 px-3 py-2">
+                                {{ .Name }}
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                <div class="py-1">
+                                    {{ range .Children }}
+                                        <a href="{{ .URL }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{{ .Name }}</a>
+                                    {{ end }}
+                                </div>
+                            </div>
+                        </div>
+                    {{ else }}
+                        <a href="{{ .URL }}" class="text-gray-700 hover:text-blue-600 px-3 py-2 {{ if $currentPage.IsMenuCurrent "main" . }}text-blue-600{{ end }}">
+                            {{ .Name }}
+                        </a>
+                    {{ end }}
+                {{ end }}
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden text-gray-600 hover:text-gray-900">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden mt-4">
+            <!-- Mobile Search -->
+            {{ if .Site.Params.show_search }}
+            <div class="px-4 py-2">
+                <div class="search-container">
+                    <input type="text" 
+                           id="mobile-search-input" 
+                           class="search-input" 
+                           placeholder="Search..."
+                           aria-label="Search">
+                    <div id="mobile-search-results" class="search-results"></div>
+                </div>
+            </div>
+            {{ end }}
+
+            {{ range .Site.Menus.main }}
+                {{ if .HasChildren }}
+                    <div class="mobile-dropdown">
+                        <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex justify-between items-center">
+                            {{ .Name }}
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="hidden pl-4">
+                            {{ range .Children }}
+                                <a href="{{ .URL }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{{ .Name }}</a>
+                            {{ end }}
+                        </div>
+                    </div>
+                {{ else }}
+                    <a href="{{ .URL }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">{{ .Name }}</a>
+                {{ end }}
+            {{ end }}
+        </div>
+    </nav>
+</header>
+
+<!-- Search and Menu JavaScript -->
+<script src="/js/search.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize search
+    new Search();
+
+    // Mobile menu functionality
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileDropdowns = document.querySelectorAll('.mobile-dropdown button');
+
+    mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileDropdowns.forEach(button => {
+        button.addEventListener('click', function() {
+            const dropdownContent = this.nextElementSibling;
+            dropdownContent.classList.toggle('hidden');
+        });
+    });
+});
+</script> 
