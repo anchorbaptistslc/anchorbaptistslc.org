@@ -21,3 +21,18 @@ theme = 'anchor-theme'
     sunday_morning = "11:00 AM"
     sunday_evening = "6:00 PM"
     wednesday = "7:00 PM"
+
+[build]
+  writeStats = true
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.145.0"
+
+[build.processing]
+  skip = false
+[build.processing.css]
+  includePaths = ["assets/css"]
+  bundle = true
+  minify = true

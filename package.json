@@ -8,7 +8,7 @@
     "start": "hugo serve --theme=anchor-theme --buildDrafts --buildFuture",
     "dev": "hugo serve --theme=anchor-theme --buildDrafts --buildFuture --disableFastRender --printPathWarnings",
     "clean": "rm -rf public resources",
-    "build:prod": "npm run clean && HUGO_ENV=production hugo --theme=anchor-theme --gc --minify"
+    "build:prod": "npm run clean && NODE_ENV=production HUGO_ENV=production hugo --theme=anchor-theme --gc --minify"
   },
   "keywords": [
     "church",
@@ -20,7 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.3",
+    "postcss": "^8.4.35",
     "postcss-cli": "^11.0.0",
     "tailwindcss": "^3.4.1"
   },
