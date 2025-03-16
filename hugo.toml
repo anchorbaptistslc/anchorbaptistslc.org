@@ -36,3 +36,18 @@ theme = 'anchor-theme'
   includePaths = ["assets/css"]
   bundle = true
   minify = true
+
+[security.exec]
+  allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^tailwindcss$']
+
+[security.funcs]
+  getenv = ['^HUGO_']
+
+[security.http]
+  methods = ['(?i)GET|POST']
+  urls = ['.*']
+
+[assets]
+  disableHMR = false
+  [assets.css]
+    sourceMap = true

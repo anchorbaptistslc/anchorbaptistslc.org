@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    {{ $styles := resources.Get "css/main.css" | css.PostCSS }}
-    <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+    {{ $css := resources.Get "css/main.css" }}
+    {{ $opts := dict "targetPath" "css/main.css" "enableSourceMap" true }}
+    {{ $styles := $css | resources.PostCSS $opts | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
     {{ $js := resources.Get "js/main.js" }}
     <script src="{{ $js.RelPermalink }}"></script>
 </head>
