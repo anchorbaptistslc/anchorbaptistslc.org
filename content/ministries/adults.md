@@ -1,7 +1,8 @@
 ---
-title: "Adult Ministries"
-description: "Adult programs and Bible studies at Anchor Baptist Church"
-weight: 30
+title: "Adult Ministry"
+description: "Adult programs and activities at Anchor Baptist Church"
+weight: 10
+featured_image: "/images/horizontal/anchor-friend-day-0427.jpg"
 ---
 
 # ADULT BIBLE CLASSES

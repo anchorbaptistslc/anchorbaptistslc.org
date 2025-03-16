@@ -1,6 +1,7 @@
 ---
-title: "Our Ministries"
-description: "Learn about the various ministries at Anchor Baptist Church"
+title: "Ministries"
+description: "Various ministries and programs at Anchor Baptist Church"
+featured_image: "/images/horizontal/anchor-friend-day-0427.jpg"
 ---
 
 # Our Ministries

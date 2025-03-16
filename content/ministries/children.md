@@ -1,7 +1,8 @@
 ---
-title: "Children's Ministries"
-description: "Programs and activities for children at Anchor Baptist Church"
-weight: 10
+title: "Children's Ministry"
+description: "Children's programs and activities at Anchor Baptist Church"
+weight: 30
+featured_image: "/images/horizontal/anchor-friend-day-0427.jpg"
 ---
 
 # Children's Ministries

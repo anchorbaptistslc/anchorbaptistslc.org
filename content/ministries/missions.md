@@ -1,7 +1,8 @@
 ---
 title: "Missions"
-description: "Supporting missions and reaching our world for Christ"
+description: "Supporting missionaries and spreading the Gospel worldwide"
 weight: 40
+featured_image: "/images/horizontal/anchor-friend-day-0427.jpg"
 ---
 
 # Missions

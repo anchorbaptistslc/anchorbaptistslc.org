@@ -1,6 +1,7 @@
 ---
 title: "Sunday School"
 description: "Sunday School at Anchor Baptist Church"
+featured_image: "/images/horizontal/anchor-friend-day-0427.jpg"
 ---
 
 # Sunday School
