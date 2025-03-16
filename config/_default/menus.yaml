@@ -2,11 +2,11 @@ main:
   - name: Watch
     url: https://www.youtube.com/@anchorbaptistchurchslc/streams
     weight: 10
-  - name: Salvation
-    url: /the-gospel/
-    weight: 20
   - name: Visit
     url: /plan-your-visit/
+    weight: 20
+  - name: Salvation
+    url: /the-gospel/
     weight: 30
   - name: About
     url: /about/
