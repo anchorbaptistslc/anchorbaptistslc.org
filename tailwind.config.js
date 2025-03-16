@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./layouts/**/*.html",
     "./content/**/*.{html,md}",
+    "./static/**/*.{js,jpg}",
     "./themes/anchor-theme/layouts/**/*.html"
   ],
   safelist: [

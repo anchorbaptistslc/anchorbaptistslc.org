@@ -22,13 +22,24 @@ theme = 'anchor-theme'
     sunday_evening = "6:00 PM"
     wednesday = "7:00 PM"
 
-[build]
-  writeStats = true
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
 
 [module]
   [module.hugoVersion]
     extended = true
     min = "0.145.0"
+
+[build]
+  writeStats = true
+  noChmod = true
+  noTimes = true
 
 [build.processing]
   skip = false

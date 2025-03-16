@@ -4,11 +4,12 @@
   "description": "Website for Anchor Baptist Church in Salt Lake City",
   "main": "index.js",
   "scripts": {
-    "build": "hugo --theme=anchor-theme --minify --gc",
-    "start": "hugo serve --theme=anchor-theme --buildDrafts --buildFuture",
-    "dev": "hugo serve --theme=anchor-theme --buildDrafts --buildFuture --disableFastRender --printPathWarnings",
+    "build": "hugo --minify --gc",
+    "postcss:build": "postcss assets/css/main.css -o assets/css/main.processed.css",
+    "start": "hugo serve --buildDrafts --buildFuture",
+    "dev": "hugo serve --buildDrafts --buildFuture --disableFastRender --printPathWarnings",
     "clean": "rm -rf public resources",
-    "build:prod": "npm run clean && NODE_ENV=production HUGO_ENV=production hugo --theme=anchor-theme --gc --minify"
+    "build:prod": "npm run clean && npm run postcss:build && NODE_ENV=production HUGO_ENV=production hugo --gc --minify"
   },
   "keywords": [
     "church",
