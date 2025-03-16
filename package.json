@@ -8,7 +8,7 @@
     "start": "hugo serve --theme=anchor-theme --buildDrafts --buildFuture",
     "dev": "hugo serve --theme=anchor-theme --buildDrafts --buildFuture --disableFastRender --printPathWarnings",
     "clean": "rm -rf public resources",
-    "build:prod": "npm run clean && hugo --theme=anchor-theme --gc --minify --environment production"
+    "build:prod": "npm run clean && HUGO_ENV=production hugo --theme=anchor-theme --gc --minify"
   },
   "keywords": [
     "church",
