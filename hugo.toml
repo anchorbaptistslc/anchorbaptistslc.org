@@ -49,7 +49,7 @@ theme = 'anchor-theme'
   minify = true
 
 [security.exec]
-  allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^tailwindcss$']
+  allow = ['^dart-sass-embedded$', '^git$', '^go$', '^npx$', '^postcss$', '^tailwindcss$']
 
 [security.funcs]
   getenv = ['^HUGO_']
