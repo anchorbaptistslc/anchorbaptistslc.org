@@ -12,7 +12,7 @@
         </div>
         <div class="relative">
             <div class="container mx-auto px-4 py-24">
-                <div class="max-w-3xl">
+                <div class="max-w-4xl">
                     <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white">Welcome to Anchor Baptist Church</h1>
                     <p class="text-xl mb-8 text-white">{{ .Site.Params.description }}</p>
                     <div class="space-x-4">
@@ -31,19 +31,19 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="text-center p-6 bg-gray-50 rounded-lg">
                     <h3 class="font-semibold mb-2">Sunday School</h3>
-                    <p class="text-xl text-blue-700">{{ .Site.Params.services.sunday_school }}</p>
+                    <p class="text-xl text-brand-link">{{ .Site.Params.services.sunday_school }}</p>
                 </div>
                 <div class="text-center p-6 bg-gray-50 rounded-lg">
                     <h3 class="font-semibold mb-2">Sunday Morning</h3>
-                    <p class="text-xl text-blue-700">{{ .Site.Params.services.sunday_morning }}</p>
+                    <p class="text-xl text-brand-link">{{ .Site.Params.services.sunday_morning }}</p>
                 </div>
                 <div class="text-center p-6 bg-gray-50 rounded-lg">
                     <h3 class="font-semibold mb-2">Sunday Evening</h3>
-                    <p class="text-xl text-blue-700">{{ .Site.Params.services.sunday_evening }}</p>
+                    <p class="text-xl text-brand-link">{{ .Site.Params.services.sunday_evening }}</p>
                 </div>
                 <div class="text-center p-6 bg-gray-50 rounded-lg">
                     <h3 class="font-semibold mb-2">Wednesday</h3>
-                    <p class="text-xl text-blue-700">{{ .Site.Params.services.wednesday }}</p>
+                    <p class="text-xl text-brand-link">{{ .Site.Params.services.wednesday }}</p>
                 </div>
             </div>
         </div>
@@ -56,28 +56,29 @@
                  alt="" 
                  class="w-full h-full object-cover" 
                  aria-hidden="true">
+            <div class="absolute inset-0 bg-gray-900 bg-opacity-60"></div>
         </div>
         <div class="container mx-auto px-4 relative">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Visit Us -->
-                <div class="bg-white/90 p-8 rounded-lg shadow-lg">
+                <div class="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg">
                     <h3 class="text-2xl font-bold mb-4">Plan Your Visit</h3>
                     <p class="mb-4">Join us for a service and experience warm, Christ-centered fellowship at Anchor Baptist Church.</p>
-                    <a href="/plan-your-visit/" class="text-blue-700 font-semibold hover:text-blue-900">Plan Your Visit →</a>
+                    <a href="/plan-your-visit/" class="text-brand-link font-semibold hover:text-brand-linkHover">Plan Your Visit →</a>
                 </div>
 
                 <!-- The Bible Way to Heaven -->
-                <div class="bg-white/90 p-8 rounded-lg shadow-lg">
+                <div class="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg">
                     <h3 class="text-2xl font-bold mb-4">The Bible Way to Heaven</h3>
                     <p class="mb-4">Discover God's plan of salvation through Jesus Christ.</p>
-                    <a href="/the-gospel/" class="text-blue-700 font-semibold hover:text-blue-900">Learn More →</a>
+                    <a href="/the-gospel/" class="text-brand-link font-semibold hover:text-brand-linkHover">Learn More →</a>
                 </div>
 
                 <!-- Get Involved -->
-                <div class="bg-white/90 p-8 rounded-lg shadow-lg">
+                <div class="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg">
                     <h3 class="text-2xl font-bold mb-4">Get Involved</h3>
                     <p class="mb-4">Find your place in our church family and serve the Lord with us.</p>
-                    <a href="/ministries/" class="text-blue-700 font-semibold hover:text-blue-900">See Our Ministries →</a>
+                    <a href="/ministries/" class="text-brand-link font-semibold hover:text-brand-linkHover">See Our Ministries →</a>
                 </div>
             </div>
         </div>

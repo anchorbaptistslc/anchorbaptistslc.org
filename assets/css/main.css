@@ -17,7 +17,7 @@
         @apply text-2xl font-bold mb-2;
     }
     a {
-        @apply text-blue-600 hover:text-blue-800;
+        @apply text-brand-link hover:text-brand-linkHover transition-colors duration-200;
     }
 }
 
