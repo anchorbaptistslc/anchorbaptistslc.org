@@ -50,9 +50,9 @@
     </div>
 
     <div class="container mx-auto px-4 py-12">
-        <div class="flex flex-col lg:flex-row gap-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <!-- Main Content -->
-            <div class="flex-grow">
+            <div class="lg:col-span-2">
                 <!-- Quick Info Box -->
                 {{ if or .Params.meeting_time .Params.location .Params.age_group }}
                 <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
@@ -88,7 +88,7 @@
                 {{ with .Params.leaders }}
                 <div class="mt-12">
                     <h2 class="text-2xl font-bold mb-6">Ministry Leaders</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="grid grid-cols-1 gap-8">
                         {{ range . }}
                         <div class="flex items-start space-x-4">
                             {{ with .photo }}
@@ -111,7 +111,7 @@
             </div>
 
             <!-- Sidebar -->
-            <div class="lg:w-1/3">
+            <div class="lg:col-span-1">
                 <!-- Get Involved Box -->
                 <div class="bg-brand-dark text-white rounded-lg p-8 mb-8">
                     <h2 class="text-2xl font-bold mb-4">Get Involved</h2>
