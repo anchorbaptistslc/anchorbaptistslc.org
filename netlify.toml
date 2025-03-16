@@ -3,8 +3,9 @@
   command = "npm run build:prod"
 
 [build.environment]
-  HUGO_VERSION = "0.145.0-extended"
+  HUGO_VERSION = "0.145.0"
   NODE_VERSION = "18"
+  HUGO_EXTENDED = "true"
 
 [context.production.environment]
   HUGO_ENV = "production"
