@@ -1,14 +1,23 @@
 {{ define "main" }}
 <div class="bg-gray-50">
     <!-- Hero Section -->
-    <div class="relative bg-blue-700 text-white py-24 z-0">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">Welcome to Anchor Baptist Church</h1>
-                <p class="text-xl mb-8">{{ .Site.Params.description }}</p>
-                <div class="space-x-4">
-                    <a href="/about/church/" class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">Learn More</a>
-                    <a href="/plan-your-visit/" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600">Visit Us</a>
+    <div class="relative overflow-hidden z-0">
+        <div class="absolute inset-0">
+            <img src="/images/hero-background.jpg" 
+                 alt="" 
+                 class="w-full h-full object-cover object-[center_65%]" 
+                 aria-hidden="true">
+            <div class="absolute inset-0 bg-blue-700 bg-opacity-75 mix-blend-multiply"></div>
+        </div>
+        <div class="relative">
+            <div class="container mx-auto px-4 py-24">
+                <div class="max-w-3xl">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white">Welcome to Anchor Baptist Church</h1>
+                    <p class="text-xl mb-8 text-white">{{ .Site.Params.description }}</p>
+                    <div class="space-x-4">
+                        <a href="/about/church/" class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">Learn More</a>
+                        <a href="/plan-your-visit/" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600">Visit Us</a>
+                    </div>
                 </div>
             </div>
         </div>
