@@ -1,5 +1,7 @@
 ---
 title: "Plan Your Visit"
+description: "Plan your visit to Anchor Baptist Church"
+featured_image: "/images/horizontal/anchor-2024-vision-sunday -2024-01-1427.jpg"
 ---
 
 # Plan Your Visit

@@ -1,6 +1,7 @@
 ---
-title: "The Bible Way To Heaven"
-url: "/the-gospel/"
+title: "The Gospel"
+description: "Learn about the Gospel of Jesus Christ and how to be saved"
+featured_image: "/images/horizontal/anchor-missions-sunday-am-2024-10-2134.jpg"
 ---
 
 There are big questions that haunt all of us. What happens when I die? Where will I spend eternity? The single most important question that you will ever answer is this – "If I were to die today, would I spend eternity in Heaven with God?" Your relationship to Jesus Christ is central to the answer to that question.
