@@ -2,10 +2,6 @@
 title: "About Us"
 description: "Learn more about Anchor Baptist Church, our beliefs, and our leadership"
 featured_image: "/images/horizontal/harvest-day-2023-10-1171.jpg"
-menu:
-  main:
-    name: "About"
-    weight: 20
 ---
 
 # About Our Church
