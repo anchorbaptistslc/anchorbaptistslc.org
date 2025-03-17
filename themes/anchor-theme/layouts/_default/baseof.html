@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    
+    <!-- Montserrat font for hero headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
+    
+    <style>
+    .hero-heading {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 200;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    </style>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#1a202c',
+                        'brand-link': '#2563eb',
+                        'brand-linkHover': '#1d4ed8',
+                    },
+                },
+            },
+        }
+    </script>
     {{ if eq hugo.Environment "production" }}
         {{ $css := resources.Get "css/main.processed.css" | minify | fingerprint }}
         <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
