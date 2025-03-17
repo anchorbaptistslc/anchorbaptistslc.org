@@ -1,18 +1,4 @@
 {{ define "main" }}
-<!-- Font Import -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
-
-<style>
-.hero-heading {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 200;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-</style>
-
 <div class="bg-gray-50">
     <!-- Hero Section -->
     <div class="relative overflow-hidden z-0">
@@ -28,7 +14,7 @@
             <div class="container mx-auto px-4 py-24">
                 <div class="max-w-4xl">
                     <h1 class="text-4xl md:text-5xl mb-6 text-white hero-heading">{{ .Params.hero.title }}</h1>
-                    <p class="text-xl mb-8 text-white">{{ .Site.Params.description }}</p>
+                    <p class="text-xl mb-8 text-white hero-tagline">{{ .Params.hero.tagline }}</p>
                     <div class="space-x-4">
                         <a href="{{ .Params.hero.cta.learn_more.url }}" class="bg-white text-brand-dark px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 border-2 border-white">{{ .Params.hero.cta.learn_more.text }}</a>
                         <a href="{{ .Params.hero.cta.visit.url }}" class="bg-transparent border-2 border-white text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200 hover:bg-gray-100 hover:text-brand-dark hover:border-gray-100 [&:hover]:text-brand-dark">{{ .Params.hero.cta.visit.text }}</a>
