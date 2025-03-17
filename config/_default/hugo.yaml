@@ -23,3 +23,12 @@ privacy:
     privacyEnhanced: true
   vimeo:
     enableDNT: true
+
+######################## params ####################
+params:
+  description: "A Bible-believing Baptist church in Salt Lake City, Utah"
+  services:
+    sunday_school: "10:00 AM"
+    sunday_morning: "11:00 AM"
+    sunday_evening: "6:00 PM"
+    wednesday: "7:00 PM"

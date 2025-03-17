@@ -13,11 +13,11 @@
         <div class="relative">
             <div class="container mx-auto px-4 py-24">
                 <div class="max-w-4xl">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white">Welcome to Anchor Baptist Church</h1>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white">{{ .Params.hero.title }}</h1>
                     <p class="text-xl mb-8 text-white">{{ .Site.Params.description }}</p>
                     <div class="space-x-4">
-                        <a href="/about/church/" class="bg-white text-brand-dark px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 border-2 border-white">Learn More</a>
-                        <a href="/plan-your-visit/" class="bg-transparent border-2 border-white text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200 hover:bg-gray-100 hover:text-brand-dark hover:border-gray-100 [&:hover]:text-brand-dark">Visit Us</a>
+                        <a href="{{ .Params.hero.cta.learn_more.url }}" class="bg-white text-brand-dark px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 border-2 border-white">{{ .Params.hero.cta.learn_more.text }}</a>
+                        <a href="{{ .Params.hero.cta.visit.url }}" class="bg-transparent border-2 border-white text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200 hover:bg-gray-100 hover:text-brand-dark hover:border-gray-100 [&:hover]:text-brand-dark">{{ .Params.hero.cta.visit.text }}</a>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
     <!-- Service Times -->
     <div class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Join Us for Worship</h2>
+            <h2 class="text-3xl font-bold text-center mb-12">{{ .Params.worship.title }}</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="text-center p-6 bg-gray-50 rounded-lg">
                     <h3 class="font-semibold mb-2">Sunday School</h3>
@@ -52,7 +52,7 @@
     <!-- Featured Content -->
     <div class="relative py-16">
         <div class="absolute inset-0">
-            <img src="/images/horizontal/anchor-spring-revival-2023-04-1121.jpg" 
+            <img src="{{ .Params.featured.image }}" 
                  alt="" 
                  class="w-full h-full object-cover" 
                  aria-hidden="true">
@@ -60,26 +60,13 @@
         </div>
         <div class="container mx-auto px-4 relative">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Visit Us -->
+                {{ range .Params.featured.cards }}
                 <div class="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4">Plan Your Visit</h3>
-                    <p class="mb-4">Join us for a service and experience warm, Christ-centered fellowship at Anchor Baptist Church.</p>
-                    <a href="/plan-your-visit/" class="text-brand-link font-semibold hover:text-brand-linkHover">Plan Your Visit →</a>
+                    <h3 class="text-2xl font-bold mb-4">{{ .title }}</h3>
+                    <p class="mb-4">{{ .description }}</p>
+                    <a href="{{ .url }}" class="text-brand-link font-semibold hover:text-brand-linkHover">{{ .link_text }}</a>
                 </div>
-
-                <!-- The Bible Way to Heaven -->
-                <div class="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4">The Bible Way to Heaven</h3>
-                    <p class="mb-4">Discover God's plan of salvation through Jesus Christ.</p>
-                    <a href="/the-gospel/" class="text-brand-link font-semibold hover:text-brand-linkHover">Learn More →</a>
-                </div>
-
-                <!-- Get Involved -->
-                <div class="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4">Get Involved</h3>
-                    <p class="mb-4">Find your place in our church family and serve the Lord with us.</p>
-                    <a href="/ministries/" class="text-brand-link font-semibold hover:text-brand-linkHover">See Our Ministries →</a>
-                </div>
+                {{ end }}
             </div>
         </div>
     </div>
