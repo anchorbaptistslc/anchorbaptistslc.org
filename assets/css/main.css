@@ -54,12 +54,13 @@
     border: 2px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
-    transition: border-color 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .search-input:focus {
-    border-color: #007bff;
+    border-color: #163258;
     outline: none;
+    box-shadow: 0 0 0 2px rgba(22, 50, 88, 0.1);
 }
 
 .search-results {
@@ -68,9 +69,9 @@
     left: 0;
     right: 0;
     background: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
     margin-top: 4px;
     max-height: 500px;
     overflow-y: auto;
@@ -80,11 +81,11 @@
 
 .search-result {
     display: block;
-    padding: 12px;
-    border-bottom: 1px solid #eee;
+    padding: 16px;
+    border-bottom: 1px solid #e5e7eb;
     text-decoration: none;
-    color: inherit;
-    transition: background-color 0.2s ease;
+    color: #1a202c;
+    transition: all 0.2s ease;
 }
 
 .search-result:last-child {
@@ -96,33 +97,35 @@
 }
 
 .search-result h3 {
-    margin: 0 0 4px;
+    margin: 0 0 8px;
     font-size: 18px;
-    color: #007bff;
+    font-weight: 600;
+    color: #163258;
 }
 
 .search-result .description {
-    margin: 4px 0;
+    color: #4b5563;
     font-size: 14px;
-    color: #6c757d;
+    margin-bottom: 4px;
+    line-height: 1.5;
 }
 
 .search-result .summary {
-    margin: 4px 0 0;
+    color: #6b7280;
     font-size: 14px;
-    color: #212529;
+    line-height: 1.5;
 }
 
 .search-no-results {
-    padding: 12px;
+    padding: 16px;
     text-align: center;
-    color: #6c757d;
+    color: #6b7280;
+    font-size: 14px;
 }
 
-/* Highlighted search matches */
 .search-result mark {
-    background-color: #fff3cd;
-    color: #856404;
+    background-color: rgba(22, 50, 88, 0.1);
+    color: #163258;
     padding: 0.1em 0.2em;
     border-radius: 2px;
 }
