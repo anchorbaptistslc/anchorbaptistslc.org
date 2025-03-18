@@ -78,9 +78,9 @@ class Search {
 
         const searchResults = this.searchIndex.filter(page => {
             const titleMatch = page.title.toLowerCase().includes(query);
-            const contentMatch = page.content.toLowerCase().includes(query);
             const descriptionMatch = page.description?.toLowerCase().includes(query);
-            return titleMatch || contentMatch || descriptionMatch;
+            const contentMatch = page.content.toLowerCase().includes(query);
+            return titleMatch || descriptionMatch || contentMatch;
         }).slice(0, 10); // Limit to 10 results
 
         this.displayResults(searchResults, device);
@@ -102,7 +102,6 @@ class Search {
                 ${result.description ? 
                     `<p class="description">${this.highlight(result.description, this.searchInputs[device].value)}</p>` : 
                     ''}
-                <p class="summary">${this.highlight(this.truncate(result.summary || '', 150), this.searchInputs[device].value)}</p>
             </a>
         `).join('');
 
