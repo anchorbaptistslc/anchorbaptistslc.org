@@ -22,6 +22,10 @@ theme = 'anchor-theme'
     sunday_evening = "6:00 PM"
     wednesday = "7:00 PM"
 
+# Output Formats
+[outputs]
+  home = ["HTML", "JSON"]
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
