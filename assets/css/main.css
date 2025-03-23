@@ -39,6 +39,13 @@
         @apply flex items-center py-3;
         min-height: 120px; /* Increased height for larger logo */
     }
+    .hero-heading {
+        @apply font-thin text-5xl md:text-6xl lg:text-7xl;
+    }
+    .footer-skyline {
+        background-size: 100% auto;
+        min-height: 100px;
+    }
 }
 
 /* Search Styles */

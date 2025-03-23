@@ -1,5 +1,6 @@
-<footer class="bg-brand-dark text-white">
-    <div class="container mx-auto px-4 py-12">
+<footer class="bg-brand-dark text-white relative pb-48">
+    <div class="absolute inset-0 bg-bottom bg-no-repeat footer-skyline" style="background-image: url('/images/graphics/city-skyline-graphic.png');"></div>
+    <div class="container mx-auto px-4 py-12 relative">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Contact Information -->
             <div>
@@ -65,7 +66,7 @@
         </div>
 
         <!-- Copyright -->
-        <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+        <div class="mt-8 text-center">
             <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.</p>
         </div>
     </div>
