@@ -36,8 +36,10 @@
         @apply text-blue-600;
     }
     .logo-container {
-        @apply flex items-center py-3;
-        min-height: 120px; /* Increased height for larger logo */
+        @apply flex items-start;
+        padding-top: 0;
+        padding-bottom: 0.5rem;
+        transition: all 0.3s ease;
     }
     .hero-heading {
         @apply font-thin text-5xl md:text-6xl lg:text-7xl;
