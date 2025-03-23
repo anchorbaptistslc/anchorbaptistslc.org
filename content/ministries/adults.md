@@ -7,15 +7,15 @@ featured_image: "/images/horizontal/anchor-friend-day-0427.jpg"
 
 # ADULT BIBLE CLASSES
 
-## **Anchor Bible Class**
+## Anchor Bible Class**
 
 The Anchor Bible Class meets every Sunday morning in the Auditorium at 10:00 am for a time of Bible Study and challenging application. 
 
 Join us at 9:30 am in the Fellowship Hall for breakfast and coffee!
 
-Teachers: Dan Starr
+Teachers: Richard Smith
 
-## **Higher Ways Singles Bible Class**
+## Higher Ways Singles Bible Class
 
 The Higher Ways Singles Bible Class began in June 2021. This class is designed for singles of all ages to come together in fellowship and study of the Word of God. You will be challenged by the application of the lessons as you go out and live for Christ throughout the week!
 
@@ -25,7 +25,7 @@ Join us at 9:30 am in the Fellowship Hall for breakfast and coffee!
 
 Teachers: Billy and Amy Green
 
-**Starting Point Bible Class**
+## Starting Point Bible Class
 
 Starting on September 4, 2022, the StaringPoint Bible Class is a rotating 13 week adult Sunday school class, designed for new members and new believers. Whether you join us on week one or week seven, stay for all thirteen and then find your place at Anchor Baptist Church!
 
@@ -35,11 +35,11 @@ Join us at 9:30 am in the Fellowship Hall for breakfast and coffee!
 
 Teachers: Pastor and Mrs. Atwood
 
-**Senior Saints Ministry**
+## Senior Saints Ministry
 
 Our Senior Saints meet once a quarter throughout the year for a time of food, fellowship, and activities. At Anchor Baptist Church, all age groups are vital and we believe our Senior Saints have godly wisdom and life experience for all to glean from! Join us for this exiting time!
 
-**Future Adult Ministries:**
+## Future Adult Ministries:
 
 Couple's Class: a class designed with young couples in mind
 
