@@ -1,5 +1,7 @@
 <header class="bg-brand-light shadow-md relative z-50">
-    <nav class="container mx-auto px-4 pb-1">
+    <!-- Background image container -->
+    <div class="header-bg absolute inset-0 z-0"></div>
+    <nav class="container mx-auto px-4 pb-1 relative z-10">
         <div class="flex justify-between items-center">
             <!-- Logo -->
             <a href="/" class="logo-container h-28 flex items-start">
@@ -31,7 +33,7 @@
                 {{ range .Site.Menus.main }}
                     {{ if .HasChildren }}
                         <div class="relative group">
-                            <button class="flex items-center text-gray-700 hover:text-brand-link px-3 py-2">
+                            <button class="flex items-center text-brand-dark hover:text-brand-link px-3 py-2">
                                 {{ .Name }}
                                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -40,13 +42,13 @@
                             <div class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                                 <div class="py-1">
                                     {{ range .Children }}
-                                        <a href="{{ .URL }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{{ .Name }}</a>
+                                        <a href="{{ .URL }}" class="block px-4 py-2 text-sm text-brand-dark hover:bg-gray-100">{{ .Name }}</a>
                                     {{ end }}
                                 </div>
                             </div>
                         </div>
                     {{ else }}
-                        <a href="{{ .URL }}" class="text-gray-700 hover:text-brand-link px-3 py-2 {{ if $currentPage.IsMenuCurrent "main" . }}text-brand-link{{ end }}">
+                        <a href="{{ .URL }}" class="text-brand-dark hover:text-brand-link px-3 py-2 {{ if $currentPage.IsMenuCurrent "main" . }}text-brand-link{{ end }}">
                             {{ .Name }}
                         </a>
                     {{ end }}
@@ -54,7 +56,7 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="lg:hidden text-gray-600 hover:text-gray-900">
+            <button id="mobile-menu-button" class="lg:hidden text-brand-dark hover:text-brand-link">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
@@ -80,7 +82,7 @@
             {{ range .Site.Menus.main }}
                 {{ if .HasChildren }}
                     <div class="mobile-dropdown">
-                        <button class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex justify-between items-center">
+                        <button class="w-full text-left px-4 py-2 text-brand-dark hover:bg-gray-100 flex justify-between items-center">
                             {{ .Name }}
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -88,12 +90,12 @@
                         </button>
                         <div class="hidden pl-4">
                             {{ range .Children }}
-                                <a href="{{ .URL }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{{ .Name }}</a>
+                                <a href="{{ .URL }}" class="block px-4 py-2 text-sm text-brand-dark hover:bg-gray-100">{{ .Name }}</a>
                             {{ end }}
                         </div>
                     </div>
                 {{ else }}
-                    <a href="{{ .URL }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">{{ .Name }}</a>
+                    <a href="{{ .URL }}" class="block px-4 py-2 text-brand-dark hover:bg-gray-100">{{ .Name }}</a>
                 {{ end }}
             {{ end }}
         </div>
