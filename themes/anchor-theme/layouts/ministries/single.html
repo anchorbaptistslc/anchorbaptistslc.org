@@ -88,7 +88,7 @@
                 <!-- Leaders Section -->
                 {{ with .Params.leaders }}
                 <div class="mt-12">
-                    <h2 class="text-2xl font-bold mb-6">Ministry Leaders</h2>
+                    <h2 class="text-2xl font-medium mb-6">Ministry Leaders</h2>
                     <div class="grid grid-cols-1 gap-8">
                         {{ range . }}
                         <div class="flex items-start space-x-4">
@@ -96,7 +96,7 @@
                             <img src="{{ . }}" alt="{{ $.Name }}" class="w-24 h-24 rounded-lg object-cover">
                             {{ end }}
                             <div>
-                                <h3 class="font-bold text-xl">{{ .name }}</h3>
+                                <h3 class="font-medium text-xl">{{ .name }}</h3>
                                 {{ with .role }}
                                 <p class="text-gray-600 mb-2">{{ . }}</p>
                                 {{ end }}
@@ -115,7 +115,7 @@
             <div class="lg:col-span-1">
                 <!-- Get Involved Box -->
                 <div class="bg-brand-dark text-white rounded-lg p-8 mb-8">
-                    <h2 class="text-2xl font-bold mb-4">Get Involved</h2>
+                    <h2 class="text-2xl font-medium mb-4">Get Involved</h2>
                     <p class="mb-6">Interested in joining or learning more about this ministry?</p>
                     {{ with .Params.contact_email }}
                     <a href="mailto:{{ . }}" class="inline-block bg-white text-brand-dark px-6 py-2 rounded-lg font-semibold hover:bg-gray-100">
@@ -130,7 +130,7 @@
 
                 <!-- Other Ministries -->
                 <div class="bg-white rounded-lg shadow-sm p-6">
-                    <h2 class="text-xl font-bold mb-4">Other Ministries</h2>
+                    <h2 class="text-xl font-medium mb-4">Other Ministries</h2>
                     <ul class="space-y-3">
                         {{ range where .Site.RegularPages "Section" "ministries" }}
                         {{ if ne .RelPermalink $.RelPermalink }}

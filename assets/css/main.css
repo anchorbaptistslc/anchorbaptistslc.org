@@ -8,13 +8,13 @@
         @apply antialiased;
     }
     h1 {
-        @apply text-4xl font-bold mb-4;
+        @apply text-4xl font-medium mb-4;
     }
     h2 {
-        @apply text-3xl font-bold mb-3;
+        @apply text-3xl font-medium mb-3;
     }
     h3 {
-        @apply text-2xl font-bold mb-2;
+        @apply text-2xl font-medium mb-2;
     }
     a {
         @apply text-brand-link hover:text-brand-linkHover transition-colors duration-200;
@@ -46,6 +46,20 @@
         background-size: 100% auto;
         min-height: 100px;
     }
+}
+
+/* Override prose heading weights */
+.prose h1 {
+    font-weight: 500 !important;
+    letter-spacing: 0.05em !important;
+}
+.prose h2 {
+    font-weight: 500 !important;
+    letter-spacing: 0.05em !important;
+}
+.prose h3 {
+    font-weight: 500 !important;
+    letter-spacing: 0.05em !important;
 }
 
 /* Search Styles */

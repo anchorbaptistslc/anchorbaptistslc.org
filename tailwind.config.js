@@ -66,6 +66,21 @@ module.exports = {
         sans: ['Inter var', 'system-ui', 'sans-serif'],
         serif: ['Merriweather', 'Georgia', 'serif'],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            ':where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *))': {
+              fontWeight: '500',
+            },
+            ':where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *))': {
+              fontWeight: '500',
+            },
+            ':where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *))': {
+              fontWeight: '500',
+            },
+          },
+        },
+      },
     },
   },
   plugins: [

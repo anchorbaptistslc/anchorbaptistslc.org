@@ -68,7 +68,7 @@
                 <!-- Call to Action (if specified) -->
                 {{ with .Params.cta }}
                 <div class="mt-12 bg-brand-dark text-white rounded-lg p-8">
-                    <h2 class="text-2xl font-bold mb-4">{{ .title }}</h2>
+                    <h2 class="text-2xl font-medium mb-4">{{ .title }}</h2>
                     <p class="mb-6">{{ .description }}</p>
                     <a href="{{ .url }}" class="inline-block bg-white text-brand-dark px-6 py-2 rounded-lg font-semibold hover:bg-gray-100">
                         {{ .button_text }}
@@ -83,7 +83,7 @@
                 {{ $related := .Site.RegularPages.Related . | first 3 }}
                 {{ with $related }}
                 <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
-                    <h2 class="text-xl font-bold mb-4">Related Pages</h2>
+                    <h2 class="text-xl font-medium mb-4">Related Pages</h2>
                     <ul class="space-y-4">
                         {{ range . }}
                         <li>
@@ -98,7 +98,7 @@
 
                 <!-- Contact Box -->
                 <div class="bg-white rounded-lg shadow-sm p-6">
-                    <h2 class="text-xl font-bold mb-4">Get in Touch</h2>
+                    <h2 class="text-xl font-medium mb-4">Get in Touch</h2>
                     <p class="mb-4">Have questions? We're here to help.</p>
                     <div class="space-y-2">
                         <p>
