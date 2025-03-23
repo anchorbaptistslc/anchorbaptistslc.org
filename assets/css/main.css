@@ -43,8 +43,11 @@
         @apply font-thin text-5xl md:text-6xl lg:text-7xl;
     }
     .footer-skyline {
+        background-image: url('/images/graphics/city-skyline-graphic.png');
         background-size: 100% auto;
-        min-height: 100px;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        padding-bottom: 400px;
     }
 }
 
