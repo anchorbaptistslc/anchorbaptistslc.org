@@ -1,14 +1,15 @@
 ---
 title: "Church Leadership"
-description: "Meet the leadership team at Anchor Baptist Church"
+description: "Meet Pastor Jason Atwood and the leadership team of Anchor Baptist Church"
 featured_image: "/images/horizontal/anchor-missions-sunday-am-2024-10-2134.jpg"
+content_image: "/images/people/pastor-and-family.png"
+content_image_alt_text: "Pastor Jason Atwood and Family"
+content_image_caption: "Pastor Jason Atwood and Family"
 menu:
   about:
     name: "Leadership"
     weight: 30
 ---
-
-# Leadership
 
 Pastor Jason Atwood was born and raised in South Texas near Corpus Christi. He was raised in a Christian home and was saved at an early age. During his first year at Texas A&M University in Corpus Christi, he was called to preach at a missions conference in his home church in Beeville, Texas. The next fall he enrolled in Bible college where he met his future wife Aimeé who grew up in a pastor's home in Milwaukee, WI and was saved as a child. Both Pastor and Mrs. Atwood graduated from Fairhaven Baptist College in Chesterton, Indiana with bachelor's degrees. They are blessed to have three boys who love the Lord.
 
