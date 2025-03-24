@@ -49,6 +49,23 @@
         </div>
     </div>
 
+    <!-- Welcome Section -->
+    <div class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+                <div class="prose lg:prose-lg">
+                    {{ .Content }}
+                </div>
+                <div class="mt-8 lg:mt-0">
+                    <img src="{{ .Params.welcome.image }}" 
+                         alt="{{ .Params.welcome.image_alt }}" 
+                         class="rounded-lg shadow-lg">
+                    <p class="mt-4 text-center text-gray-600">{{ .Params.welcome.image_alt }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Featured Content -->
     <div class="relative py-16">
         <div class="absolute inset-0">
