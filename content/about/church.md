@@ -1,14 +1,19 @@
 ---
 title: "Welcome to Anchor Baptist Church"
-description: "Learn about Anchor Baptist Church, a Bible-believing church in Salt Lake City, Utah"
-featured_image: "/images/horizontal/harvest-day-2023-10-1171.jpg"
+description: "Learn about Anchor Baptist Church and our mission in Salt Lake City"
+featured_image: "/images/horizontal/anchor-missions-sunday-am-2024-10-2134.jpg"
+content_images:
+  - image: "/images/people/anchor-friend-day-2025-03-3064.jpg"
+    alt_text: "2025 Friend Day Services"
+    caption: "2025 Friend Day Services"
+  - image: "/images/people/anchor-harvest-day-2024-10-2586.jpg"
+    alt_text: "2024 Harvest Day Services"
+    caption: "2024 Harvest Day Services"
 menu:
   about:
     name: "Our Church"
     weight: 10
 ---
-
-# Welcome to Anchor Baptist Church
 
 Anchor Baptist Church is a local, independent, Baptist church centrally located on the east side of the Salt Lake Valley.
 

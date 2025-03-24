@@ -1,14 +1,15 @@
 ---
 title: "What We Believe"
-description: "Our Statement of Faith and Core Beliefs"
+description: "Learn about the core beliefs and doctrines of Anchor Baptist Church"
 featured_image: "/images/horizontal/anchor-missions-sunday-am-2024-10-2134.jpg"
+content_images:
+  - image: "/images/people/anchor-friend-day-2025-03-3131.jpg"
+    alt_text: "An open Bible in church"
 menu:
   about:
     name: "Our Beliefs"
     weight: 20
 ---
-
-# Our Beliefs
 
 ### The Holy Scriptures
 
