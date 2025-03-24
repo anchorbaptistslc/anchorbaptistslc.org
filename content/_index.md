@@ -30,7 +30,7 @@ featured:
       url: "/ministries/"
 
 welcome:
-  image: "/images/people/pastor-and-family.png"
+  image: "/images/people/pastor-and-family.jpg"
   image_alt: "Pastor Jason Atwood and Family"
 ---
 

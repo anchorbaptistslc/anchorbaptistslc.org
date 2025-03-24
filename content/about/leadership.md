@@ -2,7 +2,7 @@
 title: "Church Leadership"
 description: "Meet Pastor Jason Atwood and the leadership team of Anchor Baptist Church"
 featured_image: "/images/horizontal/anchor-missions-sunday-am-2024-10-2134.jpg"
-content_image: "/images/people/pastor-and-family.png"
+content_image: "/images/people/pastor-and-family.jpg"
 content_image_alt_text: "Pastor Jason Atwood and Family"
 content_image_caption: "Pastor Jason Atwood and Family"
 menu:
