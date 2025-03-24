@@ -45,17 +45,17 @@
         @apply font-thin text-5xl md:text-6xl lg:text-7xl;
     }
     .footer-skyline {
-        background-image: url('/images/graphics/city-skyline-graphic.png');
+        background-image: url('/images/graphics/city-skyline-65-years.png');
         background-size: 100% auto;
         background-position: bottom;
         background-repeat: no-repeat;
-        padding-bottom: 150px;
+        padding-bottom: 250px;
     }
 }
 
 @media (min-width: 768px) {
     .footer-skyline {
-        padding-bottom: 300px;
+        padding-bottom: 600px;
     }
 }
 
