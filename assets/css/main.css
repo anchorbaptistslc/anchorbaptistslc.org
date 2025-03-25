@@ -53,6 +53,13 @@
     }
 }
 
+/* Responsive adjustments for 1280px-1535px */
+@media (min-width: 1280px) and (max-width: 1535px) {
+    .logo-container img {
+        min-width: 300px;
+    }
+}
+
 @media (min-width: 768px) {
     .footer-skyline {
         padding-bottom: 600px;
