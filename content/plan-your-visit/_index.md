@@ -2,9 +2,22 @@
 title: "Plan Your Visit"
 description: "Plan your visit to Anchor Baptist Church"
 featured_image: "/images/horizontal/anchor-2024-vision-sunday -2024-01-1427.jpg"
+layout: "single"
+tagline: "Every visitor is an honored guest"
+content_images:
+  - image: "/images/people/anchor-friend-day-2025-03-3042.jpg"
+    alt_text: "2025 Friend Day Services"
+    caption: "Welcoming greeters"
+  - image: "/images/people/anchor-harvest-day-2024-10-2699.jpg"
+    alt_text: "2024 Harvest Day Services"
+    caption: "Families and people of all ages welcome"
+  - image: "/images/people/anchor-harvest-day-2024-10-2602.jpg"
+    alt_text: "2024 Harvest Day Services"
+  - image: "/images/people/anchor-missions-monday-2024-10-2338.jpg"
+    alt_text: "2024 Missions Conference"
+  - image: "/images/people/anchor-missions-sunday-pm-2024-10-2271.jpg"
+    alt_text: "2024 Missions Conference"
 ---
-
-# Plan Your Visit
 
 ### Visiting
 
