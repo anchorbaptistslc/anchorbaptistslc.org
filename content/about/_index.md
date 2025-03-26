@@ -2,6 +2,7 @@
 title: "About Us"
 description: "Learn more about Anchor Baptist Church, our beliefs, and our leadership"
 featured_image: "/images/horizontal/harvest-day-2023-10-1171.jpg"
+tagline: "A church family serving Christ since 1960"
 ---
 
 # About Our Church
