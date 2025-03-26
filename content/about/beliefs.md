@@ -9,6 +9,7 @@ menu:
   about:
     name: "Our Beliefs"
     weight: 20
+layout: "two-column"
 ---
 
 ### The Holy Scriptures
