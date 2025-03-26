@@ -12,7 +12,7 @@ content_images:
     caption: "Growing together in Christ"
 ---
 
-At Anchor Baptist Church, we offer various ministries to help people of all ages grow in their faith and serve the Lord.
+At Anchor Baptist Church, we offer various ministries to help people of all ages grow in their faith and serve the Lord. Our Sunday School program provides age-appropriate Bible teaching and discussion. Classes for all ages meet at 10:00 AM every Sunday morning. 
 
 ## Children's Ministries
 - **Children's Church** - Available during the Sunday morning service
@@ -23,9 +23,11 @@ At Anchor Baptist Church, we offer various ministries to help people of all ages
 Our teen ministry focuses on helping young people grow in their faith, develop strong Christian character, and build lasting friendships while serving in the church.
 
 ## Adult Ministries
+- **Music** - Serve the Lord through music
 - **Sunday School** - Bible study and discussion groups at 10:00 AM
 - **Bible Study** - Wednesday evening teaching and prayer at 7:00 PM
 - **Fellowship** - Various events throughout the year
+- **Senior Saints** - Special ministry for our senior members
 
 ## Missions & Outreach
 We are committed to reaching our community and the world with the Gospel through:
@@ -34,4 +36,4 @@ We are committed to reaching our community and the world with the Gospel through
 - Church planting and Bible translation efforts
 - Special services and events
 
-Explore our various ministries using the links to the right, or [plan your visit](/plan-your-visit) to join us for a service! 
+Explore our various ministries using the links to the right, or [plan your visit](/plan-your-visit) to join us for a service!
