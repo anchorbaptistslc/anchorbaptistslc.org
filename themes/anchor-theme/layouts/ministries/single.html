@@ -1,31 +1,7 @@
 {{ define "main" }}
 <article class="bg-gray-50">
     {{ partial "hero.html" . }}
-
-    <!-- Breadcrumb -->
-    <div class="bg-white border-b">
-        <div class="container mx-auto px-4 py-3">
-            <nav class="text-sm text-gray-500" aria-label="Breadcrumb">
-                <ol class="flex flex-wrap items-center">
-                    <li class="flex items-center">
-                        <a href="/" class="hover:text-brand-link">Home</a>
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="h-4 w-4 mx-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                        <a href="/ministries/" class="hover:text-brand-link">Ministries</a>
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="h-4 w-4 mx-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                        <span class="text-gray-700">{{ .Title }}</span>
-                    </li>
-                </ol>
-            </nav>
-        </div>
-    </div>
+    {{ partial "breadcrumb.html" . }}
 
     <div class="container mx-auto px-4 py-12">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
