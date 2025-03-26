@@ -86,7 +86,7 @@
                     <h2 class="text-xl font-bold mb-4 text-gray-900">Other Ministries</h2>
                     <div class="space-y-4">
                         {{ $ministries := .Site.GetPage "/ministries" }}
-                        {{ range $ministries.RegularPages }}
+                        {{ range sort $ministries.RegularPages "Weight" "asc" }}
                         {{ if ne .RelPermalink $.RelPermalink }}
                         <div class="border-b border-gray-200 pb-4 last:border-0">
                             <h3 class="text-lg font-semibold mb-2">
