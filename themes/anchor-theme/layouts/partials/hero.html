@@ -1,0 +1,24 @@
+<!-- Header Image (if available) -->
+{{ with .Params.featured_image }}
+<div class="relative h-48 md:h-64 overflow-hidden">
+    <img src="{{ . }}" 
+         alt="{{ $.Title }}" 
+         class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gray-900 bg-opacity-60"></div>
+    <div class="absolute inset-0 flex items-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl text-white mb-2 hero-heading">{{ $.Title }}</h1>
+            {{ with $.Params.tagline }}
+            <p class="text-lg md:text-xl text-white opacity-90 hero-tagline">{{ . }}</p>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ else }}
+<!-- Text-only header if no image -->
+<div class="bg-white border-b">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl md:text-4xl text-gray-900 hero-heading">{{ .Title }}</h1>
+    </div>
+</div>
+{{ end }} 
