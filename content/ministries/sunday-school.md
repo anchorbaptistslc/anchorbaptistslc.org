@@ -2,6 +2,7 @@
 title: "Sunday School"
 description: "Sunday School at Anchor Baptist Church"
 featured_image: "/images/horizontal/anchor-friend-day-0427.jpg"
+tagline: "Learning and growing in God's Word together"
 ---
 
 # Sunday School
