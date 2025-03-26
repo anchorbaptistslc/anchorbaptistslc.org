@@ -1,8 +1,9 @@
 ---
-title: "The Gospel"
+title: "How to Be Saved"
 description: "Learn about the Gospel of Jesus Christ and how to be saved"
 featured_image: "/images/horizontal/anchor-missions-sunday-am-2024-10-2134.jpg"
 layout: "two-column"
+tagline: "The most important decision you'll ever make"
 content_images:
   - image: "/images/people/anchor-friend-day-2025-03-3131.jpg"
     alt_text: "An open Bible in church"
