@@ -3,6 +3,7 @@ title: "Adult Ministry"
 description: "Adult programs and activities at Anchor Baptist Church"
 weight: 10
 featured_image: "/images/horizontal/anchor-friend-day-0427.jpg"
+tagline: "Growing in faith through fellowship and Bible study"
 ---
 
 # ADULT BIBLE CLASSES
