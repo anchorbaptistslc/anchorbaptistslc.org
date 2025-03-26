@@ -2,43 +2,36 @@
 title: "Ministries"
 description: "Various ministries and programs at Anchor Baptist Church"
 featured_image: "/images/horizontal/anchor-friend-day-0427.jpg"
+tagline: "Serving Christ together in faith and fellowship"
+content_images:
+  - image: "/images/people/anchor-missions-sunday-am-2024-10-2165.jpg"
+    alt_text: "Anchor Baptist Church missions service"
+    caption: "Supporting missions around the world"
+  - image: "/images/people/anchor-i-love-my-church-2025-02-2966.jpg"
+    alt_text: "Church family fellowship"
+    caption: "Growing together in Christ"
 ---
-
-# Our Ministries
 
 At Anchor Baptist Church, we offer various ministries to help people of all ages grow in their faith and serve the Lord.
 
-## Sunday School
-Classes for all ages meet at 10:00 AM every Sunday morning. Our Sunday School program provides age-appropriate Bible teaching and discussion.
-
 ## Children's Ministries
 - **Children's Church** - Available during the Sunday morning service
-- **Shipmates** - Our Wednesday evening program for children ages 4 and up
-- **Sunday School Classes** - Age-appropriate Bible lessons for children
+- **Patch the Pirate** - Our Wednesday evening program for children ages 4 and up
+- **Sunday School** - Age-appropriate Bible lessons for all children
 
-## Teens
-Our teen ministry focuses on helping young people:
-- Grow in their faith
-- Develop strong Christian character
-- Build lasting friendships
-- Serve in the church
+## Youth Ministry
+Our teen ministry focuses on helping young people grow in their faith, develop strong Christian character, and build lasting friendships while serving in the church.
 
-## Adults
-- **Sunday School** - Bible study and discussion
-- **Bible Study** - Wednesday evening teaching and prayer
-- **Fellowship Opportunities** - Various events throughout the year
+## Adult Ministries
+- **Sunday School** - Bible study and discussion groups at 10:00 AM
+- **Bible Study** - Wednesday evening teaching and prayer at 7:00 PM
+- **Fellowship** - Various events throughout the year
 
-## Outreach
-We are committed to reaching our community with the Gospel through:
-- Personal evangelism
-- Community outreach events
-- Special services
+## Missions & Outreach
+We are committed to reaching our community and the world with the Gospel through:
+- Personal evangelism and community outreach
+- Supporting missionaries worldwide
+- Church planting and Bible translation efforts
+- Special services and events
 
-## Missions
-Supporting missions is an important part of our church's ministry. We support missionaries who are:
-- Sharing the Gospel around the world
-- Planting churches
-- Training national pastors
-- Translating the Bible
-
-Visit us during any of our services to learn more about these ministries and how you can get involved! 
+Explore our various ministries using the links to the right, or [plan your visit](/plan-your-visit) to join us for a service! 
