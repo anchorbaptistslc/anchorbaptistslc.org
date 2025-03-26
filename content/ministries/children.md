@@ -1,7 +1,7 @@
 ---
 title: "Children's Ministry"
 description: "Children's programs and activities at Anchor Baptist Church"
-weight: 30
+weight: 20
 featured_image: "/images/horizontal/anchor-friend-day-0427.jpg"
 tagline: "Nurturing young hearts in the truth of God's Word"
 ---

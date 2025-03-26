@@ -82,19 +82,23 @@
                 </div>
 
                 <!-- Other Ministries -->
-                <div class="bg-white rounded-lg shadow-sm p-6">
-                    <h2 class="text-xl font-medium mb-4">Other Ministries</h2>
-                    <ul class="space-y-3">
-                        {{ range where .Site.RegularPages "Section" "ministries" }}
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-xl font-bold mb-4 text-gray-900">Other Ministries</h2>
+                    <div class="space-y-4">
+                        {{ $ministries := .Site.GetPage "/ministries" }}
+                        {{ range $ministries.RegularPages }}
                         {{ if ne .RelPermalink $.RelPermalink }}
-                        <li>
-                            <a href="{{ .RelPermalink }}" class="hover:text-brand-link">
-                                {{ .Title }}
-                            </a>
-                        </li>
+                        <div class="border-b border-gray-200 pb-4 last:border-0">
+                            <h3 class="text-lg font-semibold mb-2">
+                                <a href="{{ .RelPermalink }}" class="text-gray-900 hover:text-brand-blue-800">{{ .Title }}</a>
+                            </h3>
+                            {{ with .Description }}
+                            <p class="text-gray-600 text-sm">{{ . }}</p>
+                            {{ end }}
+                        </div>
                         {{ end }}
                         {{ end }}
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
