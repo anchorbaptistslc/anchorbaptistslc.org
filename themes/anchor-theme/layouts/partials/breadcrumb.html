@@ -21,26 +21,20 @@
                     {{ end }}
                 {{ else }}
                     {{ $sections := split .RelPermalink "/" }}
+                    {{ $currentPath := "" }}
                     {{ range $i, $section := $sections }}
                         {{ if and (ne $section "") (ne $i (sub (len $sections) 1)) }}
-                            {{ with $.Site.GetPage $section }}
+                            {{ $currentPath = printf "%s%s/" $currentPath $section }}
+                            {{ with $.Site.GetPage $currentPath }}
                             <li class="flex items-center">
                                 <svg class="h-4 w-4 mx-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
-                                <a href="/{{ range $j := seq 1 (add $i 1) }}{{ index $sections $j }}/{{ end }}" class="hover:text-brand-link">
-                                    {{ .Title }}
-                                </a>
+                                <a href="{{ .RelPermalink }}" class="hover:text-brand-link">{{ .Title }}</a>
                             </li>
                             {{ end }}
                         {{ end }}
                     {{ end }}
-                    <li class="flex items-center">
-                        <svg class="h-4 w-4 mx-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                        <span class="text-gray-700">{{ .Title }}</span>
-                    </li>
                 {{ end }}
             </ol>
         </nav>
