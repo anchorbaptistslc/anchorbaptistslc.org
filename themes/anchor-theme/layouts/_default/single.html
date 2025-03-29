@@ -26,20 +26,6 @@
                         {{ end }}
                     </div>
                 </div>
-                {{ else if .Params.content_image }}
-                <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-start">
-                    <div class="prose lg:prose-lg">
-                        {{ .Content }}
-                    </div>
-                    <div class="mt-8 lg:mt-0">
-                        <img src="{{ .Params.content_image }}" 
-                             alt="{{ .Params.content_image_alt_text | default "Content image" }}" 
-                             class="rounded-lg shadow-lg">
-                        {{ if .Params.content_image_caption }}
-                        <p class="mt-4 text-center text-gray-600">{{ .Params.content_image_caption }}</p>
-                        {{ end }}
-                    </div>
-                </div>
                 {{ else }}
                 <div class="prose max-w-none">
                     {{ .Content }}
