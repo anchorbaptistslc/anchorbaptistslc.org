@@ -2,6 +2,7 @@
 hero:
   title: "Welcome to Anchor Baptist Church"
   tagline: "Lifting up Jesus in Salt Lake City, Utah"
+  image: "/images/hero-background.jpg"
   cta:
     learn_more:
       text: "Learn More"
