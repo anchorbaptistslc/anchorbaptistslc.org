@@ -20,7 +20,7 @@ Teachers: Richard Smith
 
 Starting on September 4, 2022, the StaringPoint Bible Class is a rotating 13 week adult Sunday school class, designed for new members and new believers. Whether you join us on week one or week seven, stay for all thirteen and then find your place at Anchor Baptist Church!
 
-We meet every Sunday morning at 10:00 AM upstairs in the Admin Building
+We meet every Sunday morning at 10:00 AM in the Fellowship Hall.
 
 Join us at 9:30 am in the Fellowship Hall for breakfast and coffee!
 
