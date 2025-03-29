@@ -130,9 +130,12 @@ themes/anchor-theme/
 │   └── index.html
 ├── static/
 │   ├── css/
-│   ├── js/
-│   │   └── search.js
-│   └── images/
+│   ├── images/
+│   │   └── logo-anchor-60th-text.jpg
+│   │   └── logo-anchor-yellow.jpg
+│   │   └── logo.jpg
+│   └── js/
+│       └── search.js
 └── README.md
 ```
 
