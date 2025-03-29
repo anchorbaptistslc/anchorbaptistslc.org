@@ -79,6 +79,7 @@ The built site will be in the `public/` directory.
 - **Social Media**:
   - [Facebook](https://www.facebook.com/anchorbaptistchurchslc/)
   - [YouTube](https://www.youtube.com/@anchorbaptistchurchslc/streams)
+  - [Instagram](https://www.instagram.com/anchorbaptistslc/)
 
 ## Design Inspiration
 

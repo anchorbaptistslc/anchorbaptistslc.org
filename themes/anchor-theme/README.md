@@ -51,6 +51,7 @@ params:
   social:
     facebook: "https://www.facebook.com/anchorbaptistchurchslc/"
     youtube: "https://www.youtube.com/@anchorbaptistchurchslc/streams"
+    instagram: "https://www.instagram.com/anchorbaptistslc/"
   
   # Service Times
   services:
@@ -116,7 +117,6 @@ themes/anchor-theme/
 │   │   └── baseof.html
 │   │   └── index.json
 │   │   └── list.html
-│   │   └── manifest.webmanifest
 │   │   └── single.html
 │   │   └── two-column.html
 │   ├── ministries/
