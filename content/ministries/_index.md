@@ -25,8 +25,8 @@ Our teen ministry focuses on helping young people grow in their faith, develop s
 
 ## Adult Ministries
 - **Music** - Serve the Lord through music
-- **Sunday School** - Bible study and discussion groups at 10:00 AM
-- **Bible Study** - Wednesday evening teaching and prayer at 7:00 PM
+- **Sunday School** - Bible study groups at 10:00 AM
+- **Bible Study** - Wednesday evening service and prayer at 7:00 PM
 - **Fellowship** - Various events throughout the year
 - **Senior Saints** - Special ministry for our senior members
 

@@ -13,7 +13,7 @@ content_images:
     caption: "Special music during worship service"
   - image: "/images/people/anchor-i-love-my-church-2025-02-2989.jpg"
     alt_text: "Church choir and orchestra"
-    caption: "Our choir and orchestra leading worship"
+    caption: "Orchestra member serving the Lord through music"
 meeting_time: "Sunday mornings at 11:00 AM\nChoir and Orchestra practice at 5:00 PM"
 location: "Main Auditorium"
 leaders:

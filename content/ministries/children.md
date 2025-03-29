@@ -4,9 +4,16 @@ description: "Children's programs and activities at Anchor Baptist Church"
 weight: 20
 featured_image: "/images/horizontal/anchor-friend-day-0427.jpg"
 tagline: "Nurturing young hearts in the truth of God's Word"
+content_images:
+  - image: "/images/people/anchor-harvest-day-2024-10-2728.jpg"
+    alt_text: "Children's ministry activities"
+    caption: "Fun and learning in children's ministry"
+  - image: "/images/people/anchor-harvest-day-2024-10-2720.jpg"
+    alt_text: "Children's ministry activities"
+    caption: "Growing in faith together"
 ---
 
-# Children's Ministries
+At Anchor Baptist Church, we offer a comprehensive children's ministry program from nursery through 6th grade, providing age-appropriate Bible teaching, activities, and fellowship for every child.
 
 **Nursery**
 
