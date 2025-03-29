@@ -97,7 +97,7 @@ class Search {
         }
 
         const html = results.map(result => `
-            <a href="${result.permalink}" class="search-result">
+            <a href="${result.path}" class="search-result">
                 <h3>${this.highlight(result.title, this.searchInputs[device].value)}</h3>
                 ${result.description ? 
                     `<p class="description">${this.highlight(result.description, this.searchInputs[device].value)}</p>` : 
