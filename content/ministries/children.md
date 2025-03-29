@@ -25,7 +25,7 @@ The nursery is available for children ages 0 thru 3 years old.
 
 Every Sunday morning at 11 AM, our 4 year olds thru 6th grade will learn a Bible story, have a snack, and participate in a craft that they can take home! They learn Bible truths, sing fun songs, play amazing games, and earn prizes!
 
-**3 Years Old – K5**
+**4 & 5 Years Olds**
 
 Teacher: Mrs. Angela Bolt
 
@@ -33,7 +33,7 @@ SIMPLE BIBLE STORIES, COLORFUL CRAFTS, and SMILING FACES make learning fun and e
 
 **1st thru 3rd Graders**
 
-Teacher: Mrs. Carrie Haire
+Teacher: Mrs. Rebecca Banister
 
 As your children grow, we desire for their knowledge of BIBLE TRUTHS to grow along with them. This class accomplishes this desire by lessons that are both ENGAGING and PURPOSEFUL!
 
