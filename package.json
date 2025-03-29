@@ -6,8 +6,8 @@
   "scripts": {
     "build": "hugo --minify --gc",
     "postcss:build": "postcss assets/css/main.css -o assets/css/main.processed.css",
-    "start": "hugo serve --buildDrafts --buildFuture",
-    "dev": "hugo serve --buildDrafts --buildFuture --disableFastRender --printPathWarnings",
+    "start": "hugo serve",
+    "dev": "npm run clean && hugo serve --disableFastRender --printPathWarnings --printUnusedTemplates --templateMetrics --port 1313",
     "clean": "rm -rf public resources",
     "build:prod": "npm run clean && npm run postcss:build && NODE_ENV=production HUGO_ENV=production hugo --gc --minify"
   },

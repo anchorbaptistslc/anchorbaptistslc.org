@@ -33,16 +33,5 @@ outputs:
   home:
     - HTML
     - JSON
-    - WebAppManifest
   section:
     - HTML
-
-outputFormats:
-  WebAppManifest:
-    mediaType: application/manifest+json
-    rel: manifest
-
-mediaTypes:
-  application/manifest+json:
-    suffixes:
-      - webmanifest
