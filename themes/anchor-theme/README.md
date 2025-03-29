@@ -16,6 +16,41 @@ A modern, responsive theme for Anchor Baptist Church's website built with Hugo a
 - Customizable through site parameters
 - Optimized for performance and accessibility
 
+## Content Types
+
+The theme includes several [archetypes](https://gohugo.io/content-management/archetypes/) to help maintain consistent content structure:
+
+### Homepage
+```bash
+hugo new --kind homepage _index.md
+```
+Creates a new homepage with:
+- Hero section with title, tagline, and CTA buttons
+- Worship times section
+- Featured cards section
+- Welcome section with image
+
+### Ministries
+```bash
+hugo new --kind ministries ministries/your-ministry.md
+```
+Creates a new ministry page with:
+- Title and description
+- Featured image
+- Tagline
+- Content images with alt text and captions
+- Single column layout
+
+### About
+```bash
+hugo new --kind about about/your-page.md
+```
+Creates a new about section page with:
+- Title and description
+- Featured image
+- Tagline
+- Content images with alt text and captions
+
 ## Requirements
 
 - Hugo Extended version 0.145.0 or later

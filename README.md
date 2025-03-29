@@ -42,20 +42,39 @@ The website serves as the online presence for Anchor Baptist Church, providing:
 
 3. Start the development server:
    ```bash
-   hugo server -D
+   npm run dev
    ```
 
 The site will be available at `http://localhost:1313/`.
 
 ### Building for Production
 
-To build the site for production:
-
 ```bash
 npm run build:prod
 ```
 
-The built site will be in the `public/` directory.
+## Content Management
+
+The site uses Hugo archetypes to maintain consistent content structure. These templates help ensure that new content follows the established patterns:
+
+### Creating New Pages
+
+1. **Homepage**
+   ```bash
+   hugo new --kind homepage _index.md
+   ```
+
+2. **Ministry Pages**
+   ```bash
+   hugo new --kind ministries ministries/your-ministry.md
+   ```
+
+3. **About Section Pages**
+   ```bash
+   hugo new --kind about about/your-page.md
+   ```
+
+Each archetype includes pre-configured frontmatter with the necessary fields and structure. See the [theme documentation](themes/anchor-theme/README.md) for more details about each content type.
 
 ## Project Structure
 
