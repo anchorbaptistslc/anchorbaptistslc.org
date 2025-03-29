@@ -34,9 +34,29 @@
                 {{ end }}
 
                 <!-- Content -->
+                {{ if .Params.content_images }}
+                <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-start">
+                    <div class="prose">
+                        {{ .Content }}
+                    </div>
+                    <div class="mt-8 lg:mt-0 space-y-8">
+                        {{ range .Params.content_images }}
+                        <div>
+                            <img src="{{ .image }}" 
+                                 alt="{{ .alt_text | default "Content image" }}" 
+                                 class="rounded-lg shadow-lg">
+                            {{ if .caption }}
+                            <p class="mt-4 text-center text-gray-600">{{ .caption }}</p>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ else }}
                 <div class="prose max-w-none">
                     {{ .Content }}
                 </div>
+                {{ end }}
 
                 <!-- Leaders Section -->
                 {{ with .Params.leaders }}
