@@ -40,7 +40,7 @@ The website serves as the online presence for Anchor Baptist Church, providing:
 
 3. Start the development server:
    ```bash
-   hugo server
+   hugo server -D
    ```
 
 The site will be available at `http://localhost:1313/`.
@@ -50,7 +50,7 @@ The site will be available at `http://localhost:1313/`.
 To build the site for production:
 
 ```bash
-hugo
+npm run build:prod
 ```
 
 The built site will be in the `public/` directory.
