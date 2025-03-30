@@ -40,6 +40,19 @@
     }
 }
 
+/* Hero Styles */
+.hero-heading {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hero-tagline {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+} 
+
 /* Responsive adjustments */
 @media (min-width: 1280px) and (max-width: 1535px) {
     .logo-container img {

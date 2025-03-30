@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Manager</title>
+</head>
+<body>
+    <!-- Include the script that builds the page and powers Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <!-- Preview Templates -->
+    <script>
+      {{ if eq hugo.Environment "production" }}
+        {{ $css := resources.Get "css/main.processed.css" | minify | fingerprint }}
+        CMS.registerPreviewStyle("{{ $css.RelPermalink }}", { raw: false });
+      {{ else }}
+        {{ $css := resources.Get "css/main.css" }}
+        {{ $opts := dict "inlineImports" true }}
+        {{ $css = $css | css.PostCSS $opts }}
+        CMS.registerPreviewStyle("{{ $css.RelPermalink }}", { raw: false });
+      {{ end }}
+
+      // Add Google Fonts
+      CMS.registerPreviewStyle("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Work+Sans:wght@400&display=swap", { raw: false });
+      
+      // Add Tailwind CSS
+      CMS.registerPreviewStyle("https://cdn.tailwindcss.com?plugins=typography", { raw: false });
+
+      const HomePreview = createClass({
+        render: function() {
+          const entry = this.props.entry;
+          const hero = entry.getIn(['data', 'hero']) ? entry.getIn(['data', 'hero']).toJS() : {};
+          const featured = entry.getIn(['data', 'featured']) ? entry.getIn(['data', 'featured']).toJS() : {};
+          const welcome = entry.getIn(['data', 'welcome']) ? entry.getIn(['data', 'welcome']).toJS() : {};
+          
+          return h('div', {className: 'bg-gray-50'},
+            // Hero Section
+            h('div', {className: 'relative overflow-hidden z-0'},
+              h('div', {className: 'absolute inset-0'},
+                h('img', {
+                  src: hero.image || '',
+                  className: 'w-full h-full object-cover object-[center_65%]',
+                  alt: ''
+                }),
+                h('div', {className: 'absolute inset-0 bg-brand-dark bg-opacity-75 mix-blend-multiply'})
+              ),
+              h('div', {className: 'relative'},
+                h('div', {className: 'container mx-auto px-4 py-24'},
+                  h('div', {className: 'max-w-4xl'},
+                    h('h1', {className: 'text-4xl md:text-5xl mb-6 text-white hero-heading'}, hero.title || ''),
+                    h('p', {className: 'text-xl mb-8 text-white hero-tagline'}, hero.tagline || ''),
+                    // CTA Buttons
+                    h('div', {className: 'space-x-4'},
+                      hero.cta?.learn_more && h('a', {
+                        href: hero.cta.learn_more.url || '#',
+                        className: 'bg-white text-brand-dark px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 border-2 border-white'
+                      }, hero.cta.learn_more.text || 'Learn More'),
+                      hero.cta?.visit && h('a', {
+                        href: hero.cta.visit.url || '#',
+                        className: 'bg-transparent border-2 border-white text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200 hover:bg-gray-100 hover:text-brand-dark hover:border-gray-100'
+                      }, hero.cta.visit.text || 'Visit Us')
+                    )
+                  )
+                )
+              )
+            ),
+            // Featured Section
+            featured.image && h('div', {className: 'container mx-auto px-4 py-16'},
+              h('div', {className: 'grid grid-cols-1 md:grid-cols-3 gap-8'},
+                featured.cards?.map(card => h('div', {key: card.title, className: 'bg-white p-6 rounded-lg shadow-md'},
+                  h('h2', {className: 'text-xl font-semibold mb-4'}, card.title || ''),
+                  h('p', {className: 'text-gray-600 mb-4'}, card.description || ''),
+                  h('a', {
+                    href: card.url || '#',
+                    className: 'text-brand-link hover:text-brand-linkHover'
+                  }, card.link_text || 'Learn More →')
+                ))
+              )
+            ),
+            // Welcome Section
+            welcome.image && h('div', {className: 'container mx-auto px-4 py-16'},
+              h('div', {className: 'grid grid-cols-1 md:grid-cols-2 gap-8 items-center'},
+                h('div', {},
+                  h('img', {
+                    src: welcome.image,
+                    alt: welcome.image_alt || '',
+                    className: 'rounded-lg shadow-lg'
+                  })
+                ),
+                h('div', {className: 'prose max-w-none'},
+                  this.props.widgetFor('body')
+                )
+              )
+            )
+          );
+        }
+      });
+
+      const MinistryPreview = createClass({
+        render: function() {
+          const entry = this.props.entry;
+          const images = entry.getIn(['data', 'content_images']) ? entry.getIn(['data', 'content_images']).toJS() : [];
+          
+          return h('div', {className: 'bg-white'},
+            // Featured Image Header
+            h('div', {className: 'relative h-48 md:h-64 overflow-hidden'},
+              h('img', {
+                src: entry.getIn(['data', 'featured_image']) || '',
+                className: 'absolute inset-0 w-full h-full object-cover',
+                alt: entry.getIn(['data', 'title']) || ''
+              }),
+              h('div', {className: 'absolute inset-0 bg-gray-900 bg-opacity-60'}),
+              h('div', {className: 'absolute inset-0 flex items-center'},
+                h('div', {className: 'container mx-auto px-4'},
+                  h('h1', {className: 'text-3xl md:text-4xl lg:text-5xl text-white mb-2 hero-heading'}, 
+                    entry.getIn(['data', 'title']) || ''
+                  ),
+                  h('p', {className: 'text-lg md:text-xl text-white opacity-90 hero-tagline'},
+                    entry.getIn(['data', 'tagline']) || ''
+                  )
+                )
+              )
+            ),
+            // Content Images
+            images.length > 0 && h('div', {className: 'container mx-auto px-4 py-8'},
+              h('div', {className: 'grid grid-cols-1 md:grid-cols-2 gap-8'},
+                images.map(img => h('div', {key: img.image, className: 'text-center'},
+                  h('img', {
+                    src: img.image,
+                    alt: img.alt_text || '',
+                    className: 'rounded-lg shadow-lg mb-4'
+                  }),
+                  h('p', {className: 'text-gray-600'}, img.caption || '')
+                ))
+              )
+            ),
+            // Content
+            h('div', {className: 'container mx-auto px-4 py-8'},
+              h('div', {className: 'prose max-w-none'},
+                this.props.widgetFor('body')
+              )
+            )
+          );
+        }
+      });
+
+      CMS.registerPreviewTemplate('homepage', HomePreview);
+      CMS.registerPreviewTemplate('ministries', MinistryPreview);
+      CMS.registerPreviewTemplate('about', MinistryPreview); // Using same template as ministries since layout is similar
+    </script>
+</body>
+</html> 
