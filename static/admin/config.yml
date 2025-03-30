@@ -3,11 +3,9 @@ backend:
   repo: rbolt/anchorbaptistslc.org
   branch: main
   use_graphql: true
-  base_url: https://anchorbaptistslc.netlify.org
-  auth_endpoint: auth
-  auth_redirect_uri: https://anchorbaptistslc.netlify.org/callback
-  auth_client_id: ${AUTH0_CLIENT_ID}
-  auth_client_secret: ${AUTH0_CLIENT_SECRET}
+  auth_url: https://github.com/login/oauth/authorize
+  auth_redirect_uri: https://api.netlify.com/auth/done
+  client_id: Ov23licizFSkTxXCG916
 
 local_backend: true
 local_backend_url: http://localhost:8081/api/v1
