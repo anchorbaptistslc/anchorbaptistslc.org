@@ -3,7 +3,6 @@ backend:
   repo: rbolt/anchorbaptistslc.org
   branch: main
   use_graphql: true
-  base_url: https://anchorbaptistslc.netlify.app
   auth_url: https://github.com/login/oauth/authorize
   auth_redirect_uri: https://api.netlify.com/auth/done
   client_id: Ov23licizFSkTxXCG916
