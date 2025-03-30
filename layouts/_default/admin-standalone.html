@@ -100,45 +100,49 @@
       const MinistryPreview = createClass({
         render: function() {
           const entry = this.props.entry;
-          const images = entry.getIn(['data', 'content_images']) ? entry.getIn(['data', 'content_images']).toJS() : [];
-          
-          return h('div', {className: 'bg-white'},
-            // Featured Image Header
-            h('div', {className: 'relative h-48 md:h-64 overflow-hidden'},
+          const data = entry.getIn(['data']).toJS();
+          const contentImages = data.content_images || [];
+
+          return h('div', { className: 'bg-white' },
+            // Hero Section
+            h('div', { className: 'relative h-48 md:h-64 overflow-hidden' },
               h('img', {
-                src: entry.getIn(['data', 'featured_image']) || '',
+                src: data.featured_image || '',
                 className: 'absolute inset-0 w-full h-full object-cover',
-                alt: entry.getIn(['data', 'title']) || ''
+                alt: data.title || ''
               }),
-              h('div', {className: 'absolute inset-0 bg-gray-900 bg-opacity-60'}),
-              h('div', {className: 'absolute inset-0 flex items-center'},
-                h('div', {className: 'container mx-auto px-4'},
-                  h('h1', {className: 'text-3xl md:text-4xl lg:text-5xl text-white mb-2 hero-heading'}, 
-                    entry.getIn(['data', 'title']) || ''
-                  ),
-                  h('p', {className: 'text-lg md:text-xl text-white opacity-90 hero-tagline'},
-                    entry.getIn(['data', 'tagline']) || ''
-                  )
+              h('div', { className: 'absolute inset-0 bg-gray-900 bg-opacity-60' }),
+              h('div', { className: 'absolute inset-0 flex items-center' },
+                h('div', { className: 'container mx-auto px-4' },
+                  h('h1', { className: 'text-3xl md:text-4xl lg:text-5xl text-white mb-2 hero-heading' }, data.title || ''),
+                  h('p', { className: 'text-lg md:text-xl text-white opacity-90 hero-tagline' }, data.tagline || '')
                 )
               )
             ),
-            // Content Images
-            images.length > 0 && h('div', {className: 'container mx-auto px-4 py-8'},
-              h('div', {className: 'grid grid-cols-1 md:grid-cols-2 gap-8'},
-                images.map(img => h('div', {key: img.image, className: 'text-center'},
-                  h('img', {
-                    src: img.image,
-                    alt: img.alt_text || '',
-                    className: 'rounded-lg shadow-lg mb-4'
-                  }),
-                  h('p', {className: 'text-gray-600'}, img.caption || '')
-                ))
-              )
-            ),
-            // Content
-            h('div', {className: 'container mx-auto px-4 py-8'},
-              h('div', {className: 'prose max-w-none'},
-                this.props.widgetFor('body')
+            // Content Section
+            h('div', { className: 'container mx-auto px-4 py-8' },
+              h('div', { className: 'flex flex-col lg:flex-row gap-8' },
+                // Main Content
+                h('div', { className: 'lg:w-7/12' },
+                  h('div', { className: 'prose max-w-none' },
+                    this.props.widgetFor('body')
+                  )
+                ),
+                // Images
+                contentImages.length > 0 && h('div', { className: 'lg:w-5/12' },
+                  h('div', { className: 'grid grid-cols-1 gap-8' },
+                    contentImages.map((image, index) => 
+                      h('div', { key: index, className: 'text-center' },
+                        h('img', {
+                          src: image.image,
+                          alt: image.alt_text || '',
+                          className: 'rounded-lg shadow-lg mb-4'
+                        }),
+                        image.caption && h('p', { className: 'text-gray-600' }, image.caption)
+                      )
+                    )
+                  )
+                )
               )
             )
           );
