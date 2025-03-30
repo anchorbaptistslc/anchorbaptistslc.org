@@ -9,7 +9,8 @@
     "start": "hugo serve",
     "dev": "npm run clean && hugo serve --disableFastRender --printPathWarnings --printUnusedTemplates --templateMetrics --port 1313",
     "clean": "rm -rf public resources",
-    "build:prod": "npm run clean && npm run postcss:build && NODE_ENV=production HUGO_ENV=production hugo --gc --minify"
+    "build:prod": "npm run clean && npm run postcss:build && NODE_ENV=production HUGO_ENV=production hugo --gc --minify",
+    "cms": "npx netlify-cms-proxy-server"
   },
   "keywords": [
     "church",
@@ -23,7 +24,8 @@
     "autoprefixer": "^10.4.21",
     "postcss": "^8.4.35",
     "postcss-cli": "^11.0.0",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "netlify-cms-proxy-server": "^1.3.24"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.10",

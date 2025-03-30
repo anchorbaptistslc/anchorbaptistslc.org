@@ -1,13 +1,13 @@
 ---
 title: "About Us"
 description: "Learn more about Anchor Baptist Church, our beliefs, and our leadership"
-featured_image: "/images/horizontal/harvest-day-2023-10-1171.jpg"
+featured_image: "/images/uploads/harvest-day-2023-10-1171.jpg"
 tagline: "A church family serving Christ since 1960"
 content_images:
-  - image: "/images/people/anchor-missions-sunday-pm-2024-10-2271.jpg"
+  - image: "/images/uploads/anchor-missions-sunday-pm-2024-10-2271.jpg"
     alt_text: "Anchor Baptist Church missions service"
     caption: "Our evening missions service"
-  - image: "/images/people/anchor-friend-day-2025-03-3064.jpg"
+  - image: "/images/uploads/anchor-friend-day-2025-03-3064.jpg"
     alt_text: "Anchor Baptist Church Friend Day celebration"
     caption: "Our Friend Day celebration"
 ---

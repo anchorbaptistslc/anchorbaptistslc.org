@@ -1,10 +1,10 @@
 ---
 title: "Church Leadership"
 description: "Meet Pastor Jason Atwood and the leadership team of Anchor Baptist Church"
-featured_image: "/images/horizontal/anchor-missions-sunday-am-2024-10-2134.jpg"
+featured_image: "/images/uploads/anchor-missions-sunday-am-2024-10-2134.jpg"
 tagline: "Following God's call in the Salt Lake Valley"
 content_images:
-  - image: "/images/people/pastor-and-family.jpg"
+  - image: "/images/uploads/pastor-and-family.jpg"
     alt_text: "Pastor Jason Atwood and Family"
     caption: "Pastor Jason Atwood and Family"
 menu:

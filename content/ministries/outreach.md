@@ -2,7 +2,7 @@
 title: "Outreach"
 description: "Outreach Ministry at Anchor Baptist Church"
 weight: 50
-featured_image: "/images/horizontal/anchor-friend-day-0427.jpg"
+featured_image: "/images/uploads/anchor-friend-day-0427.jpg"
 tagline: "Sharing the Gospel across the street and around the world"
 meeting_time: "Saturdays at 10:00 AM"
 location: "Meet at Church"

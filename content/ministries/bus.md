@@ -2,10 +2,10 @@
 title: "Bus Ministry"
 description: "Transportation ministry at Anchor Baptist Church"
 weight: 12
-featured_image: "/images/horizontal/anchor-friend-day-0427.jpg"
+featured_image: "/images/uploads/anchor-friend-day-0427.jpg"
 tagline: "Bringing people to church"
 content_images:
-  - image: "/images/people/harvest-day-2023-10-1157.jpg"
+  - image: "/images/uploads/harvest-day-2023-10-1157.jpg"
     alt_text: "Bus ministry outreach"
     caption: "Serving our community through transportation"
 leaders:

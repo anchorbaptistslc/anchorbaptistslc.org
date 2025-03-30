@@ -2,7 +2,7 @@
 title: "Teen Ministry"
 description: "Youth programs and activities at Anchor Baptist Church"
 weight: 30
-featured_image: "/images/horizontal/anchor-friend-day-0427.jpg"
+featured_image: "/images/uploads/anchor-friend-day-0427.jpg"
 tagline: "Building the next generation of faithful followers"
 meeting_time: "Sundays at 10:00 AM"
 location: "Teen Room"

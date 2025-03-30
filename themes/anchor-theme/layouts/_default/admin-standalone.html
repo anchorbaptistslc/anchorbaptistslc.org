@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Manager</title>
+</head>
+<body>
+    <!-- Include the script that builds the page and powers Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <!-- Preview Templates -->
+    <script>
+      {{ if eq hugo.Environment "production" }}
+        {{ $css := resources.Get "css/main.processed.css" | minify | fingerprint }}
+        CMS.registerPreviewStyle("{{ $css.RelPermalink }}", { raw: false });
+      {{ else }}
+        {{ $css := resources.Get "css/main.css" }}
+        {{ $opts := dict "inlineImports" true }}
+        {{ $css = $css | css.PostCSS $opts }}
+        CMS.registerPreviewStyle("{{ $css.RelPermalink }}", { raw: false });
+      {{ end }}
+
+      // Add Google Fonts
+      CMS.registerPreviewStyle("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Work+Sans:wght@400&display=swap", { raw: false });
+      
+      // Add Tailwind CSS
+      CMS.registerPreviewStyle("https://cdn.tailwindcss.com?plugins=typography", { raw: false });
+
+      const HomePreview = createClass({
+        render: function() {
+          const entry = this.props.entry;
+          const hero = entry.getIn(['data', 'hero']) ? entry.getIn(['data', 'hero']).toJS() : {};
+          const worship = entry.getIn(['data', 'worship']) ? entry.getIn(['data', 'worship']).toJS() : {};
+          const welcome = entry.getIn(['data', 'welcome']) ? entry.getIn(['data', 'welcome']).toJS() : {};
+          const featured = entry.getIn(['data', 'featured']) ? entry.getIn(['data', 'featured']).toJS() : {};
+          
+          return h('div', { className: 'bg-gray-50' },
+            // Hero Section
+            h('div', { className: 'relative overflow-hidden z-0' },
+              h('div', { className: 'absolute inset-0' },
+                h('img', {
+                  src: hero.image || '',
+                  className: 'w-full h-full object-cover object-[center_65%]',
+                  alt: '',
+                  'aria-hidden': 'true'
+                }),
+                h('div', { className: 'absolute inset-0 bg-brand-dark bg-opacity-75 mix-blend-multiply transition-opacity duration-500 opacity-0' })
+              ),
+              h('div', { className: 'relative' },
+                h('div', { className: 'container mx-auto px-4 py-24' },
+                  h('div', { className: 'max-w-4xl' },
+                    h('h1', { className: 'text-4xl md:text-5xl mb-6 text-white hero-heading' }, hero.title || ''),
+                    h('p', { className: 'text-xl mb-8 text-white hero-tagline' }, hero.tagline || ''),
+                    h('div', { className: 'space-x-4' },
+                      hero.cta?.learn_more && h('a', {
+                        href: hero.cta.learn_more.url || '#',
+                        className: 'bg-white text-brand-dark px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 border-2 border-white'
+                      }, hero.cta.learn_more.text || 'Learn More'),
+                      hero.cta?.visit && h('a', {
+                        href: hero.cta.visit.url || '#',
+                        className: 'bg-transparent border-2 border-white text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200 hover:bg-gray-100 hover:text-brand-dark hover:border-gray-100'
+                      }, hero.cta.visit.text || 'Visit Us')
+                    )
+                  )
+                )
+              )
+            ),
+
+            // Service Times
+            h('div', { className: 'py-16 bg-white' },
+              h('div', { className: 'container mx-auto px-4' },
+                h('h2', { className: 'text-3xl mb-12 text-center hero-heading' }, worship.title || ''),
+                h('div', { className: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8' },
+                  h('div', { className: 'text-center p-6 bg-gray-50 rounded-lg' },
+                    h('h3', { className: 'font-medium mb-2 tracking-[0.05em]', style: { fontSize: '16px' } }, 'Sunday School'),
+                    h('p', { className: 'text-xl text-brand-link' }, '9:30 AM')
+                  ),
+                  h('div', { className: 'text-center p-6 bg-gray-50 rounded-lg' },
+                    h('h3', { className: 'font-medium mb-2 tracking-[0.05em]', style: { fontSize: '16px' } }, 'Sunday Morning'),
+                    h('p', { className: 'text-xl text-brand-link' }, '10:45 AM')
+                  ),
+                  h('div', { className: 'text-center p-6 bg-gray-50 rounded-lg' },
+                    h('h3', { className: 'font-medium mb-2 tracking-[0.05em]', style: { fontSize: '16px' } }, 'Sunday Evening'),
+                    h('p', { className: 'text-xl text-brand-link' }, '6:00 PM')
+                  ),
+                  h('div', { className: 'text-center p-6 bg-gray-50 rounded-lg' },
+                    h('h3', { className: 'font-medium mb-2 tracking-[0.05em]', style: { fontSize: '16px' } }, 'Wednesday'),
+                    h('p', { className: 'text-xl text-brand-link' }, '7:00 PM')
+                  )
+                )
+              )
+            ),
+
+            // Welcome Section
+            h('div', { className: 'py-16 bg-white' },
+              h('div', { className: 'container mx-auto px-4' },
+                h('div', { className: 'lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center' },
+                  h('div', { className: 'prose' },
+                    this.props.widgetFor('body')
+                  ),
+                  h('div', { className: 'mt-8 lg:mt-0' },
+                    h('img', {
+                      src: welcome.image || '',
+                      alt: welcome.image_alt || '',
+                      className: 'rounded-lg shadow-lg'
+                    }),
+                    welcome.image_alt && h('p', { className: 'mt-4 text-center text-gray-600' }, welcome.image_alt)
+                  )
+                )
+              )
+            ),
+
+            // Featured Content
+            featured.image && h('div', { className: 'relative py-16' },
+              h('div', { className: 'absolute inset-0' },
+                h('img', {
+                  src: featured.image,
+                  alt: '',
+                  className: 'w-full h-full object-cover',
+                  'aria-hidden': 'true'
+                }),
+                h('div', { className: 'absolute inset-0 bg-gray-900 bg-opacity-60' })
+              ),
+              h('div', { className: 'container mx-auto px-4 relative' },
+                h('div', { className: 'grid grid-cols-1 md:grid-cols-3 gap-8' },
+                  featured.cards?.map(card => 
+                    h('div', { key: card.title, className: 'bg-white bg-opacity-90 p-8 rounded-lg shadow-lg' },
+                      h('h3', { className: 'text-2xl font-medium mb-4 tracking-[0.05em]' }, card.title || ''),
+                      h('p', { className: 'mb-4' }, card.description || ''),
+                      h('a', {
+                        href: card.url || '#',
+                        className: 'text-brand-link font-semibold hover:text-brand-linkHover'
+                      }, card.link_text || 'Learn More →')
+                    )
+                  )
+                )
+              )
+            )
+          );
+        }
+      });
+
+      const MinistryPreview = createClass({
+        render: function() {
+          const entry = this.props.entry;
+          const data = entry.getIn(['data']).toJS();
+          const contentImages = data.content_images || [];
+
+          return h('div', { className: 'bg-white' },
+            // Hero Section
+            h('div', { className: 'relative h-48 md:h-64 overflow-hidden' },
+              h('img', {
+                src: data.featured_image || '',
+                className: 'absolute inset-0 w-full h-full object-cover',
+                alt: data.title || ''
+              }),
+              h('div', { className: 'absolute inset-0 bg-gray-900 bg-opacity-60' }),
+              h('div', { className: 'absolute inset-0 flex items-center' },
+                h('div', { className: 'container mx-auto px-4' },
+                  h('h1', { className: 'text-3xl md:text-4xl lg:text-5xl text-white mb-2 hero-heading' }, data.title || ''),
+                  h('p', { className: 'text-lg md:text-xl text-white opacity-90 hero-tagline' }, data.tagline || '')
+                )
+              )
+            ),
+            // Content Section
+            h('div', { className: 'container mx-auto px-4 py-8' },
+              h('div', { className: 'flex flex-col lg:flex-row gap-8' },
+                // Main Content
+                h('div', { className: 'lg:w-7/12' },
+                  // Quick Info Box
+                  (data.meeting_time || data.location || data.age_group) && h('div', { className: 'bg-white rounded-lg shadow-sm p-6 mb-8' },
+                    h('div', { className: 'grid grid-cols-1 md:grid-cols-3 gap-6' },
+                      data.meeting_time && h('div', null,
+                        h('h3', { className: 'font-semibold text-gray-600 mb-1', style: { fontSize: 'inherit' } }, 'Meeting Time'),
+                        h('p', { className: 'text-lg' }, data.meeting_time)
+                      ),
+                      data.location && h('div', null,
+                        h('h3', { className: 'font-semibold text-gray-600 mb-1', style: { fontSize: 'inherit' } }, 'Location'),
+                        h('p', { className: 'text-lg' }, data.location)
+                      ),
+                      data.age_group && h('div', null,
+                        h('h3', { className: 'font-semibold text-gray-600 mb-1', style: { fontSize: 'inherit' } }, 'Age Group'),
+                        h('p', { className: 'text-lg' }, data.age_group)
+                      )
+                    )
+                  ),
+                  // Main Content
+                  h('div', { className: 'prose max-w-none' },
+                    this.props.widgetFor('body')
+                  ),
+                  // Leaders Section
+                  data.leaders && data.leaders.length > 0 && h('div', { className: 'mt-12' },
+                    h('h2', { className: 'text-2xl font-medium mb-6' }, 'Ministry Leaders'),
+                    h('div', { className: 'grid grid-cols-1 gap-8' },
+                      data.leaders.map((leader, index) => 
+                        h('div', { key: index, className: 'flex items-start space-x-4' },
+                          leader.photo && h('img', {
+                            src: leader.photo,
+                            alt: leader.name,
+                            className: 'w-24 h-24 rounded-lg object-cover'
+                          }),
+                          h('div', null,
+                            h('h3', { className: 'font-medium text-xl' }, leader.name),
+                            leader.role && h('p', { className: 'text-gray-600 mb-2' }, leader.role),
+                            leader.bio && h('p', { className: 'text-gray-700' }, leader.bio)
+                          )
+                        )
+                      )
+                    )
+                  )
+                ),
+                // Images
+                contentImages.length > 0 && h('div', { className: 'lg:w-5/12' },
+                  h('div', { className: 'grid grid-cols-1 gap-8' },
+                    contentImages.map((image, index) => 
+                      h('div', { key: index, className: 'text-center' },
+                        h('img', {
+                          src: image.image,
+                          alt: image.alt_text || '',
+                          className: 'rounded-lg shadow-lg mb-4'
+                        }),
+                        image.caption && h('p', { className: 'text-gray-600' }, image.caption)
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          );
+        }
+      });
+
+      CMS.registerPreviewTemplate('homepage', HomePreview);
+      CMS.registerPreviewTemplate('plan-your-visit', MinistryPreview);
+      CMS.registerPreviewTemplate('the-gospel', MinistryPreview);
+      CMS.registerPreviewTemplate('ministries', MinistryPreview);
+      CMS.registerPreviewTemplate('ministry-pages', MinistryPreview);
+      CMS.registerPreviewTemplate('about', MinistryPreview); // Using same template as ministries since layout is similar
+      CMS.registerPreviewTemplate('about-pages', MinistryPreview);
+    </script>
+</body>
+</html> 

@@ -2,7 +2,7 @@
 title: "Missions"
 description: "Supporting missionaries and spreading the Gospel worldwide"
 weight: 60
-featured_image: "/images/horizontal/anchor-friend-day-0427.jpg"
+featured_image: "/images/uploads/anchor-friend-day-0427.jpg"
 tagline: "Taking the Gospel to the ends of the earth"
 ---
 

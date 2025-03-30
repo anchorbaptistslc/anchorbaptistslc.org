@@ -1,0 +1,149 @@
+backend:
+  name: test-repo
+  branch: main
+
+local_backend: true
+local_backend_url: http://localhost:1313/admin/
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "homepage"
+        label: "Homepage"
+        file: "content/_index.md"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - label: "CTA Buttons"
+                name: "cta"
+                widget: "object"
+                fields:
+                  - label: "Learn More"
+                    name: "learn_more"
+                    widget: "object"
+                    fields:
+                      - { label: "Text", name: "text", widget: "string" }
+                      - { label: "URL", name: "url", widget: "string" }
+                  - label: "Visit Us"
+                    name: "visit"
+                    widget: "object"
+                    fields:
+                      - { label: "Text", name: "text", widget: "string" }
+                      - { label: "URL", name: "url", widget: "string" }
+
+          - label: "Worship"
+            name: "worship"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+
+          - label: "Welcome"
+            name: "welcome"
+            widget: "object"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Image Alt Text", name: "image_alt", widget: "string" }
+
+          - label: "Featured"
+            name: "featured"
+            widget: "object"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - label: "Cards"
+                name: "cards"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Link Text", name: "link_text", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - name: "plan-your-visit"
+        label: "Visit"
+        file: "content/plan-your-visit.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Featured Image", name: "featured_image", widget: "image" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - label: "Content Images"
+            name: "content_images"
+            widget: "list"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt Text", name: "alt_text", widget: "string" }
+              - { label: "Caption", name: "caption", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - name: "the-gospel"
+        label: "Salvation"
+        file: "content/the-gospel.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Featured Image", name: "featured_image", widget: "image" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - label: "Content Images"
+            name: "content_images"
+            widget: "list"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt Text", name: "alt_text", widget: "string" }
+              - { label: "Caption", name: "caption", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "about-pages"
+    label: "About Pages"
+    folder: "content/about"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Image", name: "featured_image", widget: "image" }
+      - { label: "Tagline", name: "tagline", widget: "string" }
+      - label: "Content Images"
+        name: "content_images"
+        widget: "list"
+        fields:
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Alt Text", name: "alt_text", widget: "string" }
+          - { label: "Caption", name: "caption", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "ministry-pages"
+    label: "Ministry Pages"
+    folder: "content/ministries"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Image", name: "featured_image", widget: "image" }
+      - { label: "Tagline", name: "tagline", widget: "string" }
+      - { label: "Meeting Time", name: "meeting_time", widget: "string" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Age Group", name: "age_group", widget: "string" }
+      - label: "Leaders"
+        name: "leaders"
+        widget: "list"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Role", name: "role", widget: "string" }
+      - label: "Content Images"
+        name: "content_images"
+        widget: "list"
+        fields:
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Alt Text", name: "alt_text", widget: "string" }
+          - { label: "Caption", name: "caption", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
