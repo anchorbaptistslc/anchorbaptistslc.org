@@ -16,27 +16,44 @@ collections:
         label: "Homepage"
         file: "content/_index.md"
         fields:
-          - { label: "Hero Title", name: "hero.title", widget: "string" }
-          - { label: "Hero Tagline", name: "hero.tagline", widget: "string" }
-          - { label: "Hero Image", name: "hero.image", widget: "image" }
-          - label: "Hero CTA Buttons"
-            name: "hero.cta"
+          - label: "Hero"
+            name: "hero"
             widget: "object"
             fields:
-              - label: "Learn More"
-                name: "learn_more"
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - label: "CTA Buttons"
+                name: "cta"
                 widget: "object"
                 fields:
-                  - { label: "Text", name: "text", widget: "string" }
-                  - { label: "URL", name: "url", widget: "string" }
-              - label: "Visit Us"
-                name: "visit"
-                widget: "object"
-                fields:
-                  - { label: "Text", name: "text", widget: "string" }
-                  - { label: "URL", name: "url", widget: "string" }
-          - { label: "Worship Title", name: "worship.title", widget: "string" }
-          - label: "Featured Section"
+                  - label: "Learn More"
+                    name: "learn_more"
+                    widget: "object"
+                    fields:
+                      - { label: "Text", name: "text", widget: "string" }
+                      - { label: "URL", name: "url", widget: "string" }
+                  - label: "Visit Us"
+                    name: "visit"
+                    widget: "object"
+                    fields:
+                      - { label: "Text", name: "text", widget: "string" }
+                      - { label: "URL", name: "url", widget: "string" }
+
+          - label: "Worship"
+            name: "worship"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+
+          - label: "Welcome"
+            name: "welcome"
+            widget: "object"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Image Alt Text", name: "image_alt", widget: "string" }
+
+          - label: "Featured"
             name: "featured"
             widget: "object"
             fields:
@@ -49,12 +66,7 @@ collections:
                   - { label: "Description", name: "description", widget: "text" }
                   - { label: "Link Text", name: "link_text", widget: "string" }
                   - { label: "URL", name: "url", widget: "string" }
-          - label: "Welcome Section"
-            name: "welcome"
-            widget: "object"
-            fields:
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Image Alt Text", name: "image_alt", widget: "string" }
+
           - { label: "Body", name: "body", widget: "markdown" }
 
       - name: "ministries"
