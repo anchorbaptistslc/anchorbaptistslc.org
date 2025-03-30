@@ -2,7 +2,7 @@
 hero:
   title: "Welcome to Anchor Baptist Church"
   tagline: "Lifting up Jesus in Salt Lake City, Utah"
-  image: "/images/hero-background.jpg"
+  image: "/images/uploads/hero-background.jpg"
   cta:
     learn_more:
       text: "Learn More"
@@ -15,7 +15,7 @@ worship:
   title: "Join Us for Worship"
 
 featured:
-  image: "/images/horizontal/anchor-spring-revival-2023-04-1121.jpg"
+  image: "/images/uploads/anchor-spring-revival-2023-04-1121.jpg"
   cards:
     - title: "Plan Your Visit"
       description: "Join us for a service and experience warm, Christ-centered fellowship at Anchor Baptist Church."

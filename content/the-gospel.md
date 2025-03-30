@@ -1,17 +1,17 @@
 ---
 title: "How to Be Saved"
 description: "Learn about the Gospel of Jesus Christ and how to be saved"
-featured_image: "/images/horizontal/anchor-missions-sunday-am-2024-10-2134.jpg"
+featured_image: "/images/uploads/anchor-missions-sunday-am-2024-10-2134.jpg"
 layout: "two-column"
 tagline: "The most important decision you'll ever make"
 content_images:
-  - image: "/images/people/anchor-friend-day-2025-03-3131.jpg"
+  - image: "/images/uploads/anchor-friend-day-2025-03-3131.jpg"
     alt_text: "An open Bible in church"
     caption: "God's Word guides our faith"
-  - image: "/images/people/anchor-friend-day-2025-03-3064.jpg"
+  - image: "/images/uploads/anchor-friend-day-2025-03-3064.jpg"
     alt_text: "Church fellowship and community"
     caption: "Experience our church family"
-  - image: "/images/people/anchor-i-love-my-church-2025-02-2877.jpg"
+  - image: "/images/uploads/anchor-i-love-my-church-2025-02-2877.jpg"
     alt_text: "Church members worshiping together"
     caption: "Join us in worship"
 ---

@@ -1,14 +1,14 @@
 ---
 title: "Ministries"
 description: "Various ministries and programs at Anchor Baptist Church"
-featured_image: "/images/horizontal/anchor-friend-day-0427.jpg"
+featured_image: "/images/uploads/anchor-friend-day-0427.jpg"
 tagline: "Serving Christ together in faith and fellowship"
 layout: "single"
 content_images:
-  - image: "/images/people/anchor-missions-sunday-am-2024-10-2165.jpg"
+  - image: "/images/uploads/anchor-missions-sunday-am-2024-10-2165.jpg"
     alt_text: "Anchor Baptist Church missions service"
     caption: "Supporting missions around the world"
-  - image: "/images/people/anchor-i-love-my-church-2025-02-2966.jpg"
+  - image: "/images/uploads/anchor-i-love-my-church-2025-02-2966.jpg"
     alt_text: "Church family fellowship"
     caption: "Growing together in Christ"
 ---

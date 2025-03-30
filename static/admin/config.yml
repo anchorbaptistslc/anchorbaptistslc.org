@@ -5,8 +5,8 @@ backend:
 local_backend: true
 local_backend_url: http://localhost:1313/admin/
 
-media_folder: "static/images"
-public_folder: "/images"
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   - name: "pages"
