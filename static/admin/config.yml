@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: rbolt/anchorbaptistslc.org
+  repo: richardbolt/anchorbaptistslc.org
   branch: main
   use_graphql: true
   auth_url: https://github.com/login/oauth/authorize
