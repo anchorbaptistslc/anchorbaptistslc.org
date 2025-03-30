@@ -31,27 +31,28 @@
         render: function() {
           const entry = this.props.entry;
           const hero = entry.getIn(['data', 'hero']) ? entry.getIn(['data', 'hero']).toJS() : {};
-          const featured = entry.getIn(['data', 'featured']) ? entry.getIn(['data', 'featured']).toJS() : {};
+          const worship = entry.getIn(['data', 'worship']) ? entry.getIn(['data', 'worship']).toJS() : {};
           const welcome = entry.getIn(['data', 'welcome']) ? entry.getIn(['data', 'welcome']).toJS() : {};
+          const featured = entry.getIn(['data', 'featured']) ? entry.getIn(['data', 'featured']).toJS() : {};
           
-          return h('div', {className: 'bg-gray-50'},
+          return h('div', { className: 'bg-gray-50' },
             // Hero Section
-            h('div', {className: 'relative overflow-hidden z-0'},
-              h('div', {className: 'absolute inset-0'},
+            h('div', { className: 'relative overflow-hidden z-0' },
+              h('div', { className: 'absolute inset-0' },
                 h('img', {
                   src: hero.image || '',
                   className: 'w-full h-full object-cover object-[center_65%]',
-                  alt: ''
+                  alt: '',
+                  'aria-hidden': 'true'
                 }),
-                h('div', {className: 'absolute inset-0 bg-brand-dark bg-opacity-75 mix-blend-multiply'})
+                h('div', { className: 'absolute inset-0 bg-brand-dark mix-blend-multiply bg-opacity-0absolute inset-0 bg-brand-dark bg-opacity-75 mix-blend-multiply transition-opacity duration-500 opacity-0' })
               ),
-              h('div', {className: 'relative'},
-                h('div', {className: 'container mx-auto px-4 py-24'},
-                  h('div', {className: 'max-w-4xl'},
-                    h('h1', {className: 'text-4xl md:text-5xl mb-6 text-white hero-heading'}, hero.title || ''),
-                    h('p', {className: 'text-xl mb-8 text-white hero-tagline'}, hero.tagline || ''),
-                    // CTA Buttons
-                    h('div', {className: 'space-x-4'},
+              h('div', { className: 'relative' },
+                h('div', { className: 'container mx-auto px-4 py-24' },
+                  h('div', { className: 'max-w-4xl' },
+                    h('h1', { className: 'text-4xl md:text-5xl mb-6 text-white hero-heading' }, hero.title || ''),
+                    h('p', { className: 'text-xl mb-8 text-white hero-tagline' }, hero.tagline || ''),
+                    h('div', { className: 'space-x-4' },
                       hero.cta?.learn_more && h('a', {
                         href: hero.cta.learn_more.url || '#',
                         className: 'bg-white text-brand-dark px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 border-2 border-white'
@@ -65,31 +66,74 @@
                 )
               )
             ),
-            // Featured Section
-            featured.image && h('div', {className: 'container mx-auto px-4 py-16'},
-              h('div', {className: 'grid grid-cols-1 md:grid-cols-3 gap-8'},
-                featured.cards?.map(card => h('div', {key: card.title, className: 'bg-white p-6 rounded-lg shadow-md'},
-                  h('h2', {className: 'text-xl font-semibold mb-4'}, card.title || ''),
-                  h('p', {className: 'text-gray-600 mb-4'}, card.description || ''),
-                  h('a', {
-                    href: card.url || '#',
-                    className: 'text-brand-link hover:text-brand-linkHover'
-                  }, card.link_text || 'Learn More →')
-                ))
+
+            // Service Times
+            h('div', { className: 'py-16 bg-white' },
+              h('div', { className: 'container mx-auto px-4' },
+                h('h2', { className: 'text-3xl mb-12 text-center hero-heading' }, worship.title || ''),
+                h('div', { className: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8' },
+                  h('div', { className: 'text-center p-6 bg-gray-50 rounded-lg' },
+                    h('h3', { className: 'font-medium mb-2 tracking-[0.05em]', style: { fontSize: '16px' } }, 'Sunday School'),
+                    h('p', { className: 'text-xl text-brand-link' }, '9:30 AM')
+                  ),
+                  h('div', { className: 'text-center p-6 bg-gray-50 rounded-lg' },
+                    h('h3', { className: 'font-medium mb-2 tracking-[0.05em]', style: { fontSize: '16px' } }, 'Sunday Morning'),
+                    h('p', { className: 'text-xl text-brand-link' }, '10:45 AM')
+                  ),
+                  h('div', { className: 'text-center p-6 bg-gray-50 rounded-lg' },
+                    h('h3', { className: 'font-medium mb-2 tracking-[0.05em]', style: { fontSize: '16px' } }, 'Sunday Evening'),
+                    h('p', { className: 'text-xl text-brand-link' }, '6:00 PM')
+                  ),
+                  h('div', { className: 'text-center p-6 bg-gray-50 rounded-lg' },
+                    h('h3', { className: 'font-medium mb-2 tracking-[0.05em]', style: { fontSize: '16px' } }, 'Wednesday'),
+                    h('p', { className: 'text-xl text-brand-link' }, '7:00 PM')
+                  )
+                )
               )
             ),
+
             // Welcome Section
-            welcome.image && h('div', {className: 'container mx-auto px-4 py-16'},
-              h('div', {className: 'grid grid-cols-1 md:grid-cols-2 gap-8 items-center'},
-                h('div', {},
-                  h('img', {
-                    src: welcome.image,
-                    alt: welcome.image_alt || '',
-                    className: 'rounded-lg shadow-lg'
-                  })
-                ),
-                h('div', {className: 'prose max-w-none'},
-                  this.props.widgetFor('body')
+            h('div', { className: 'py-16 bg-white' },
+              h('div', { className: 'container mx-auto px-4' },
+                h('div', { className: 'lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center' },
+                  h('div', { className: 'prose' },
+                    this.props.widgetFor('body')
+                  ),
+                  h('div', { className: 'mt-8 lg:mt-0' },
+                    h('img', {
+                      src: welcome.image || '',
+                      alt: welcome.image_alt || '',
+                      className: 'rounded-lg shadow-lg'
+                    }),
+                    welcome.image_alt && h('p', { className: 'mt-4 text-center text-gray-600' }, welcome.image_alt)
+                  )
+                )
+              )
+            ),
+
+            // Featured Content
+            featured.image && h('div', { className: 'relative py-16' },
+              h('div', { className: 'absolute inset-0' },
+                h('img', {
+                  src: featured.image,
+                  alt: '',
+                  className: 'w-full h-full object-cover',
+                  'aria-hidden': 'true'
+                }),
+                h('div', { className: 'absolute inset-0 bg-gray-900 bg-opacity-60' })
+              ),
+              h('div', { className: 'container mx-auto px-4 relative' },
+                h('div', { className: 'grid grid-cols-1 md:grid-cols-3 gap-8' },
+                  featured.cards?.map(card => 
+                    h('div', { key: card.title, className: 'bg-white bg-opacity-90 p-8 rounded-lg shadow-lg' },
+                      h('h3', { className: 'text-2xl font-medium mb-4 tracking-[0.05em]' }, card.title || ''),
+                      h('p', { className: 'mb-4' }, card.description || ''),
+                      h('a', {
+                        href: card.url || '#',
+                        className: 'text-brand-link font-semibold hover:text-brand-linkHover'
+                      }, card.link_text || 'Learn More →')
+                    )
+                  )
                 )
               )
             )
