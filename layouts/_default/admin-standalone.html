@@ -168,8 +168,46 @@
               h('div', { className: 'flex flex-col lg:flex-row gap-8' },
                 // Main Content
                 h('div', { className: 'lg:w-7/12' },
+                  // Quick Info Box
+                  (data.meeting_time || data.location || data.age_group) && h('div', { className: 'bg-white rounded-lg shadow-sm p-6 mb-8' },
+                    h('div', { className: 'grid grid-cols-1 md:grid-cols-3 gap-6' },
+                      data.meeting_time && h('div', null,
+                        h('h3', { className: 'font-semibold text-gray-600 mb-1', style: { fontSize: 'inherit' } }, 'Meeting Time'),
+                        h('p', { className: 'text-lg' }, data.meeting_time)
+                      ),
+                      data.location && h('div', null,
+                        h('h3', { className: 'font-semibold text-gray-600 mb-1', style: { fontSize: 'inherit' } }, 'Location'),
+                        h('p', { className: 'text-lg' }, data.location)
+                      ),
+                      data.age_group && h('div', null,
+                        h('h3', { className: 'font-semibold text-gray-600 mb-1', style: { fontSize: 'inherit' } }, 'Age Group'),
+                        h('p', { className: 'text-lg' }, data.age_group)
+                      )
+                    )
+                  ),
+                  // Main Content
                   h('div', { className: 'prose max-w-none' },
                     this.props.widgetFor('body')
+                  ),
+                  // Leaders Section
+                  data.leaders && data.leaders.length > 0 && h('div', { className: 'mt-12' },
+                    h('h2', { className: 'text-2xl font-medium mb-6' }, 'Ministry Leaders'),
+                    h('div', { className: 'grid grid-cols-1 gap-8' },
+                      data.leaders.map((leader, index) => 
+                        h('div', { key: index, className: 'flex items-start space-x-4' },
+                          leader.photo && h('img', {
+                            src: leader.photo,
+                            alt: leader.name,
+                            className: 'w-24 h-24 rounded-lg object-cover'
+                          }),
+                          h('div', null,
+                            h('h3', { className: 'font-medium text-xl' }, leader.name),
+                            leader.role && h('p', { className: 'text-gray-600 mb-2' }, leader.role),
+                            leader.bio && h('p', { className: 'text-gray-700' }, leader.bio)
+                          )
+                        )
+                      )
+                    )
                   )
                 ),
                 // Images
