@@ -69,40 +69,6 @@ collections:
 
           - { label: "Body", name: "body", widget: "markdown" }
 
-      - name: "ministries"
-        label: "Ministries Overview"
-        file: "content/ministries/_index.md"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - { label: "Featured Image", name: "featured_image", widget: "image" }
-          - { label: "Tagline", name: "tagline", widget: "string" }
-          - label: "Content Images"
-            name: "content_images"
-            widget: "list"
-            fields:
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Alt Text", name: "alt_text", widget: "string" }
-              - { label: "Caption", name: "caption", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-
-      - name: "about"
-        label: "About Overview"
-        file: "content/about/_index.md"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - { label: "Featured Image", name: "featured_image", widget: "image" }
-          - { label: "Tagline", name: "tagline", widget: "string" }
-          - label: "Content Images"
-            name: "content_images"
-            widget: "list"
-            fields:
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Alt Text", name: "alt_text", widget: "string" }
-              - { label: "Caption", name: "caption", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-
       - name: "plan-your-visit"
         label: "Plan Your Visit"
         file: "content/plan-your-visit.md"
@@ -137,12 +103,45 @@ collections:
               - { label: "Caption", name: "caption", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "ministry-pages"
-    label: "Ministry Pages"
-    folder: "content/ministries"
+      - name: "about"
+        label: "About Overview"
+        file: "content/about/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Featured Image", name: "featured_image", widget: "image" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - label: "Content Images"
+            name: "content_images"
+            widget: "list"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt Text", name: "alt_text", widget: "string" }
+              - { label: "Caption", name: "caption", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+  
+      - name: "ministries"
+        label: "Ministries Overview"
+        file: "content/ministries/_index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Featured Image", name: "featured_image", widget: "image" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - label: "Content Images"
+            name: "content_images"
+            widget: "list"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt Text", name: "alt_text", widget: "string" }
+              - { label: "Caption", name: "caption", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "about-pages"
+    label: "About Pages"
+    folder: "content/about"
     create: true
     exclude: ["_index.md"]
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
@@ -157,12 +156,11 @@ collections:
           - { label: "Caption", name: "caption", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "about-pages"
-    label: "About Pages"
-    folder: "content/about"
+  - name: "ministry-pages"
+    label: "Ministry Pages"
+    folder: "content/ministries"
     create: true
     exclude: ["_index.md"]
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
@@ -175,4 +173,4 @@ collections:
           - { label: "Image", name: "image", widget: "image" }
           - { label: "Alt Text", name: "alt_text", widget: "string" }
           - { label: "Caption", name: "caption", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" } 
+      - { label: "Body", name: "body", widget: "markdown" }
