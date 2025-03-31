@@ -31,7 +31,7 @@ The website serves as the online presence for Anchor Baptist Church, providing:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/richardbolt/anchorbaptistslc.org.git
+   git clone https://github.com/anchorbaptistslc/anchorbaptistslc.org.git
    cd anchorbaptistslc.org
    ```
 
