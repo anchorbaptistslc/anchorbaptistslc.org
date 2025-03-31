@@ -34,6 +34,7 @@
           const worship = entry.getIn(['data', 'worship']) ? entry.getIn(['data', 'worship']).toJS() : {};
           const welcome = entry.getIn(['data', 'welcome']) ? entry.getIn(['data', 'welcome']).toJS() : {};
           const featured = entry.getIn(['data', 'featured']) ? entry.getIn(['data', 'featured']).toJS() : {};
+          const params = entry.getIn(['data', 'params']) ? entry.getIn(['data', 'params']).toJS() : {};
           
           return h('div', { className: 'bg-gray-50' },
             // Hero Section
@@ -50,7 +51,7 @@
               h('div', { className: 'relative' },
                 h('div', { className: 'container mx-auto px-4 py-24' },
                   h('div', { className: 'max-w-4xl' },
-                    h('h1', { className: 'text-4xl md:text-5xl mb-6 text-white hero-heading' }, hero.title || ''),
+                    params.show_title && h('h1', { className: 'text-4xl md:text-5xl mb-6 text-white hero-heading' }, hero.title || ''),
                     h('p', { className: 'text-xl mb-8 text-white hero-tagline' }, hero.tagline || ''),
                     h('div', { className: 'space-x-4' },
                       hero.cta?.learn_more && h('a', {
