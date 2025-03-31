@@ -13,7 +13,9 @@
         <div class="relative">
             <div class="container mx-auto px-4 py-24">
                 <div class="max-w-4xl">
+                    {{ if .Params.show_title }}
                     <h1 class="text-4xl md:text-5xl mb-6 text-white hero-heading">{{ .Params.hero.title }}</h1>
+                    {{ end }}
                     <p class="text-xl mb-8 text-white hero-tagline">{{ .Params.hero.tagline }}</p>
                     <div class="space-x-4">
                         <a href="{{ .Params.hero.cta.learn_more.url }}" class="bg-white text-brand-dark px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 border-2 border-white">{{ .Params.hero.cta.learn_more.text }}</a>

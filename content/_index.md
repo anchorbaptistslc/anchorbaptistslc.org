@@ -31,6 +31,8 @@ featured:
       description: Find your place in our church family and serve the Lord with us.
       link_text: See Our Ministries →
       url: /ministries/
+params:
+  show_title: false
 ---
 
 Anchor Baptist Church is a local, independent, Baptist church centrally located on the east side of the Salt Lake Valley.
