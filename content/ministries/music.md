@@ -1,25 +1,25 @@
 ---
-title: "Music Ministry"
-description: "Music programs and worship at Anchor Baptist Church"
-weight: 15
-featured_image: "/images/uploads/anchor-friend-day-2025-03-3072.jpg"
-tagline: "Praising God through song and worship"
-content_images:
-  - image: "/images/uploads/anchor-friend-day-2025-03-3070.jpg"
-    alt_text: "Church worship service choir"
-    caption: "Church worship service choir"
-  - image: "/images/uploads/anchor-i-love-my-church-2025-02-3004.jpg"
-    alt_text: "Special music performance"
-    caption: "Special music during worship service"
-  - image: "/images/uploads/anchor-i-love-my-church-2025-02-2989.jpg"
-    alt_text: "Church choir and orchestra"
-    caption: "Orchestra member serving the Lord through music"
-meeting_time: "Sunday mornings at 11:00 AM\nChoir and Orchestra practice at 5:00 PM"
-location: "Main Auditorium"
+title: Music Ministry
+featured_image: /images/uploads/anchor-friend-day-2025-03-3072.jpg
+tagline: Praising God through song and worship
+meeting_time: ""
+location: ""
 leaders:
-  - name: "Jordan Lendt"
-    role: "Music Director"
-    bio: "Leading our congregation in worship through music and song."
+  - name: Jordan Lendt
+    role: Music Director
+    bio: Leading our congregation in worship through music and song.
+weight: 15
+description: Music programs and worship at Anchor Baptist Church
+content_images:
+  - image: /images/uploads/anchor-friend-day-2025-03-3070.jpg
+    alt_text: Church worship service choir
+    caption: Church worship service choir
+  - image: /images/uploads/anchor-i-love-my-church-2025-02-3004.jpg
+    alt_text: Special music performance
+    caption: Special music during worship service
+  - image: /images/uploads/anchor-i-love-my-church-2025-02-2989.jpg
+    alt_text: Church choir and orchestra
+    caption: Orchestra member serving the Lord through music
 ---
 
 At Anchor Baptist Church, we believe that music is a vital part of worship and spiritual growth. Our music ministry, led by Jordan Lendt, serves to enhance our worship services and bring glory to God through song.
