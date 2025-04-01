@@ -43,6 +43,7 @@ collections:
           - { label: "Tagline", name: "tagline", widget: "string" }
           - label: "Content Images"
             name: "content_images"
+            required: false
             widget: "list"
             fields:
               - { label: "Image", name: "image", widget: "image" }
@@ -63,6 +64,7 @@ collections:
           - { label: "Tagline", name: "tagline", widget: "string" }
           - label: "Content Images"
             name: "content_images"
+            required: false
             widget: "list"
             fields:
               - { label: "Image", name: "image", widget: "image" }
@@ -81,6 +83,7 @@ collections:
       - { label: "Tagline", name: "tagline", widget: "string" }
       - label: "Content Images"
         name: "content_images"
+        required: false
         widget: "list"
         fields:
           - { label: "Image", name: "image", widget: "image" }
@@ -97,17 +100,19 @@ collections:
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Featured Image", name: "featured_image", widget: "image" }
       - { label: "Tagline", name: "tagline", widget: "string" }
-      - { label: "Meeting Time", name: "meeting_time", widget: "string" }
-      - { label: "Location", name: "location", widget: "string" }
-      - { label: "Age Group", name: "age_group", widget: "string" }
+      - { label: "Meeting Time", name: "meeting_time", widget: "string", required: false }
+      - { label: "Location", name: "location", widget: "string", required: false }
+      - { label: "Age Group", name: "age_group", widget: "string", required: false }
       - label: "Leaders"
         name: "leaders"
+        required: false
         widget: "list"
         fields:
           - { label: "Name", name: "name", widget: "string" }
           - { label: "Role", name: "role", widget: "string" }
       - label: "Content Images"
         name: "content_images"
+        required: false
         widget: "list"
         fields:
           - { label: "Image", name: "image", widget: "image" }
