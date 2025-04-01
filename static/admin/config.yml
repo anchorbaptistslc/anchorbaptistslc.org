@@ -110,6 +110,7 @@ collections:
         fields:
           - { label: "Name", name: "name", widget: "string" }
           - { label: "Role", name: "role", widget: "string" }
+          - { label: "Bio", name: "bio", widget: "string" }
       - label: "Content Images"
         name: "content_images"
         required: false
