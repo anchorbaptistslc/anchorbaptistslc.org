@@ -1,9 +1,9 @@
 ---
-title: "Adult Programs"
-description: "Adult programs and activities at Anchor Baptist Church"
+title: Adult Programs
+description: Adult programs and activities at Anchor Baptist Church
 weight: 40
-featured_image: "/images/horizontal/anchor-friend-day-0427.jpg"
-tagline: "Growing in faith through fellowship and Bible study"
+featured_image: /images/uploads/harvest-day-2023-10-1171.jpg
+tagline: Growing in faith through fellowship and Bible study
 ---
 
 ## Adult Bible Classes
