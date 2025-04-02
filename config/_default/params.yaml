@@ -22,7 +22,14 @@ description: "A Bible-believing church in Salt Lake City, Utah"
 author: "Anchor Baptist Church"
 
 # Church Information
-address: "1880 East 5600 South, Salt Lake City, UT 84121"
+address:
+  full: "1880 East 5600 South, Salt Lake City, UT 84121"
+  street: "1880 East 5600 South"
+  city: "Salt Lake City"
+  state: "UT"
+  zip: "84121"
+  latitude: "40.7608"
+  longitude: "-111.8910"
 phone: "(801) 272-9405"
 email: "office@anchorbaptistslc.org"
 
@@ -37,6 +44,7 @@ services:
 social:
   facebook: "https://www.facebook.com/anchorbaptistchurchslc/"
   youtube: "https://www.youtube.com/@anchorbaptistchurchslc/streams"
+  instagram: "https://www.instagram.com/anchorbaptistslc/"
 
 # Navigation
 main_sections:
@@ -51,22 +59,6 @@ seo:
   og_image: "/img/social-share.png"
   og_image_width: "1200"
   og_image_height: "630"
-  
-  # Schema.org
-  local_business:
-    type: "Church"
-    name: "Anchor Baptist Church"
-    address:
-      streetAddress: "1880 East 5600 South"
-      addressLocality: "Salt Lake City"
-      addressRegion: "UT"
-      postalCode: "84121"
-      addressCountry: "US"
-    geo:
-      latitude: "40.6500"
-      longitude: "-111.8422"
-    telephone: "(801) 272-9405"
-    url: "https://anchorbaptistslc.org"
 
 # Image Optimization
 images:
