@@ -45,9 +45,9 @@ module.exports = {
       colors: {
         brand: {
           light: '#6E879D', // RGB(110, 135, 157)
-          dark: '#122847',  // RGB(18, 40, 71)
-          link: '#2B5282', // RGB(43, 82, 130) - for regular link state
-          linkHover: '#3A6EAF', // RGB(58, 110, 175) - for hover state
+          dark: '#1a202c',  // RGB(26,32,44)
+          link: '#163258', // RGB(22, 50, 88) - for regular link state
+          linkHover: '#69889f', // RGB(105, 136, 159) - for hover state
         },
         primary: {
           50: '#f0f9ff',

@@ -1,0 +1,7 @@
+{{- $image := resources.GetMatch . -}}
+{{- if $image -}}
+  {{- $processed := $image.Resize "1840x" -}}
+  {{- $processed.RelPermalink -}}
+{{- else -}}
+  {{- . -}}
+{{- end -}} 
