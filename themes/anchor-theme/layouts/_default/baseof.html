@@ -48,10 +48,13 @@
         {{ $css = $css | css.PostCSS $opts }}
         <link rel="stylesheet" href="{{ $css.RelPermalink }}">
     {{ end }}
+    <!-- Site and Theme JavaScript -->
     {{ $themeJs := resources.Get "js/theme.js" | js.Build }}
-    <script src="{{ $themeJs.RelPermalink }}"></script>
+    <script defer src="{{ $themeJs.RelPermalink }}"></script>
     {{ $mainJs := resources.Get "js/main.js" | js.Build }}
-    <script src="{{ $mainJs.RelPermalink }}"></script>
+    <script defer src="{{ $mainJs.RelPermalink }}"></script>
+    <!-- Search and Menu JavaScript -->
+    <script defer src="/js/search.js"></script>
 </head>
 <body class="flex flex-col min-h-screen bg-white">
     {{ partial "header" . }}
