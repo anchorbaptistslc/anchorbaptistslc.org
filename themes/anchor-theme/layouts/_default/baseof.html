@@ -38,21 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Work+Sans:wght@400&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-dark': '#1a202c',
-                        'brand-link': '#163258',
-                        'brand-linkHover': '#69889f',
-                    },
-                },
-            },
-        }
-    </script>
+    <!-- CSS -->
     {{ if eq hugo.Environment "production" }}
         {{ $css := resources.Get "css/main.processed.css" | minify | fingerprint }}
         <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
