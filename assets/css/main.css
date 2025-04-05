@@ -7,24 +7,3 @@
     padding-bottom: 0.5rem;
     transition: all 0.3s ease;
 }
-
-.footer-skyline {
-    background-image: url('/images/graphics/city-skyline-65-years.png');
-    background-size: 100% auto;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    padding-bottom: 250px;
-}
-
-@media (min-width: 768px) {
-    .footer-skyline {
-        padding-bottom: 600px;
-    }
-}
-
-.header-bg {
-    /* define background-image in html to use Hugo's image pipeline to shrink the image */
-    background-size: cover;
-    background-position: center;
-    opacity: 0.15;
-}

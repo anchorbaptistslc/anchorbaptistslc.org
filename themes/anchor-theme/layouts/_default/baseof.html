@@ -52,6 +52,9 @@
         .header-bg {
             background-image: url('{{ partial "image.html" "images/header-harvest-day.jpg" }}');
         }
+        .footer-skyline {
+            background-image: url('{{ partial "image.html" (dict "path" "images/graphics/city-skyline-65-years.png" "width" "1600") }}');
+        }
     </style>
     <!-- Site and Theme JavaScript -->
     {{ $themeJs := resources.Get "js/theme.js" | js.Build }}
