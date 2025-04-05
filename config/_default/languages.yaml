@@ -5,7 +5,7 @@ en:
   copyright: "© 2025 Anchor Baptist Church. All rights reserved."
   title: "Anchor Baptist Church"
   params:
-    description: "A Bible-believing church in Salt Lake City, Utah"
+    description: "Anchor Baptist Church is a Bible-believing, independent Baptist church in Salt Lake City, Utah, focused on proclaiming the Gospel and faithfully serving Jesus Christ."
     ### accessibility ###
     accessibility:
       skip_text: "Skip to content"
