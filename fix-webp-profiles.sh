@@ -4,7 +4,11 @@ SRC_DIR="assets/images/uploads"
 DEST_DIR="public/images/uploads"
 TMP_DIR="tmp-reencoded"
 
-echo $(which magick) && echo $(`which magick` -version) && echo $(which convert) && echo $(`which convert` -version)
+echo "Checking Image Magick presence and versions..."
+echo $(which magick)
+echo $(`which magick` -version)
+echo $(which convert)
+echo $(`which convert` -version)
 if ! command -v `which magick` &> /dev/null; then
   echo "❌ ImageMagick (convert) not found — skipping color fix"
   exit 0
