@@ -23,7 +23,7 @@
 }
 
 .header-bg {
-    background-image: url('/images/header-harvest-day.jpg');
+    /* define background-image in html to use Hugo's image pipeline to shrink the image */
     background-size: cover;
     background-position: center;
     opacity: 0.15;

@@ -30,8 +30,8 @@
     <link rel="canonical" href="{{ .Permalink }}">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/images/logo-anchor-yellow.png">
-    <link rel="apple-touch-icon" href="/images/logo-anchor-yellow.png">
+    <link rel="icon" type="image/webp" href="{{ partial "image.html" (dict "path" "images/logo-anchor-yellow.png" "width" "180") }}">
+    <link rel="apple-touch-icon" href="{{ partial "image.html" (dict "path" "images/logo-anchor-yellow.png" "width" "180") }}">
 
     <!-- Montserrat font for hero headings and Work Sans for taglines -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,6 +48,11 @@
         {{ $css = $css | css.PostCSS $opts }}
         <link rel="stylesheet" href="{{ $css.RelPermalink }}">
     {{ end }}
+    <style>
+        .header-bg {
+            background-image: url('{{ partial "image.html" "images/header-harvest-day.jpg" }}');
+        }
+    </style>
     <!-- Site and Theme JavaScript -->
     {{ $themeJs := resources.Get "js/theme.js" | js.Build }}
     <script defer src="{{ $themeJs.RelPermalink }}"></script>
