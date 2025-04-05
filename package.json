@@ -9,7 +9,7 @@
     "start": "hugo serve",
     "dev": "npm run clean && hugo serve --disableFastRender --printPathWarnings --printUnusedTemplates --templateMetrics --port 1313",
     "clean": "rm -rf public resources",
-    "build:prod": "npm run clean && npm run postcss:build && NODE_ENV=production HUGO_ENV=production hugo --gc --minify",
+    "build:prod": "npm run clean && npm run postcss:build && NODE_ENV=production HUGO_ENV=production hugo --gc --minify && ./fix-webp-profiles.sh",
     "cms": "npx netlify-cms-proxy-server"
   },
   "keywords": [

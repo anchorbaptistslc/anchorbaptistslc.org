@@ -26,6 +26,8 @@ The website serves as the online presence for Anchor Baptist Church, providing:
 - [Hugo Extended](https://gohugo.io/installation/) (v0.136.5 or later)
 - [Node.js](https://nodejs.org/) (v18 or later)
 - [npm](https://www.npmjs.com/) (usually comes with Node.js)
+- [Image Magick](https://imagemagick.org) (On MacOS: `brew install imagemagick`)
+- [Exiftool](https://exiftool.org) (On MacOS: `brew install exiftool`)
 
 ### Setup
 
@@ -47,11 +49,22 @@ The website serves as the online presence for Anchor Baptist Church, providing:
 
 The site will be available at `http://localhost:1313/`.
 
+To test the editor with the local git repo vs the remote:
+
+4. Start the CMS proxy server:
+```bash
+npx netlify-cms-proxy-server
+```
+
 ### Building for Production
 
 ```bash
 npm run build:prod
 ```
+
+We use Image Magick and Exiftool in the production build to capture any images in the uploads directory with
+non-sRGB color profiles (i.e. Adobe RGB) and re-encode the webp images with the same color profile as the original.
+This ensure the site images retain the color of the original image intent.
 
 ## Content Management
 
