@@ -59,7 +59,7 @@
                     {{ .Content }}
                 </div>
                 <div class="mt-8 lg:mt-0">
-                    <img loading="lazy" src="{{ .Params.welcome.image }}" 
+                    <img loading="lazy" src="{{ partial "image.html" (dict "path" .Params.welcome.image "width" "1000") }}" 
                          alt="{{ .Params.welcome.image_alt }}" 
                          class="rounded-lg shadow-lg">
                     <p class="mt-4 text-center text-gray-600">{{ .Params.welcome.image_alt }}</p>
@@ -72,7 +72,7 @@
     <div class="relative py-16">
         <div class="absolute inset-0">
             <img loading="lazy" src="{{ partial "image.html" .Params.featured.image }}" 
-                 alt="" 
+                 alt="{{ .Params.featured.image_alt }}" 
                  class="w-full h-full object-cover" 
                  aria-hidden="true">
             <div class="absolute inset-0 bg-gray-900 bg-opacity-60"></div>
