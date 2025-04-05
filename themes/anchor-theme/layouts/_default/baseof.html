@@ -36,7 +36,7 @@
     <!-- Montserrat font for hero headings and Work Sans for taglines -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Work+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Work+Sans:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- CSS -->
     {{ if eq hugo.Environment "production" }}
