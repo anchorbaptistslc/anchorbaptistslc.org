@@ -42,7 +42,7 @@
                     <div class="mt-8 lg:mt-0 space-y-8">
                         {{ range .Params.content_images }}
                         <div>
-                            <img src="{{ .image }}" 
+                            <img loading="lazy" src="{{ partial "image.html" (dict "path" .image "width" "1200") }}" 
                                  alt="{{ .alt_text | default "Content image" }}" 
                                  class="rounded-lg shadow-lg">
                             {{ if .caption }}
@@ -66,7 +66,7 @@
                         {{ range . }}
                         <div class="flex items-start space-x-4">
                             {{ with .photo }}
-                            <img src="{{ . }}" alt="{{ $.Name }}" class="w-24 h-24 rounded-lg object-cover">
+                            <img loading="lazy" src="{{ partial "image.html" (dict "path" . "width" "1200") }}" alt="{{ $.Name }}" class="w-24 h-24 rounded-lg object-cover">
                             {{ end }}
                             <div>
                                 <h3 class="font-medium text-xl">{{ .name }}</h3>

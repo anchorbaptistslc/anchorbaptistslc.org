@@ -53,3 +53,8 @@ theme = 'anchor-theme'
   disableHMR = false
   [assets.css]
     sourceMap = true
+
+[imaging]
+  hint = 'picture'
+  quality = 85
+  resampleFilter = 'Lanczos'

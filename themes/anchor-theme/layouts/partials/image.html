@@ -1,11 +1,10 @@
 {{- /* Handle both string and map inputs */ -}}
-{{- /* Case 1: Direct string path */ -}}
 {{- if reflect.IsMap . -}}
   {{- /* Case 2: Dictionary with path and width */ -}}
   {{- $path := .path -}}
   {{- $width := default "1840" .width -}}
   {{- with resources.GetMatch $path -}}
-    {{- $processed := .Resize (printf "%sx" $width) -}}
+    {{- $processed := .Resize (printf "%sx webp" $width) -}}
     {{- $processed.RelPermalink -}}
   {{- else -}}
     {{- $path -}}
@@ -13,7 +12,7 @@
 {{- else -}}
   {{- /* String path with default width */ -}}
   {{- with resources.GetMatch . -}}
-    {{- $processed := .Resize "1840x" -}}
+    {{- $processed := .Resize "1840x webp" -}}
     {{- $processed.RelPermalink -}}
   {{- else -}}
     {{- . -}}

@@ -19,7 +19,7 @@
                     {{ range . }}
                     <div class="bg-white rounded-lg shadow-md overflow-hidden">
                         {{ with .image }}
-                        <img src="{{ . }}" alt="{{ $.Params.title }} - {{ $.Params.tagline }}" class="w-full h-64 object-cover">
+                        <img loading="lazy" src="{{ partial "image.html" (dict "path" . "width" "1200") }}" alt="{{ $.Params.title }} - {{ $.Params.tagline }}" class="w-full h-64 object-cover">
                         {{ end }}
                         {{ with .caption }}
                         <div class="p-4">
