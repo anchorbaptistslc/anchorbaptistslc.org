@@ -71,7 +71,7 @@
     <!-- Featured Content -->
     <div class="relative py-16">
         <div class="absolute inset-0">
-            <img loading="lazy" src="{{ .Params.featured.image }}" 
+            <img loading="lazy" src="{{ partial "image.html" .Params.featured.image }}" 
                  alt="" 
                  class="w-full h-full object-cover" 
                  aria-hidden="true">
