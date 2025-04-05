@@ -4,7 +4,7 @@ SRC_DIR="assets/images/uploads"
 DEST_DIR="public/images/uploads"
 TMP_DIR="tmp-reencoded"
 
-which magick && `which magick` -version && which convert && convert -version
+echo $(which magick) && echo $(`which magick` -version) && echo $(which convert) && echo $(`which convert` -version)
 if ! command -v `which magick` &> /dev/null; then
   echo "❌ ImageMagick (convert) not found — skipping color fix"
   exit 0
@@ -42,6 +42,7 @@ find "$DEST_DIR" -type f -name '*.webp' | while read -r webp; do
   # Extract ICC profile from the source image (if any)
   icc_path="$TMP_DIR/${base}.icc"
   magick "$src" icc:"$icc_path" 2>/dev/null
+  echo $icc_path
 
   # Replace original .webp with corrected version
   #   assuming there was an ICC profile in the original else skip
