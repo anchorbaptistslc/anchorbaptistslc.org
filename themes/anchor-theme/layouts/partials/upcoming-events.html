@@ -6,8 +6,8 @@
   {{ range .Params.events }}
     {{ $eventDate := time .date }}
     {{ $endDate := $eventDate }}
-    {{ if .end_date }}
-      {{ $endDate = time .end_date }}
+    {{ if .expiryDate }}
+      {{ $endDate = time .expiryDate }}
     {{ end }}
     
     {{ if ge $endDate $now }}
@@ -26,13 +26,13 @@
         {{ range $index, $event := $events }}
           {{ $eventDate := time .date }}
           {{ $endDate := $eventDate }}
-          {{ if .end_date }}
-            {{ $endDate = time .end_date }}
+          {{ if .expiryDate }}
+            {{ $endDate = time .expiryDate }}
           {{ end }}
           
           <div class="event-slide {{ if eq $index 0 }}active{{ end }}" 
                data-event-date="{{ .date }}" 
-               data-event-end="{{ with .end_date }}{{ . }}{{ else }}{{ .date }}{{ end }}">
+               data-event-end="{{ with .expiryDate }}{{ . }}{{ else }}{{ .date }}{{ end }}">
             <div class="relative rounded-lg overflow-hidden shadow-lg">
               <div class="absolute inset-0">
                 <img src="{{ partial "image.html" (dict "path" .image "width" "1200") }}" 
@@ -80,119 +80,4 @@
     </div>
   </div>
 </div>
-
-{{/* Add JavaScript for event carousel and date-based visibility */}}
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Event carousel functionality
-  const carousel = document.querySelector('.event-carousel');
-  if (!carousel) return;
-  
-  const slides = carousel.querySelector('.event-slides');
-  const allSlides = carousel.querySelectorAll('.event-slide');
-  const dots = carousel.querySelectorAll('.carousel-dot');
-  const prevBtn = carousel.querySelector('.carousel-nav.prev');
-  const nextBtn = carousel.querySelector('.carousel-nav.next');
-  let currentSlide = 0;
-  const slideCount = allSlides.length;
-  
-  function showSlide(index) {
-    // Handle wrapping
-    if (index >= slideCount) index = 0;
-    if (index < 0) index = slideCount - 1;
-    
-    // Update current index
-    currentSlide = index;
-    slides.dataset.current = currentSlide;
-    
-    // Update slides
-    allSlides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === currentSlide);
-    });
-    
-    // Update dots
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === currentSlide);
-      dot.querySelector('span').classList.toggle('bg-brand-dark', i === currentSlide);
-      dot.querySelector('span').classList.toggle('bg-gray-400', i !== currentSlide);
-    });
-  }
-  
-  // Set up dot navigation
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const slideIndex = parseInt(dot.dataset.slide);
-      showSlide(slideIndex);
-    });
-  });
-  
-  // Set up arrow navigation
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      showSlide(currentSlide - 1);
-    });
-  }
-  
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      showSlide(currentSlide + 1);
-    });
-  }
-  
-  // Auto advance slides every 8 seconds if more than one
-  if (slideCount > 1) {
-    setInterval(() => {
-      showSlide(currentSlide + 1);
-    }, 8000);
-  }
-  
-  // Check for expired events client-side
-  const removeExpiredEvents = () => {
-    let hasRemoved = false;
-    const now = new Date();
-    
-    allSlides.forEach(slide => {
-      try {
-        const endDate = new Date(slide.dataset.eventEnd);
-        if (endDate < now) {
-          slide.style.display = 'none';
-          hasRemoved = true;
-        }
-      } catch (e) {
-        console.error('Error parsing date:', slide.dataset.eventEnd, e);
-      }
-    });
-    
-    // Hide entire section if all events expired
-    if (hasRemoved && document.querySelectorAll('.event-slide:not([style*="display: none"])').length === 0) {
-      document.getElementById('upcoming-events').style.display = 'none';
-    }
-  };
-  
-  // Check on load and periodically
-  removeExpiredEvents();
-  setInterval(removeExpiredEvents, 60000); // Check every minute
-});
-</script>
-
-<style>
-.event-slides {
-  position: relative;
-}
-
-.event-slide {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.event-slide.active {
-  display: block;
-  opacity: 1;
-}
-
-.carousel-dot.active span {
-  transform: scale(1.3);
-}
-</style>
 {{ end }} 
