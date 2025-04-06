@@ -24,6 +24,18 @@ collections:
         fields:
           - { label: "Page Parameters", name: "params", widget: "object", required: false, fields: [{ label: "Show Title", name: "show_title", widget: "boolean", default: true }] }
           - { label: "Hero", name: "hero", widget: "object", required: false, fields: [{ label: "Title", name: "title", widget: "string" }, { label: "Tagline", name: "tagline", widget: "string" }, { label: "Image", name: "image", widget: "image" }, { label: "CTA", name: "cta", widget: "object", fields: [{ label: "Learn More", name: "learn_more", widget: "object", fields: [{ label: "Text", name: "text", widget: "string" }, { label: "URL", name: "url", widget: "string" }] }, {label: "Visit Us", name: "visit", widget: "object", fields: [{ label: "Text", name: "text", widget: "string" }, { label: "URL", name: "url", widget: "string" }] }] }] }
+          - label: "Upcoming Events"
+            name: "events"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Event Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: "HH:mm", format: "YYYY-MM-DD HH:mm" }
+              - { label: "End Date", name: "end_date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: "HH:mm", format: "YYYY-MM-DD HH:mm", required: false, hint: "Optional. If not set, event will hide after event date." }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Call to Action Text", name: "cta_text", widget: "string", default: "Learn More" }
+              - { label: "Call to Action URL", name: "cta_url", widget: "string" }
           - { label: "Worship", name: "worship", widget: "object", required: false, fields: [{ label: "Title", name: "title", widget: "string" }] }
           - { label: "Welcome", name: "welcome", widget: "object", fields: [{ label: "Image", name: "image", widget: "image" }, { label: "Image Caption", name: "image_alt", widget: "string" }] }
           - { label: "Featured", name: "featured", widget: "object", fields: [{ label: "Image", name: "image", widget: "image" }, {label: "Cards", name: "cards", widget: "list", fields: [{ label: "Title", name: "title", widget: "string" }, { label: "Description", name: "description", widget: "text" }, { label: "Link Text", name: "link_text", widget: "string" }, { label: "URL", name: "url", widget: "string" }] }] }
