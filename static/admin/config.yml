@@ -34,8 +34,6 @@ collections:
               - { label: "Event Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: "HH:mm", format: "YYYY-MM-DD HH:mm" }
               - { label: "Expiry Date", name: "expiryDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: "HH:mm", format: "YYYY-MM-DD HH:mm", required: false, hint: "The date after which the event should no longer display. If not set, event will hide after event date." }
               - { label: "Image", name: "image", widget: "image" }
-              - { label: "Call to Action Text", name: "cta_text", widget: "string", default: "Learn More" }
-              - { label: "Call to Action URL", name: "cta_url", widget: "string" }
           - { label: "Worship", name: "worship", widget: "object", required: false, fields: [{ label: "Title", name: "title", widget: "string" }] }
           - { label: "Welcome", name: "welcome", widget: "object", fields: [{ label: "Image", name: "image", widget: "image" }, { label: "Image Caption", name: "image_alt", widget: "string" }] }
           - { label: "Featured", name: "featured", widget: "object", fields: [{ label: "Image", name: "image", widget: "image" }, {label: "Cards", name: "cards", widget: "list", fields: [{ label: "Title", name: "title", widget: "string" }, { label: "Description", name: "description", widget: "text" }, { label: "Link Text", name: "link_text", widget: "string" }, { label: "URL", name: "url", widget: "string" }] }] }
