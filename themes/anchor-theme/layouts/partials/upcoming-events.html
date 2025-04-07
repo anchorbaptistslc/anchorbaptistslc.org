@@ -32,7 +32,8 @@
           
           <div class="event-slide {{ if eq $index 0 }}active{{ end }}" 
                data-event-date="{{ .date }}" 
-               data-event-end="{{ with .expiryDate }}{{ . }}{{ else }}{{ .date }}{{ end }}">
+               {{ with .endDate }}data-event-end-date="{{ . }}"{{ end }}
+               data-event-expiry="{{ with .expiryDate }}{{ . }}{{ else }}{{ .date }}{{ end }}">
             <div class="relative rounded-lg overflow-hidden shadow-lg event-card">
               <div class="absolute inset-0">
                 <img src="{{ partial "image.html" (dict "path" .image "width" "1200") }}" 
@@ -49,7 +50,23 @@
                     </div>
                     <p class="text-base mb-4">
                       <span class="inline-block bg-brand-light text-brand-dark px-3 py-1 rounded-full">
-                        {{ $eventDate.Format "Monday, January 2, 2006" }} at {{ $eventDate.Format "3:04 PM" }}
+                        {{ if .endDate }}
+                          {{ $startDate := time .date }}
+                          {{ $endDate := time .endDate }}
+                          
+                          {{ if ne ($startDate.Format "2006") ($endDate.Format "2006") }}
+                            {{/* Different years */}}
+                            {{ $startDate.Format "January 2, 2006" }} - {{ $endDate.Format "January 2, 2006" }}
+                          {{ else if ne ($startDate.Format "January") ($endDate.Format "January") }}
+                            {{/* Same year, different months */}}
+                            {{ $startDate.Format "January 2" }} - {{ $endDate.Format "January 2, 2006" }}
+                          {{ else }}
+                            {{/* Same month and year */}}
+                            {{ $startDate.Format "January" }} {{ $startDate.Format "2" }}-{{ $endDate.Format "2" }}, {{ $startDate.Format "2006" }}
+                          {{ end }}
+                        {{ else }}
+                          {{ $eventDate.Format "Monday, January 2, 2006" }} at {{ $eventDate.Format "3:04 PM" }}
+                        {{ end }}
                       </span>
                     </p>
                   </div>
