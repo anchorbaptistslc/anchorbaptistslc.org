@@ -36,6 +36,7 @@ process_images() {
     if command -v magick &> /dev/null; then
         CONVERT_CMD="magick"
     fi
+    echo "   We have '$CONVERT_CMD'"
 
     mkdir -p "$TMP_DIR"
 
@@ -62,7 +63,7 @@ process_images() {
         echo "🎨 Processing $base — source: $src"
 
         # Get the output dimensions from the Hugo-generated image
-        dims=$($CONVERT_CMD identify -format "%wx%h" "$webp" 2>/dev/null)
+        dims=$(identify -format "%wx%h" "$webp" 2>/dev/null)
         if [[ -z "$dims" ]]; then
             echo "❌ Could not get dimensions from $webp — skipping"
             continue
