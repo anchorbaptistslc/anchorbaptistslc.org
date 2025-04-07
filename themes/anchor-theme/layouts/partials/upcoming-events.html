@@ -20,9 +20,18 @@
 {{ $events = sort $events "date" "asc" }}
 
 {{ if gt (len $events) 0 }}
-<div id="upcoming-events" class="py-12 bg-brand-light relative">
+<div id="upcoming-events" class="py-12 bg-brand-light bg-opacity-80 relative shadow-lg">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl mb-6 text-center hero-heading text-brand-dark">Upcoming Events</h2>
+    {{ $showHeading := true }}
+    {{ with .Params.params.events_section }}
+      {{ $showHeading = .show_heading }}
+    {{ end }}
+
+    {{ if $showHeading }}
+      <h2 class="text-3xl mb-6 text-center hero-heading text-brand-dark">
+        {{ with .Params.params.events_section.heading }}{{ . }}{{ else }}Upcoming Events{{ end }}
+      </h2>
+    {{ end }}
     
     <div class="event-carousel relative">
       <div class="event-slides" data-current="0">
@@ -42,7 +51,7 @@
                 <img src="{{ partial "image.html" (dict "path" .image "width" "1200") }}" 
                      alt="{{ .title }}" 
                      class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-brand-dark bg-opacity-60"></div>
+                <div class="absolute inset-0 bg-brand-dark bg-opacity-40"></div>
               </div>
               <div class="relative p-4 md:p-6 text-white event-content">
                 <div class="max-w-3xl mx-auto text-center flex flex-col h-full mt-4 md:mt-8">
@@ -51,7 +60,7 @@
                     <div class="event-description min-h-[3em] md:min-h-0">
                       <p class="text-base hero-tagline">{{ .description }}</p>
                     </div>
-                    <p class="text-base mb-4">
+                    <p class="text-lg mb-4">
                       <span class="inline-block bg-brand-light text-brand-dark px-3 py-1 rounded-full">
                         {{ if .endDate }}
                           {{ $startDate := time .date }}

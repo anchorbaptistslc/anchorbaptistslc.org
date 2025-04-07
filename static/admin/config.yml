@@ -22,7 +22,13 @@ collections:
         file: "content/_index.md"
         label: "Homepage"
         fields:
-          - { label: "Page Parameters", name: "params", widget: "object", required: false, fields: [{ label: "Show Title", name: "show_title", widget: "boolean", default: true }] }
+          - { label: "Page Parameters", name: "params", widget: "object", required: false, fields: [
+              { label: "Show Title", name: "show_title", widget: "boolean", default: true },
+              { label: "Events Section", name: "events_section", widget: "object", required: false, fields: [
+                { label: "Show Heading", name: "show_heading", widget: "boolean", default: true },
+                { label: "Heading Text", name: "heading", widget: "string", default: "Upcoming Events" }
+              ]}
+            ] }
           - { label: "Hero", name: "hero", widget: "object", required: false, fields: [{ label: "Title", name: "title", widget: "string" }, { label: "Tagline", name: "tagline", widget: "string" }, { label: "Image", name: "image", widget: "image" }, { label: "CTA", name: "cta", widget: "object", fields: [{ label: "Learn More", name: "learn_more", widget: "object", fields: [{ label: "Text", name: "text", widget: "string" }, { label: "URL", name: "url", widget: "string" }] }, {label: "Visit Us", name: "visit", widget: "object", fields: [{ label: "Text", name: "text", widget: "string" }, { label: "URL", name: "url", widget: "string" }] }] }] }
           - label: "Upcoming Events"
             name: "events"
@@ -36,9 +42,9 @@ collections:
               - { label: "Expiry Date", name: "expiryDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: "HH:mm", format: "YYYY-MM-DDTHH:mm:ssZ", picker_utc: true, required: true, hint: "The date after which the event should no longer display." }
               - { label: "Image", name: "image", widget: "image" }
           - { label: "Worship", name: "worship", widget: "object", required: false, fields: [{ label: "Title", name: "title", widget: "string" }] }
+          - { label: "Body", name: "body", widget: "markdown" }
           - { label: "Welcome", name: "welcome", widget: "object", fields: [{ label: "Image", name: "image", widget: "image" }, { label: "Image Caption", name: "image_alt", widget: "string" }] }
           - { label: "Featured", name: "featured", widget: "object", fields: [{ label: "Image", name: "image", widget: "image" }, {label: "Cards", name: "cards", widget: "list", fields: [{ label: "Title", name: "title", widget: "string" }, { label: "Description", name: "description", widget: "text" }, { label: "Link Text", name: "link_text", widget: "string" }, { label: "URL", name: "url", widget: "string" }] }] }
-          - { label: "Body", name: "body", widget: "markdown" }
           
 
   - name: "plan-your-visit"
@@ -49,9 +55,10 @@ collections:
         label: "Plan Your Visit"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Description", name: "description", widget: "string", hint: "Used for SEO metadata - keep it concise and on a single line" }
           - { label: "Featured Image", name: "featured_image", widget: "image" }
           - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
           - label: "Content Images"
             name: "content_images"
             required: false
@@ -60,7 +67,6 @@ collections:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt Text", name: "alt_text", widget: "string" }
               - { label: "Caption", name: "caption", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "the-gospel"
     label: "Salvation"
@@ -70,9 +76,10 @@ collections:
         label: "The Gospel"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Description", name: "description", widget: "string", hint: "Used for SEO metadata - keep it concise and on a single line" }
           - { label: "Featured Image", name: "featured_image", widget: "image" }
           - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
           - label: "Content Images"
             name: "content_images"
             required: false
@@ -81,7 +88,6 @@ collections:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt Text", name: "alt_text", widget: "string" }
               - { label: "Caption", name: "caption", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "about-pages"
     label: "About Pages"
@@ -89,9 +95,10 @@ collections:
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Description", name: "description", widget: "string", hint: "Used for SEO metadata - keep it concise and on a single line" }
       - { label: "Featured Image", name: "featured_image", widget: "image" }
       - { label: "Tagline", name: "tagline", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
       - label: "Content Images"
         name: "content_images"
         required: false
@@ -100,7 +107,6 @@ collections:
           - { label: "Image", name: "image", widget: "image" }
           - { label: "Alt Text", name: "alt_text", widget: "string" }
           - { label: "Caption", name: "caption", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "ministry-pages"
     label: "Ministry Pages"
@@ -108,7 +114,7 @@ collections:
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Description", name: "description", widget: "string", hint: "Used for SEO metadata - keep it concise and on a single line" }
       - { label: "Featured Image", name: "featured_image", widget: "image" }
       - { label: "Tagline", name: "tagline", widget: "string" }
       - { label: "Meeting Time", name: "meeting_time", widget: "string", required: false }
@@ -122,6 +128,7 @@ collections:
           - { label: "Name", name: "name", widget: "string" }
           - { label: "Role", name: "role", widget: "string" }
           - { label: "Bio", name: "bio", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
       - label: "Content Images"
         name: "content_images"
         required: false
@@ -130,4 +137,3 @@ collections:
           - { label: "Image", name: "image", widget: "image" }
           - { label: "Alt Text", name: "alt_text", widget: "string" }
           - { label: "Caption", name: "caption", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }

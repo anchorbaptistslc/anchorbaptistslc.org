@@ -215,9 +215,12 @@
             ),
 
             // Upcoming Events Section (if events exist)
-            activeEvents.length > 0 && h('div', { className: 'py-12 bg-brand-light relative' },
+            activeEvents.length > 0 && h('div', { className: 'py-12 bg-brand-light bg-opacity-80 relative shadow-lg' },
               h('div', { className: 'container mx-auto px-4' },
-                h('h2', { className: 'text-3xl mb-6 text-center hero-heading text-brand-dark' }, 'Upcoming Events'),
+                // Show heading if show_heading is true or undefined
+                (params.events_section?.show_heading !== false) && h('h2', { className: 'text-3xl mb-6 text-center hero-heading text-brand-dark' }, 
+                  params.events_section?.heading || 'Upcoming Events'
+                ),
                 
                 h('div', { className: 'event-carousel relative' },
                   // Show only the current event based on component state
@@ -229,7 +232,7 @@
                           alt: activeEvents[this.state.currentSlide].title || '',
                           className: 'w-full h-full object-cover'
                         }),
-                        h('div', { className: 'absolute inset-0 bg-brand-dark bg-opacity-60' })
+                        h('div', { className: 'absolute inset-0 bg-brand-dark bg-opacity-40' })
                       ),
                       h('div', { className: 'relative p-4 md:p-6 text-white event-content' },
                         h('div', { className: 'max-w-3xl mx-auto text-center flex flex-col h-full mt-4 md:mt-8' },
@@ -238,7 +241,7 @@
                             h('div', { className: 'event-description' },
                               h('p', { className: 'text-base hero-tagline' }, activeEvents[this.state.currentSlide].description || '')
                             ),
-                            h('p', { className: 'text-base mb-4' },
+                            h('p', { className: 'text-lg mb-4' },
                               h('span', { className: 'inline-block bg-brand-light text-brand-dark px-3 py-1 rounded-full' },
                                 formatDate(activeEvents[this.state.currentSlide].date, activeEvents[this.state.currentSlide].endDate)
                               )

@@ -33,6 +33,10 @@ function initEventCarousel() {
     let touchStartX = 0;
     let touchEndX = 0;
     
+    // Auto-rotation control
+    let autoRotateInterval = null;
+    let userInteracted = false;
+    
     function showSlide(index) {
         // Handle wrapping
         if (index >= slideCount) index = 0;
@@ -55,9 +59,22 @@ function initEventCarousel() {
         });
     }
     
+    // Function to handle user interaction
+    function handleUserInteraction() {
+        if (!userInteracted) {
+            userInteracted = true;
+            // Stop auto-rotation when user interacts
+            if (autoRotateInterval) {
+                clearInterval(autoRotateInterval);
+                autoRotateInterval = null;
+            }
+        }
+    }
+    
     // Set up dot navigation
     dots.forEach(dot => {
         dot.addEventListener('click', () => {
+            handleUserInteraction();
             const slideIndex = parseInt(dot.dataset.slide);
             showSlide(slideIndex);
         });
@@ -66,12 +83,14 @@ function initEventCarousel() {
     // Set up click area navigation
     if (prevArea) {
         prevArea.addEventListener('click', () => {
+            handleUserInteraction();
             showSlide(currentSlide - 1);
         });
     }
     
     if (nextArea) {
         nextArea.addEventListener('click', () => {
+            handleUserInteraction();
             showSlide(currentSlide + 1);
         });
     }
@@ -122,16 +141,20 @@ function initEventCarousel() {
             const threshold = 50; // Minimum swipe distance
             if (touchEndX + threshold < touchStartX) {
                 // Swipe left - go to next slide
+                handleUserInteraction();
                 showSlide(currentSlide + 1);
             } else if (touchEndX > touchStartX + threshold) {
                 // Swipe right - go to previous slide
+                handleUserInteraction();
                 showSlide(currentSlide - 1);
             }
         }
         
         // Auto advance slides every 8 seconds
-        setInterval(() => {
-            showSlide(currentSlide + 1);
+        autoRotateInterval = setInterval(() => {
+            if (!userInteracted) {
+                showSlide(currentSlide + 1);
+            }
         }, 8000);
     }
     
