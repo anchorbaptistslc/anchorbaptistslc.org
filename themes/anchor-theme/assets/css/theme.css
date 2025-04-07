@@ -234,13 +234,28 @@
 }
 
 .event-description {
-  min-height: 4rem; /* Increased height for more text */
+  min-height: 4rem; /* Base height for more text */
   max-height: 4rem;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-bottom: 1.5rem; /* Add bottom margin for desktop */
+}
+
+/* Responsive adjustments for event descriptions */
+@media (max-width: 767px) {
+  .event-card {
+    height: 320px; /* Taller on mobile to fit more content */
+  }
+  
+  .event-description {
+    min-height: 6rem; /* Taller on mobile */
+    max-height: 6rem;
+    -webkit-line-clamp: 3; /* Allow 3 lines on mobile */
+    margin-bottom: 0.75rem; /* Less margin on mobile */
+  }
 }
 
 .carousel-dot {

@@ -33,14 +33,39 @@
       CMS.registerPreviewStyle("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Work+Sans:wght@400&display=swap", { raw: false });
       
       const HomePreview = createClass({
-        render: function() {
+        getInitialState() {
+          return { currentSlide: 0 };
+        },
+        
+        nextSlide() {
           const entry = this.props.entry;
-          const hero = entry.getIn(['data', 'hero']) ? entry.getIn(['data', 'hero']).toJS() : {};
-          const worship = entry.getIn(['data', 'worship']) ? entry.getIn(['data', 'worship']).toJS() : {};
-          const welcome = entry.getIn(['data', 'welcome']) ? entry.getIn(['data', 'welcome']).toJS() : {};
-          const featured = entry.getIn(['data', 'featured']) ? entry.getIn(['data', 'featured']).toJS() : {};
-          const params = entry.getIn(['data', 'params']) ? entry.getIn(['data', 'params']).toJS() : {};
           const events = entry.getIn(['data', 'events']) ? entry.getIn(['data', 'events']).toJS() : [];
+          const activeEvents = this.getActiveEvents(events);
+          
+          this.setState(prevState => ({
+            currentSlide: (prevState.currentSlide + 1) % activeEvents.length
+          }));
+        },
+        
+        prevSlide() {
+          const entry = this.props.entry;
+          const events = entry.getIn(['data', 'events']) ? entry.getIn(['data', 'events']).toJS() : [];
+          const activeEvents = this.getActiveEvents(events);
+          
+          this.setState(prevState => ({
+            currentSlide: prevState.currentSlide === 0 
+              ? activeEvents.length - 1 
+              : prevState.currentSlide - 1
+          }));
+        },
+        
+        goToSlide(index) {
+          this.setState({ currentSlide: index });
+        },
+        
+        // Helper to get non-expired events
+        getActiveEvents(events) {
+          const now = new Date();
           
           // Process events to use expiryDate
           const processedEvents = events.map(function(event) {
@@ -56,8 +81,7 @@
           });
           
           // Filter for non-expired events
-          const now = new Date();
-          const activeEvents = processedEvents.filter(function(event) {
+          return processedEvents.filter(function(event) {
             try {
               const eventExpiry = new Date(event.processedExpiryDate);
               return eventExpiry >= now;
@@ -65,7 +89,20 @@
               return true; // If date parsing fails, include the event
             }
           });
-
+        },
+        
+        render: function() {
+          const entry = this.props.entry;
+          const hero = entry.getIn(['data', 'hero']) ? entry.getIn(['data', 'hero']).toJS() : {};
+          const worship = entry.getIn(['data', 'worship']) ? entry.getIn(['data', 'worship']).toJS() : {};
+          const welcome = entry.getIn(['data', 'welcome']) ? entry.getIn(['data', 'welcome']).toJS() : {};
+          const featured = entry.getIn(['data', 'featured']) ? entry.getIn(['data', 'featured']).toJS() : {};
+          const params = entry.getIn(['data', 'params']) ? entry.getIn(['data', 'params']).toJS() : {};
+          const events = entry.getIn(['data', 'events']) ? entry.getIn(['data', 'events']).toJS() : [];
+          
+          // Get active events using the helper method
+          const activeEvents = this.getActiveEvents(events);
+          
           // Helper function to format dates
           const formatDate = function(dateString, endDateString) {
             if (!dateString) return 'Event Date';
@@ -183,57 +220,57 @@
                 h('h2', { className: 'text-3xl mb-6 text-center hero-heading text-brand-dark' }, 'Upcoming Events'),
                 
                 h('div', { className: 'event-carousel relative' },
-                  // Show only the first event in the preview for simplicity
-                  h('div', { className: 'event-slide active' },
+                  // Show only the current event based on component state
+                  activeEvents.length > 0 && h('div', { className: 'event-slide active' },
                     h('div', { className: 'relative rounded-lg overflow-hidden shadow-lg event-card' },
                       h('div', { className: 'absolute inset-0' },
                         h('img', {
-                          src: activeEvents[0].image ? this.props.getAsset(activeEvents[0].image).toString() : '',
-                          alt: activeEvents[0].title || '',
+                          src: activeEvents[this.state.currentSlide].image ? this.props.getAsset(activeEvents[this.state.currentSlide].image).toString() : '',
+                          alt: activeEvents[this.state.currentSlide].title || '',
                           className: 'w-full h-full object-cover'
                         }),
                         h('div', { className: 'absolute inset-0 bg-brand-dark bg-opacity-60' })
                       ),
                       h('div', { className: 'relative p-4 md:p-6 text-white event-content' },
-                        h('div', { className: 'max-w-3xl mx-auto text-center flex flex-col h-full mt-8' },
+                        h('div', { className: 'max-w-3xl mx-auto text-center flex flex-col h-full mt-4 md:mt-8' },
                           h('div', { className: 'flex-grow' },
-                            h('h3', { className: 'text-2xl md:text-3xl hero-heading mb-3' }, activeEvents[0].title || ''),
+                            h('h3', { className: 'text-2xl md:text-3xl hero-heading mb-3' }, activeEvents[this.state.currentSlide].title || ''),
                             h('div', { className: 'event-description' },
-                              h('p', { className: 'text-lg mb-3' }, activeEvents[0].description || '')
+                              h('p', { className: 'text-base hero-tagline' }, activeEvents[this.state.currentSlide].description || '')
                             ),
                             h('p', { className: 'text-base mb-4' },
                               h('span', { className: 'inline-block bg-brand-light text-brand-dark px-3 py-1 rounded-full' },
-                                formatDate(activeEvents[0].date, activeEvents[0].endDate)
+                                formatDate(activeEvents[this.state.currentSlide].date, activeEvents[this.state.currentSlide].endDate)
                               )
                             )
                           ),
                           
-                          // Show indicator dots if multiple events
+                          // Indicator dots for navigation (centered at bottom)
                           activeEvents.length > 1 && h('div', { className: 'flex justify-center gap-2 mt-auto pb-2' },
-                            activeEvents.map(function(_, index) {
-                              return h('button', { 
+                            activeEvents.map((_, index) => 
+                              h('button', { 
                                 key: index,
-                                className: `carousel-dot ${index === 0 ? 'active' : ''}`,
-                                'data-slide': index
-                              },
-                                h('span', { 
-                                  className: `block w-2 h-2 rounded-full ${index === 0 ? 'bg-brand-dark' : 'bg-gray-400'} transition-colors`
-                                })
-                              );
-                            })
+                                className: `w-2 h-2 rounded-full ${index === this.state.currentSlide ? 'bg-brand-dark' : 'bg-gray-400'} transition-colors`,
+                                onClick: () => this.goToSlide(index)
+                              })
+                            )
                           )
                         )
                       )
                     )
                   ),
                   
-                  // Navigation areas for multiple events
+                  // Left and right click areas for navigation (only if multiple events)
                   activeEvents.length > 1 && [
                     h('div', {
-                      className: 'carousel-click-area carousel-prev absolute inset-y-0 left-0 w-1/5 z-10 cursor-pointer'
+                      className: 'absolute inset-y-0 left-0 w-1/5 z-10 cursor-pointer',
+                      onClick: this.prevSlide,
+                      key: 'prev'
                     }),
                     h('div', {
-                      className: 'carousel-click-area carousel-next absolute inset-y-0 right-0 w-1/5 z-10 cursor-pointer'
+                      className: 'absolute inset-y-0 right-0 w-1/5 z-10 cursor-pointer',
+                      onClick: this.nextSlide,
+                      key: 'next'
                     })
                   ]
                 )
