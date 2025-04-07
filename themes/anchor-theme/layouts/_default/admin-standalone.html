@@ -47,7 +47,10 @@
             // Set expiry date to expiryDate if available, or event date if not
             const expiryDate = event.expiryDate || event.date;
             return Object.assign({}, event, {
-              processedExpiryDate: expiryDate
+              processedExpiryDate: expiryDate,
+              // Ensure date is a string, not a Date object
+              date: typeof event.date === 'object' ? event.date.toString() : event.date,
+              expiryDate: typeof event.expiryDate === 'object' ? event.expiryDate.toString() : event.expiryDate
             });
           });
           
@@ -61,6 +64,38 @@
               return true; // If date parsing fails, include the event
             }
           });
+
+          // Helper function to format dates
+          const formatDate = function(dateString) {
+            if (!dateString) return 'Event Date';
+            
+            try {
+              // If dateString is a Date object, get its ISO string
+              if (typeof dateString === 'object' && dateString instanceof Date) {
+                dateString = dateString.toISOString();
+              }
+              
+              // Create Date object from the string
+              const utcDate = new Date(dateString);
+              
+              // Format using Intl.DateTimeFormat with UTC timezone to preserve the time as entered
+              const formatter = new Intl.DateTimeFormat('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                timeZone: 'UTC',
+                hour12: true
+              });
+              
+              return formatter.format(utcDate);
+            } catch (e) {
+              console.error('Error formatting date:', e);
+              return String(dateString);
+            }
+          };
           
           return h('div', { className: 'bg-gray-50' },
             // Hero Section
@@ -102,7 +137,7 @@
                 h('div', { className: 'event-carousel relative' },
                   // Show only the first event in the preview for simplicity
                   h('div', { className: 'event-slide active' },
-                    h('div', { className: 'relative rounded-lg overflow-hidden shadow-lg' },
+                    h('div', { className: 'relative rounded-lg overflow-hidden shadow-lg event-card' },
                       h('div', { className: 'absolute inset-0' },
                         h('img', {
                           src: activeEvents[0].image ? this.props.getAsset(activeEvents[0].image).toString() : '',
@@ -111,18 +146,22 @@
                         }),
                         h('div', { className: 'absolute inset-0 bg-brand-dark bg-opacity-60' })
                       ),
-                      h('div', { className: 'relative p-8 md:p-12 text-white' },
-                        h('div', { className: 'max-w-3xl mx-auto text-center' },
-                          h('h3', { className: 'text-3xl md:text-4xl font-bold mb-4' }, activeEvents[0].title || ''),
-                          h('p', { className: 'text-xl mb-4' }, activeEvents[0].description || ''),
-                          h('p', { className: 'text-lg mb-6' },
-                            h('span', { className: 'inline-block bg-brand-light text-brand-dark px-4 py-2 rounded-full' },
-                              activeEvents[0].date || 'Event Date'
+                      h('div', { className: 'relative p-4 md:p-6 text-white event-content' },
+                        h('div', { className: 'max-w-3xl mx-auto text-center flex flex-col h-full mt-8' },
+                          h('div', { className: 'flex-grow' },
+                            h('h3', { className: 'text-2xl md:text-3xl hero-heading mb-3' }, activeEvents[0].title || ''),
+                            h('div', { className: 'event-description' },
+                              h('p', { className: 'text-lg mb-3' }, activeEvents[0].description || '')
+                            ),
+                            h('p', { className: 'text-base mb-4' },
+                              h('span', { className: 'inline-block bg-brand-light text-brand-dark px-3 py-1 rounded-full' },
+                                formatDate(activeEvents[0].date)
+                              )
                             )
                           ),
                           
                           // Show indicator dots if multiple events
-                          activeEvents.length > 1 && h('div', { className: 'flex justify-center gap-2 mt-6' },
+                          activeEvents.length > 1 && h('div', { className: 'flex justify-center gap-2 mt-auto pb-2' },
                             activeEvents.map(function(_, index) {
                               return h('button', { 
                                 key: index,
@@ -130,7 +169,7 @@
                                 'data-slide': index
                               },
                                 h('span', { 
-                                  className: `block w-3 h-3 rounded-full ${index === 0 ? 'bg-brand-dark' : 'bg-gray-400'} transition-colors`
+                                  className: `block w-2 h-2 rounded-full ${index === 0 ? 'bg-brand-dark' : 'bg-gray-400'} transition-colors`
                                 })
                               );
                             })
@@ -140,44 +179,14 @@
                     )
                   ),
                   
-                  // Navigation arrows for multiple events
+                  // Navigation areas for multiple events
                   activeEvents.length > 1 && [
-                    h('button', {
-                      className: 'carousel-nav prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-80 rounded-full p-2 shadow-lg z-10 text-brand-dark hover:bg-opacity-100'
-                    },
-                      h('svg', {
-                        xmlns: 'http://www.w3.org/2000/svg',
-                        className: 'h-6 w-6',
-                        fill: 'none',
-                        viewBox: '0 0 24 24',
-                        stroke: 'currentColor'
-                      },
-                        h('path', {
-                          strokeLinecap: 'round',
-                          strokeLinejoin: 'round',
-                          strokeWidth: '2',
-                          d: 'M15 19l-7-7 7-7'
-                        })
-                      )
-                    ),
-                    h('button', {
-                      className: 'carousel-nav next absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-80 rounded-full p-2 shadow-lg z-10 text-brand-dark hover:bg-opacity-100'
-                    },
-                      h('svg', {
-                        xmlns: 'http://www.w3.org/2000/svg',
-                        className: 'h-6 w-6',
-                        fill: 'none',
-                        viewBox: '0 0 24 24',
-                        stroke: 'currentColor'
-                      },
-                        h('path', {
-                          strokeLinecap: 'round',
-                          strokeLinejoin: 'round',
-                          strokeWidth: '2',
-                          d: 'M9 5l7 7-7 7'
-                        })
-                      )
-                    )
+                    h('div', {
+                      className: 'carousel-click-area carousel-prev absolute inset-y-0 left-0 w-1/5 z-10 cursor-pointer'
+                    }),
+                    h('div', {
+                      className: 'carousel-click-area carousel-next absolute inset-y-0 right-0 w-1/5 z-10 cursor-pointer'
+                    })
                   ]
                 )
               )

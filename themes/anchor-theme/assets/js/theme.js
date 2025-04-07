@@ -24,10 +24,14 @@ function initEventCarousel() {
     const slides = carousel.querySelector('.event-slides');
     const allSlides = carousel.querySelectorAll('.event-slide');
     const dots = carousel.querySelectorAll('.carousel-dot');
-    const prevBtn = carousel.querySelector('.carousel-nav.prev');
-    const nextBtn = carousel.querySelector('.carousel-nav.next');
+    const prevArea = carousel.querySelector('.carousel-click-area.carousel-prev');
+    const nextArea = carousel.querySelector('.carousel-click-area.carousel-next');
     let currentSlide = 0;
     const slideCount = allSlides.length;
+    
+    // Track touch/mouse events for swiping
+    let touchStartX = 0;
+    let touchEndX = 0;
     
     function showSlide(index) {
         // Handle wrapping
@@ -59,21 +63,73 @@ function initEventCarousel() {
         });
     });
     
-    // Set up arrow navigation
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
+    // Set up click area navigation
+    if (prevArea) {
+        prevArea.addEventListener('click', () => {
             showSlide(currentSlide - 1);
         });
     }
     
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
+    if (nextArea) {
+        nextArea.addEventListener('click', () => {
             showSlide(currentSlide + 1);
         });
     }
     
-    // Auto advance slides every 8 seconds if more than one
+    // Set up touch/swipe navigation
     if (slideCount > 1) {
+        // Touch events for mobile
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+        
+        // Mouse events for desktop
+        let isMouseDown = false;
+        
+        carousel.addEventListener('mousedown', (e) => {
+            isMouseDown = true;
+            touchStartX = e.screenX;
+            // Prevent text selection during swipe
+            e.preventDefault();
+        });
+        
+        carousel.addEventListener('mousemove', (e) => {
+            if (!isMouseDown) return;
+            e.preventDefault(); // Prevent text selection
+        });
+        
+        carousel.addEventListener('mouseup', (e) => {
+            if (!isMouseDown) return;
+            touchEndX = e.screenX;
+            isMouseDown = false;
+            handleSwipe();
+        });
+        
+        carousel.addEventListener('mouseleave', (e) => {
+            if (!isMouseDown) return;
+            touchEndX = e.screenX;
+            isMouseDown = false;
+            handleSwipe();
+        });
+        
+        // Handle the swipe direction
+        function handleSwipe() {
+            const threshold = 50; // Minimum swipe distance
+            if (touchEndX + threshold < touchStartX) {
+                // Swipe left - go to next slide
+                showSlide(currentSlide + 1);
+            } else if (touchEndX > touchStartX + threshold) {
+                // Swipe right - go to previous slide
+                showSlide(currentSlide - 1);
+            }
+        }
+        
+        // Auto advance slides every 8 seconds
         setInterval(() => {
             showSlide(currentSlide + 1);
         }, 8000);

@@ -220,6 +220,29 @@
   opacity: 1;
 }
 
+/* Event card fixed height */
+.event-card {
+  height: 276px; /* Match homepage hero height */
+}
+
+.event-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 2rem; /* Add space at the top of the banner */
+}
+
+.event-description {
+  min-height: 4rem; /* Increased height for more text */
+  max-height: 4rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .carousel-dot {
   transition: transform 0.2s ease;
 }
@@ -230,4 +253,19 @@
 
 .carousel-dot span {
   transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-click-area {
+  /* Invisible areas for clicking, but make them slightly visible on hover in development */
+  transition: background-color 0.2s ease;
+}
+
+.carousel-click-area:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.event-carousel {
+  /* Make the carousel container a touch surface */
+  touch-action: pan-y;
+  user-select: none;
 }

@@ -31,8 +31,8 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
-              - { label: "Event Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: "HH:mm", format: "YYYY-MM-DD HH:mm" }
-              - { label: "Expiry Date", name: "expiryDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: "HH:mm", format: "YYYY-MM-DD HH:mm", required: false, hint: "The date after which the event should no longer display. If not set, event will hide after event date." }
+              - { label: "Event Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: "HH:mm", format: "YYYY-MM-DDTHH:mm:ssZ", picker_utc: true }
+              - { label: "Expiry Date", name: "expiryDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: "HH:mm", format: "YYYY-MM-DDTHH:mm:ssZ", picker_utc: true, required: false, hint: "The date after which the event should no longer display. If not set, event will hide after event date." }
               - { label: "Image", name: "image", widget: "image" }
           - { label: "Worship", name: "worship", widget: "object", required: false, fields: [{ label: "Title", name: "title", widget: "string" }] }
           - { label: "Welcome", name: "welcome", widget: "object", fields: [{ label: "Image", name: "image", widget: "image" }, { label: "Image Caption", name: "image_alt", widget: "string" }] }
