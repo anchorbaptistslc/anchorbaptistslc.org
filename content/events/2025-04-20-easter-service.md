@@ -1,6 +1,8 @@
 ---
 title: Easter Sunday Service
-description: Join us for a special Easter worship service celebrating the resurrection of Jesus Christ. The service will include special music, children's program, and a message of hope.
+description: Join us in celebrating the resurrection of Jesus Christ! The
+  service will include special music, a Bible message, and a children's candy
+  scramble to follow.
 dates:
   start: 2025-04-20T11:00:00.000Z
 expiryDate: 2025-04-21T00:00:00.000Z
