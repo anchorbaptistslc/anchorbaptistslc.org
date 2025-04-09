@@ -4,10 +4,7 @@ featured_image: /images/uploads/anchor-friend-day-2025-03-3072.jpg
 tagline: Praising God through song and worship
 meeting_time: ""
 location: ""
-leaders:
-  - name: Jordan Lendt
-    role: Music Director
-    bio: Leading our congregation in worship through music and song.
+leaders: []
 weight: 15
 description: Music programs and worship at Anchor Baptist Church
 content_images:
