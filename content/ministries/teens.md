@@ -18,11 +18,11 @@ What a privilege it is to impact the next generation for Christ! At Anchor Bapti
 ## Activities & Events
 
 Our teen ministry includes:
-- Weekly Bible studies
+- Weekly Bible class
 - Youth conferences
-- Summer camps
+- Missions Trips
 - Service opportunities
-- Fun activities and fellowship
+- Monthly fun activities and fellowship
 
 ## Get Involved
 
@@ -31,3 +31,5 @@ Service opportunities are available through:
 - Children's work
 - Community outreach
 - Church events 
+- Hospitality
+- Media ministry
