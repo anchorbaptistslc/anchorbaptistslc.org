@@ -1,15 +1,12 @@
 ---
-title: "Outreach"
-description: "Outreach Ministry at Anchor Baptist Church"
+title: Outreach
+featured_image: /images/uploads/anchor-friend-day-0427.jpg
+tagline: Sharing the Gospel across the street and around the world
+meeting_time: ""
+location: ""
+leaders: []
 weight: 50
-featured_image: "/images/uploads/anchor-friend-day-0427.jpg"
-tagline: "Sharing the Gospel across the street and around the world"
-meeting_time: "Saturdays at 10:00 AM"
-location: "Meet at Church"
-leaders:
-  - name: "Outreach Team"
-    role: "Ministry Leaders"
-    bio: "Dedicated to sharing the Gospel and reaching our community for Christ."
+description: Outreach Ministry at Anchor Baptist Church
 ---
 
 As Christians it is our duty to go forth and share the gospel of Jesus Christ. At Anchor Baptist Church we believe in that the Great Commission that Jesus gave His church encompasses every individual, across the street and around the world. 
