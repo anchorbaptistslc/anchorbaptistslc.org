@@ -1,6 +1,8 @@
 ---
-title: Lifting Up Jesus Spring Revival
-description: Spring Revival with Dave McCracken, Paul Hoover, Nathan Kirkman, and Jason Atwood. Join us as we continue Lifting Up Jesus.
+title: 2025 Spring Revival
+description: Spring Revival with Dave McCracken, Paul Hoover, Nathan Kirkman,
+  and Jason Atwood. Join us for this encouraging time of preaching, singing, and
+  fellowship!
 dates:
   start: 2025-05-04T10:00:00.000Z
   end: 2025-05-07T19:00:00.000Z
@@ -16,4 +18,3 @@ _build:
   list: true
   render: false
 ---
-
