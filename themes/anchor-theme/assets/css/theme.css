@@ -203,3 +203,84 @@
     background-position: center;
     opacity: 0.15;
 }
+
+/* Event Carousel Styles */
+.event-slides {
+  position: relative;
+}
+
+.event-slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.event-slide.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Event card fixed height */
+.event-card {
+  height: 276px; /* Match homepage hero height */
+}
+
+.event-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 2rem; /* Add space at the top of the banner */
+}
+
+.event-description {
+  min-height: 4rem; /* Base height for more text */
+  max-height: 4rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 1.5rem; /* Add bottom margin for desktop */
+}
+
+/* Responsive adjustments for event descriptions */
+@media (max-width: 767px) {
+  .event-card {
+    height: 320px; /* Taller on mobile to fit more content */
+  }
+  
+  .event-description {
+    min-height: 6rem; /* Taller on mobile */
+    max-height: 6rem;
+    -webkit-line-clamp: 3; /* Allow 3 lines on mobile */
+    margin-bottom: 0.75rem; /* Less margin on mobile */
+  }
+}
+
+.carousel-dot {
+  transition: transform 0.2s ease;
+}
+
+.carousel-dot.active span {
+  transform: scale(1.3);
+}
+
+.carousel-dot span {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-click-area {
+  /* Invisible areas for clicking, but make them slightly visible on hover in development */
+  transition: background-color 0.2s ease;
+}
+
+.carousel-click-area:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.event-carousel {
+  /* Make the carousel container a touch surface */
+  touch-action: pan-y;
+  user-select: none;
+}

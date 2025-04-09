@@ -1,0 +1,112 @@
+{{ $now := now }}
+{{ $events := slice }}
+
+{{/* Get events from the events section */}}
+{{ $eventsPage := .Site.GetPage "section" "events" }}
+
+{{ range $eventsPage.Pages }}
+  {{ $eventDate := time .Params.dates.start }}
+  {{ $endDate := $eventDate }}
+  {{ if .Params.dates.end }}
+    {{ $endDate = time .Params.dates.end }}
+  {{ end }}
+  {{ $expiryDate := time .Params.expiryDate }}
+  
+  {{ if ge $expiryDate $now }}
+    {{ $events = $events | append . }}
+  {{ end }}
+{{ end }}
+
+{{/* Sort events by their start date */}}
+{{ $events = sort $events "Params.dates.start" "asc" }}
+
+{{ if gt (len $events) 0 }}
+<div id="upcoming-events" class="py-12 bg-brand-light bg-opacity-80 relative shadow-lg">
+  <div class="container mx-auto px-4">
+    {{ $showHeading := true }}
+    {{ with .Params.params.events_section }}
+      {{ $showHeading = .show_heading }}
+    {{ end }}
+
+    {{ if $showHeading }}
+      <h2 class="text-3xl mb-6 text-center hero-heading text-brand-dark">
+        {{ with .Params.params.events_section.heading }}{{ . }}{{ else }}Upcoming Events{{ end }}
+      </h2>
+    {{ end }}
+    
+    <div class="event-carousel relative">
+      <div class="event-slides" data-current="0">
+        {{ range $index, $event := $events }}
+          {{ $eventDate := time $event.Params.dates.start }}
+          {{ $endDate := $eventDate }}
+          {{ if $event.Params.dates.end }}
+            {{ $endDate = time $event.Params.dates.end }}
+          {{ end }}
+          
+          <div class="event-slide {{ if eq $index 0 }}active{{ end }}" 
+               data-event-date="{{ $event.Params.dates.start }}" 
+               {{ with $event.Params.dates.end }}data-event-end-date="{{ . }}"{{ end }}
+               data-event-expiry="{{ $event.Params.expiryDate }}">
+            <div class="relative rounded-lg overflow-hidden shadow-lg event-card">
+              <div class="absolute inset-0">
+                <img src="{{ partial "image.html" (dict "path" $event.Params.image "width" "1200") }}" 
+                     alt="{{ $event.Title }}" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-brand-dark bg-opacity-40"></div>
+              </div>
+              <div class="relative p-4 md:p-6 text-white event-content">
+                <div class="max-w-3xl mx-auto text-center flex flex-col h-full mt-4 md:mt-8">
+                  <div class="flex-grow">
+                    <h3 class="text-2xl md:text-3xl hero-heading mb-3">{{ $event.Title }}</h3>
+                    <div class="event-description min-h-[3em] md:min-h-0">
+                      <p class="text-base hero-tagline">{{ $event.Description }}</p>
+                    </div>
+                    <p class="text-lg mb-4">
+                      <a href="/events#event-{{ $event.File.ContentBaseName }}" 
+                         class="inline-block bg-brand-light text-brand-dark px-3 py-1 rounded-full hover:bg-brand-dark hover:text-white transition-colors duration-200">
+                        {{ if $event.Params.dates.end }}
+                          {{ $startDate := time $event.Params.dates.start }}
+                          {{ $endDate := time $event.Params.dates.end }}
+                          
+                          {{ if ne ($startDate.Format "2006") ($endDate.Format "2006") }}
+                            {{/* Different years */}}
+                            {{ $startDate.Format "January 2, 2006" }} - {{ $endDate.Format "January 2, 2006" }}
+                          {{ else if ne ($startDate.Format "January") ($endDate.Format "January") }}
+                            {{/* Same year, different months */}}
+                            {{ $startDate.Format "January 2" }} - {{ $endDate.Format "January 2, 2006" }}
+                          {{ else }}
+                            {{/* Same month and year */}}
+                            {{ $startDate.Format "January" }} {{ $startDate.Format "2" }}-{{ $endDate.Format "2" }}, {{ $startDate.Format "2006" }}
+                          {{ end }}
+                        {{ else }}
+                          {{ $eventDate.Format "Monday, January 2, 2006" }} at {{ $eventDate.Format "3:04 PM" }}
+                        {{ end }}
+                      </a>
+                    </p>
+                  </div>
+                  
+                  {{ if gt (len $events) 1 }}
+                  <div class="flex justify-center gap-2 mt-auto pb-2">
+                    {{ range $dotIndex, $_ := $events }}
+                    <button class="carousel-dot {{ if eq $dotIndex $index }}active{{ end }}" data-slide="{{ $dotIndex }}">
+                      <span class="block w-2 h-2 rounded-full {{ if eq $dotIndex $index }}bg-brand-dark{{ else }}bg-gray-400{{ end }} transition-colors"></span>
+                    </button>
+                    {{ end }}
+                  </div>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+      
+      {{ if gt (len $events) 1 }}
+      <!-- Left and right click areas for navigation -->
+      <div class="carousel-click-area carousel-prev absolute inset-y-0 left-0 w-1/5 z-10 cursor-pointer"></div>
+      <div class="carousel-click-area carousel-next absolute inset-y-0 right-0 w-1/5 z-10 cursor-pointer"></div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }} 
