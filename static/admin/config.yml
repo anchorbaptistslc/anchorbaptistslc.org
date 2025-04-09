@@ -21,31 +21,95 @@ collections:
       - name: "home"
         file: "content/_index.md"
         label: "Homepage"
+        preview_path: "/admin/index.html"
         fields:
-          - { label: "Page Parameters", name: "params", widget: "object", required: false, fields: [
-              { label: "Show Title", name: "show_title", widget: "boolean", default: true },
-              { label: "Events Section", name: "events_section", widget: "object", required: false, fields: [
-                { label: "Show Heading", name: "show_heading", widget: "boolean", default: true },
-                { label: "Heading Text", name: "heading", widget: "string", default: "Upcoming Events" }
-              ]}
-            ] }
-          - { label: "Hero", name: "hero", widget: "object", required: false, fields: [{ label: "Title", name: "title", widget: "string" }, { label: "Tagline", name: "tagline", widget: "string" }, { label: "Image", name: "image", widget: "image" }, { label: "CTA", name: "cta", widget: "object", fields: [{ label: "Learn More", name: "learn_more", widget: "object", fields: [{ label: "Text", name: "text", widget: "string" }, { label: "URL", name: "url", widget: "string" }] }, {label: "Visit Us", name: "visit", widget: "object", fields: [{ label: "Text", name: "text", widget: "string" }, { label: "URL", name: "url", widget: "string" }] }] }] }
-          - label: "Upcoming Events"
-            name: "events"
-            widget: "list"
-            required: false
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Event Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: "HH:mm", format: "YYYY-MM-DDTHH:mm:ssZ", picker_utc: true }
-              - { label: "End Date", name: "endDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: "HH:mm", format: "YYYY-MM-DDTHH:mm:ssZ", picker_utc: true, required: false, hint: "For multi-day events. If set, date range will be displayed without times." }
-              - { label: "Expiry Date", name: "expiryDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: "HH:mm", format: "YYYY-MM-DDTHH:mm:ssZ", picker_utc: true, required: true, hint: "The date after which the event should no longer display." }
-              - { label: "Image", name: "image", widget: "image" }
-          - { label: "Worship", name: "worship", widget: "object", required: false, fields: [{ label: "Title", name: "title", widget: "string" }] }
-          - { label: "Body", name: "body", widget: "markdown" }
-          - { label: "Welcome", name: "welcome", widget: "object", fields: [{ label: "Image", name: "image", widget: "image" }, { label: "Image Caption", name: "image_alt", widget: "string" }] }
-          - { label: "Featured", name: "featured", widget: "object", fields: [{ label: "Image", name: "image", widget: "image" }, {label: "Cards", name: "cards", widget: "list", fields: [{ label: "Title", name: "title", widget: "string" }, { label: "Description", name: "description", widget: "text" }, { label: "Link Text", name: "link_text", widget: "string" }, { label: "URL", name: "url", widget: "string" }] }] }
-          
+          - {label: "Page Parameters", name: "params", widget: "object", fields: [
+              {label: "Show Title", name: "show_title", widget: "boolean", default: false},
+              {label: "Events Section", name: "events_section", widget: "object", fields: [
+                  {label: "Show Heading", name: "show_heading", widget: "boolean", default: true},
+                  {label: "Heading", name: "heading", widget: "string", default: "Upcoming Events"}
+                ]}
+            ]}
+          - {label: "Hero", name: "hero", widget: "object", fields: [
+              {label: "Title", name: "title", widget: "string"},
+              {label: "Tagline", name: "tagline", widget: "string"},
+              {label: "Image", name: "image", widget: "image"},
+              {label: "Call to Action", name: "cta", widget: "object", fields: [
+                  {label: "Learn More", name: "learn_more", widget: "object", fields: [
+                      {label: "Text", name: "text", widget: "string"},
+                      {label: "URL", name: "url", widget: "string"}
+                    ]},
+                  {label: "Visit", name: "visit", widget: "object", fields: [
+                      {label: "Text", name: "text", widget: "string"},
+                      {label: "URL", name: "url", widget: "string"}
+                    ]}
+                ]}
+            ]}
+          - {label: "Events Information", name: "events_info", widget: "string", hint: "Events are managed in the Events section and will automatically appear on the homepage based on their dates. This field is for informational purposes only and will not be saved to your content."}
+          - {label: "Worship", name: "worship", widget: "object", fields: [
+              {label: "Title", name: "title", widget: "string"}
+            ]}
+          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Welcome", name: "welcome", widget: "object", fields: [
+              {label: "Image", name: "image", widget: "image"},
+              {label: "Image Alt Text", name: "image_alt", widget: "string"}
+            ]}
+          - {label: "Featured", name: "featured", widget: "object", fields: [
+              {label: "Image", name: "image", widget: "image"},
+              {label: "Cards", name: "cards", widget: "list", fields: [
+                  {label: "Title", name: "title", widget: "string"},
+                  {label: "Description", name: "description", widget: "text"},
+                  {label: "Link Text", name: "link_text", widget: "string"},
+                  {label: "URL", name: "url", widget: "string"}
+                ]}
+            ]}
+
+  - name: "events-overview"
+    label: "Events"
+    files:
+      - name: "events-index"
+        label: "Events Overview Page"
+        file: "content/events/_index.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Tagline", name: "tagline", widget: "string"}
+          - {label: "Featured Image", name: "featured_image", widget: "image"}
+          - {label: "Description", name: "body", widget: "markdown"}
+          - {label: "Layout", name: "layout", widget: "hidden", default: "events"}
+          - {label: "Type", name: "type", widget: "hidden", default: "events"}
+          - {label: "Is Event", name: "isEvent", widget: "hidden", default: false}
+          - {label: "Build Config", name: "_build", widget: "hidden", default: {
+              list: true,
+              render: true
+            }}
+
+  - name: "events-items"
+    label: "Event Items"
+    label_singular: "Event"
+    folder: "content/events"
+    create: true
+    filter: {field: "isEvent", value: true}
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Dates", name: "dates", widget: "object", fields: [
+          {label: "Start", name: "start", widget: "datetime", picker_utc: true},
+          {label: "End", name: "end", widget: "datetime", picker_utc: true, required: false}
+        ]}
+      - {label: "Expiry Date", name: "expiryDate", widget: "datetime", picker_utc: true}
+      - {label: "Banner Image", name: "image", widget: "image"}
+      - {label: "Content Images", name: "content_images", widget: "list", required: false, fields: [
+          {label: "Image", name: "image", widget: "image"},
+          {label: "Caption", name: "caption", widget: "string", required: false}
+        ]}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "events"}
+      - {label: "Type", name: "type", widget: "hidden", default: "events"}
+      - {label: "Is Event", name: "isEvent", widget: "hidden", default: true}
+      - {label: "Build Config", name: "_build", widget: "hidden", default: {
+          list: true,
+          render: false
+        }}
 
   - name: "plan-your-visit"
     label: "Visit"

@@ -10,21 +10,6 @@ hero:
     visit:
       text: Visit Us
       url: /plan-your-visit/
-events:
-  - title: Easter Sunday Service
-    description: Join us for a special Easter worship service celebrating the
-      resurrection of Jesus Christ. The service will include special music,
-      children's program, and a message of hope.
-    date: 2025-04-20T11:00:00.000Z
-    expiryDate: 2025-04-21T00:00:00.000Z
-    image: /images/uploads/anchor-friend-day-2025-03-3070.jpg
-  - title: Lifting Up Jesus Spring Revival
-    description: Spring Revival with Dave McCracken, Paul Hoover, Nathan Kirkman,
-      and Jason Atwood. Join us as we continue Lifting Up Jesus.
-    date: 2025-05-04T10:00:00.000Z
-    expiryDate: 2025-05-08T00:00:00-06:00
-    image: /images/uploads/harvest-day-2023-10-1171.jpg
-    endDate: 2025-05-07T19:00:00.000Z
 worship:
   title: Join Us for Worship
 welcome:
