@@ -12,7 +12,58 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize the event carousel if it exists on the page
     initEventCarousel();
+    
+    // Initialize the events list page functionality if it exists
+    initEventsList();
 });
+
+/**
+ * Initializes the events list page functionality
+ */
+function initEventsList() {
+    const eventsPage = document.querySelector('.events-page');
+    if (!eventsPage) return;
+    
+    // Check for expired events client-side
+    const removeExpiredEvents = () => {
+        const now = new Date();
+        let hasRemoved = false;
+        
+        // Get all event elements
+        const eventElements = document.querySelectorAll('.events-page [id^="event-"]');
+        
+        eventElements.forEach(eventElement => {
+            try {
+                // Get the expiry date from the data attribute
+                const expiryDateStr = eventElement.getAttribute('data-event-expiry');
+                if (!expiryDateStr) return;
+                
+                const expiryDate = new Date(expiryDateStr);
+                if (expiryDate < now) {
+                    eventElement.style.display = 'none';
+                    hasRemoved = true;
+                }
+            } catch (e) {
+                console.error('Error parsing expiry date:', e);
+            }
+        });
+        
+        // Show "No upcoming events" message if all events are expired
+        const noEventsMessage = document.querySelector('.events-page .text-center');
+        if (hasRemoved && noEventsMessage) {
+            const visibleEvents = document.querySelectorAll('.events-page [id^="event-"]:not([style*="display: none"])');
+            if (visibleEvents.length === 0) {
+                noEventsMessage.style.display = 'block';
+            } else {
+                noEventsMessage.style.display = 'none';
+            }
+        }
+    };
+    
+    // Check on load and periodically
+    removeExpiredEvents();
+    setInterval(removeExpiredEvents, 60000); // Check every minute
+}
 
 /**
  * Initializes the event carousel functionality
@@ -165,14 +216,17 @@ function initEventCarousel() {
         
         allSlides.forEach(slide => {
             try {
-                // The data-event-end attribute contains expiryDate or date
-                const expiryDate = new Date(slide.dataset.eventEnd);
+                // Get the expiry date from the data attribute
+                const expiryDateStr = slide.dataset.eventExpiry;
+                if (!expiryDateStr) return;
+                
+                const expiryDate = new Date(expiryDateStr);
                 if (expiryDate < now) {
                     slide.style.display = 'none';
                     hasRemoved = true;
                 }
             } catch (e) {
-                console.error('Error parsing expiry date:', slide.dataset.eventEnd, e);
+                console.error('Error parsing expiry date:', slide.dataset.eventExpiry, e);
             }
         });
         

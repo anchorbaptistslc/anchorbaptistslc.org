@@ -33,7 +33,9 @@
           {{ $endDate = time .Params.dates.end }}
         {{ end }}
         
-        <div id="event-{{ .File.ContentBaseName }}" class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-16">
+        <div id="event-{{ .File.ContentBaseName }}" 
+             class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-16"
+             data-event-expiry="{{ .Params.expiryDate }}">
           <div class="md:col-span-2 event-details">
             <h2 class="text-brand-dark mb-2">
               <a href="#event-{{ .File.ContentBaseName }}" class="hover:text-brand-link">{{ .Title }}</a>
