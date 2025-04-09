@@ -1,17 +1,14 @@
 ---
-title: "Bus Ministry"
-description: "Transportation ministry at Anchor Baptist Church"
+title: Bus Ministry
+description: Transportation ministry at Anchor Baptist Church
 weight: 12
-featured_image: "/images/uploads/anchor-friend-day-0427.jpg"
-tagline: "Bringing people to church"
+featured_image: /images/uploads/anchor-friend-day-0427.jpg
+tagline: Bringing people to church
+leaders: []
 content_images:
-  - image: "/images/uploads/harvest-day-2023-10-1157.jpg"
-    alt_text: "Bus ministry outreach"
-    caption: "Serving our community through transportation"
-leaders:
-  - name: "Jake Martin"
-    role: "Bus Ministry Director"
-    bio: "Leading our transportation ministry to reach our community for Christ."
+  - image: /images/uploads/harvest-day-2023-10-1157.jpg
+    alt_text: Bus ministry outreach
+    caption: Serving our community through transportation
 ---
 
 At Anchor Baptist Church, we believe that transportation should never be a barrier to hearing the Gospel. Our Bus Ministry combines evangelistic outreach with practical service, providing free transportation to church services while sharing the love of Christ with our community.
@@ -32,4 +29,4 @@ The safety of our passengers is our top priority:
 - Safety protocols
 - Insurance coverage
 
-If you need transportation to church or would like to serve in this evangelistic ministry, please contact us! 
+If you need transportation to church please contact us! 
