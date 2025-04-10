@@ -66,51 +66,6 @@ export const EventsListPreview = createClass({
     const data = entry.getIn(['data']) ? entry.getIn(['data']).toJS() : {};
     const events = this.state.events;
     
-    // Helper function to format dates
-    const formatDate = function(dateString, endDateString) {
-      if (!dateString) return 'Event Date';
-      
-      try {
-        // If dateString is a Date object, get its ISO string
-        if (typeof dateString === 'object' && dateString instanceof Date) {
-          dateString = dateString.toISOString();
-        }
-        if (typeof endDateString === 'object' && endDateString instanceof Date) {
-          endDateString = endDateString.toISOString();
-        }
-        
-        // If we have both start and end dates, format as a range
-        if (endDateString) {
-          const startDate = new Date(dateString);
-          const endDate = new Date(endDateString);
-          
-          // If dates are in different months or years, show full range
-          const startYear = startDate.getUTCFullYear();
-          const endYear = endDate.getUTCFullYear();
-          const startMonth = startDate.toLocaleString('en-US', { month: 'long', timeZone: 'UTC' });
-          const endMonth = endDate.toLocaleString('en-US', { month: 'long', timeZone: 'UTC' });
-          
-          if (startYear !== endYear) {
-            // Different years: "January 2, 2025 - January 3, 2026"
-            return `${startDate.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })} - ${endDate.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}`;
-          } else if (startMonth !== endMonth) {
-            // Same year, different months: "January 30 - February 3, 2025"
-            return `${startDate.toLocaleString('en-US', { month: 'long', day: 'numeric', timeZone: 'UTC' })} - ${endDate.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}`;
-          } else {
-            // Same month and year: "January 1-5, 2025"
-            return `${startMonth} ${startDate.getUTCDate()}-${endDate.getUTCDate()}, ${startYear}`;
-          }
-        } else {
-          // For single day events, show full date and time
-          const utcDate = new Date(dateString);
-          return `${utcDate.toLocaleString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })} at ${utcDate.toLocaleString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'UTC' })}`;
-        }
-      } catch (e) {
-        console.error('Error formatting date:', e);
-        return String(dateString);
-      }
-    };
-    
     return h('div', { className: 'events-page bg-white' },
       // Hero Section
       data.featured_image ? 

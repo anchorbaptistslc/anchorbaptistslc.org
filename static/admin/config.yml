@@ -155,6 +155,7 @@ collections:
 
   - name: "about-pages"
     label: "About Pages"
+    label_singular: "About Page"
     folder: "content/about"
     create: true
     fields:
@@ -174,6 +175,7 @@ collections:
 
   - name: "ministry-pages"
     label: "Ministry Pages"
+    label_singular: "Ministry Page"
     folder: "content/ministries"
     create: true
     fields:
