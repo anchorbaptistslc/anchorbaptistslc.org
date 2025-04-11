@@ -58,7 +58,7 @@
     </style>
     <!-- Site and Theme JavaScript -->
     {{ $opts := dict "minify" true }}
-    {{ $themeJs := resources.Get "js/theme.js" | js.Build  }}
+    {{ $themeJs := resources.Get "js/theme.js" | js.Build $opts }}
     <script defer src="{{ $themeJs.RelPermalink }}"></script>
     {{ $mainJs := resources.Get "js/main.js" | js.Build $opts }}
     <script defer src="{{ $mainJs.RelPermalink }}"></script>
