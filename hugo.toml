@@ -3,6 +3,9 @@ languageCode = 'en-us'
 title = 'Anchor Baptist Church'
 theme = 'anchor-theme'
 
+# Disable unused sections
+disableKinds = ["taxonomy"]
+
 # Output Formats
 [outputs]
   home = ["HTML", "JSON"]
