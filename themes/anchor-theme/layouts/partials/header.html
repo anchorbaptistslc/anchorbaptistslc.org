@@ -101,26 +101,3 @@
         </div>
     </nav>
 </header>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize search
-    new Search();
-
-    // Mobile menu functionality
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileDropdowns = document.querySelectorAll('.mobile-dropdown button');
-
-    mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
-    });
-
-    mobileDropdowns.forEach(button => {
-        button.addEventListener('click', function() {
-            const dropdownContent = this.nextElementSibling;
-            dropdownContent.classList.toggle('hidden');
-        });
-    });
-});
-</script> 

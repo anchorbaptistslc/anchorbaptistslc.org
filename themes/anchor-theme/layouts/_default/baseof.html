@@ -57,12 +57,11 @@
         }
     </style>
     <!-- Site and Theme JavaScript -->
-    {{ $themeJs := resources.Get "js/theme.js" | js.Build }}
+    {{ $opts := dict "minify" true }}
+    {{ $themeJs := resources.Get "js/theme.js" | js.Build  }}
     <script defer src="{{ $themeJs.RelPermalink }}"></script>
-    {{ $mainJs := resources.Get "js/main.js" | js.Build }}
+    {{ $mainJs := resources.Get "js/main.js" | js.Build $opts }}
     <script defer src="{{ $mainJs.RelPermalink }}"></script>
-    <!-- Search and Menu JavaScript -->
-    <script defer src="/js/search.js"></script>
 </head>
 <body class="flex flex-col min-h-screen bg-white">
     {{ partial "header" . }}
