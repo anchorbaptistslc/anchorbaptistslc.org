@@ -1,4 +1,6 @@
 import { formatDate } from '../utils/dateFormatters.js';
+import { EventCard } from './EventCard.jsx';
+import { PreviewHeader } from './PreviewHeader.jsx';
 
 /**
  * EventPreview component for the CMS
@@ -20,45 +22,25 @@ export const EventPreview = createClass({
     return (
       <div className="bg-white">
         {/* Header */}
-        <div className="bg-blue-100 border-b-4 border-blue-300 p-4 text-center">
-          <h1 className="text-2xl font-bold text-blue-800 mb-2">Event Preview</h1>
-          <div className="text-blue-700 max-w-3xl mx-auto">
-            <p className="mb-2">Below you will see two views of your event. Note: Events only show if expiryDate is in the future.</p>
-            <ol className="list-decimal list-inside text-left" style={{ listStyleType: 'decimal', paddingLeft: '1.5rem' }}>
-              <li className="mb-1">How your event will appear in the carousel on the homepage</li>
-              <li className="mb-1">How your event will appear on the events page</li>
-            </ol>
-          </div>
-        </div>
+        <PreviewHeader
+          title="Event Preview"
+          description="Below you will see two views of your event. Note: Events only show if expiryDate is in the future."
+          listItems={[
+            "How your event will appear in the carousel on the homepage",
+            "How your event will appear on the events page"
+          ]}
+        />
         
         {/* Homepage Carousel View */}
         <div className="bg-brand-light bg-opacity-80 py-8 mb-8">
           <div className="container mx-auto px-4">
-            <div className="relative rounded-lg overflow-hidden shadow-lg event-card">
-              <div className="absolute inset-0">
-                <img
-                  src={data.image ? this.props.getAsset(data.image).toString() : ''}
-                  alt={data.title || ''}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-brand-dark bg-opacity-40" />
-              </div>
-              <div className="relative p-4 md:p-6 text-white event-content">
-                <div className="max-w-3xl mx-auto text-center flex flex-col h-full mt-4 md:mt-8">
-                  <div className="flex-grow">
-                    <h3 className="text-2xl md:text-3xl hero-heading mb-3">{data.title || ''}</h3>
-                    <div className="event-description">
-                      <p className="text-base hero-tagline">{data.description || ''}</p>
-                    </div>
-                    <p className="text-lg mb-4">
-                      <span className="inline-block bg-brand-light text-brand-dark px-3 py-1 rounded-full">
-                        {formatDate(startDate, endDate)}
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <EventCard
+              title={data.title}
+              description={data.description}
+              image={data.image}
+              dates={{ start: startDate, end: endDate }}
+              getAsset={this.props.getAsset}
+            />
           </div>
         </div>
         

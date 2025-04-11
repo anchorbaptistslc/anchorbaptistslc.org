@@ -20,5 +20,5 @@ export {
   HomePreview,
   MinistryPreview,
   EventPreview,
-  EventsListPreview
+  EventsListPreview,
 }; 

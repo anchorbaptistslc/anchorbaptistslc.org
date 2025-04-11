@@ -1,3 +1,5 @@
+import { HeroSection } from './HeroSection.jsx';
+
 /**
  * MinistryPreview component for the CMS
  * Displays a preview of a ministry page
@@ -12,24 +14,12 @@ export const MinistryPreview = createClass({
     return (
       <div className="bg-white">
         {/* Hero Section */}
-        <div className="relative h-48 md:h-64 overflow-hidden">
-          <img
-            src={data.featured_image ? this.props.getAsset(data.featured_image).toString() : ''}
-            className="absolute inset-0 w-full h-full object-cover"
-            alt={data.title || ''}
-          />
-          <div className="absolute inset-0 bg-gray-900 bg-opacity-60" />
-          <div className="absolute inset-0 flex items-center">
-            <div className="container mx-auto px-4">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl text-white mb-2 hero-heading">
-                {data.title || ''}
-              </h1>
-              <p className="text-lg md:text-xl text-white opacity-90 hero-tagline">
-                {data.tagline || ''}
-              </p>
-            </div>
-          </div>
-        </div>
+        <HeroSection 
+          featured_image={data.featured_image}
+          title={data.title || ''}
+          tagline={data.tagline || ''}
+          getAsset={this.props.getAsset}
+        />
 
         {/* Content Section */}
         <div className="container mx-auto px-4 py-8">

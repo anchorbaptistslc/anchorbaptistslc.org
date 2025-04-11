@@ -1,4 +1,5 @@
-import { formatDate } from '../utils/dateFormatters.js';
+import { EventCard } from './EventCard.jsx';
+import { PreviewHeader } from './PreviewHeader.jsx';
 
 /**
  * HomePreview component for the CMS
@@ -113,11 +114,11 @@ export const HomePreview = createClass({
     return (
       <div className="bg-gray-50">
         {/* Header */}
-        <div className="bg-blue-100 border-b-4 border-blue-300 p-4 text-center">
-          <div className="text-blue-700 max-w-3xl mx-auto">
-            <p className="mb-2">Events are managed in the Event Items section.</p>
-          </div>
-        </div>
+        <PreviewHeader
+          title=""
+          description="Events are managed in the Event Items section."
+          listItems={[]}
+        />
 
         {/* Hero Section */}
         <div className="relative overflow-hidden z-0">
@@ -179,48 +180,10 @@ export const HomePreview = createClass({
                 {/* Show only the current event based on component state */}
                 {activeEvents.length > 0 && (
                   <div className="event-slide active">
-                    <div className="relative rounded-lg overflow-hidden shadow-lg event-card">
-                      <div className="absolute inset-0">
-                        <img
-                          src={activeEvents[this.state.currentSlide].image ? this.props.getAsset(activeEvents[this.state.currentSlide].image).toString() : ''}
-                          alt={activeEvents[this.state.currentSlide].title || ''}
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-brand-dark bg-opacity-40" />
-                      </div>
-                      <div className="relative p-4 md:p-6 text-white event-content">
-                        <div className="max-w-3xl mx-auto text-center flex flex-col h-full mt-4 md:mt-8">
-                          <div className="flex-grow">
-                            <h3 className="text-2xl md:text-3xl hero-heading mb-3">
-                              {activeEvents[this.state.currentSlide].title || ''}
-                            </h3>
-                            <div className="event-description">
-                              <p className="text-base hero-tagline">
-                                {activeEvents[this.state.currentSlide].description || ''}
-                              </p>
-                            </div>
-                            <p className="text-lg mb-4">
-                              <span className="inline-block bg-brand-light text-brand-dark px-3 py-1 rounded-full">
-                                {formatDate(activeEvents[this.state.currentSlide].dates.start, activeEvents[this.state.currentSlide].dates.end)}
-                              </span>
-                            </p>
-                          </div>
-
-                          {/* Indicator dots for navigation (centered at bottom) */}
-                          {activeEvents.length > 1 && (
-                            <div className="flex justify-center gap-2 mt-auto pb-2">
-                              {activeEvents.map((_, index) => (
-                                <button
-                                  key={index}
-                                  className={`w-2 h-2 rounded-full ${index === this.state.currentSlide ? 'bg-brand-dark' : 'bg-gray-400'} transition-colors`}
-                                  onClick={() => this.goToSlide(index)}
-                                />
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
+                    <EventCard
+                      {...activeEvents[this.state.currentSlide]}
+                      getAsset={this.props.getAsset}
+                    />
                   </div>
                 )}
 
