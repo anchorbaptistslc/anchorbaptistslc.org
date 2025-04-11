@@ -30,7 +30,8 @@
       // Add Google Fonts
       CMS.registerPreviewStyle("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Work+Sans:wght@400&display=swap", { raw: false });
     </script>
-    {{ $js := resources.Get "js/cms/index.js" | js.Build }}
+    {{ $opts := dict "target" "esnext" "format" "iife" "jsxFactory" "h" "jsxFragment" "'div'" "minify" true }}
+    {{ $js := resources.Get "js/cms/index.js" | js.Build $opts }}
     <script src="{{ $js.RelPermalink }}"></script>
     <script>
         // Styles to ensure PostCSS keeps or generates them

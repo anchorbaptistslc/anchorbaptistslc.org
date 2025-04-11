@@ -4,10 +4,10 @@
  */
 
 // Import components
-import { HomePreview } from './components/HomePreview.js';
-import { MinistryPreview } from './components/MinistryPreview.js';
-import { EventPreview } from './components/EventPreview.js';
-import { EventsListPreview } from './components/EventsListPreview.js';
+import { HomePreview } from './components/HomePreview.jsx';
+import { MinistryPreview } from './components/MinistryPreview.jsx';
+import { EventPreview } from './components/EventPreview.jsx';
+import { EventsListPreview } from './components/EventsListPreview.jsx';
 
 // Make components available globally
 window.HomePreview = HomePreview;
@@ -15,7 +15,7 @@ window.MinistryPreview = MinistryPreview;
 window.EventPreview = EventPreview;
 window.EventsListPreview = EventsListPreview;
 
-// Export all components
+// Export components for use in other parts of the application
 export {
   HomePreview,
   MinistryPreview,
