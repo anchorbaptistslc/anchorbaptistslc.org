@@ -61,8 +61,13 @@ export const EventPreview = createClass({
               
               {/* Description */}
               <div className="prose max-w-none">
-                {data.description}
+                {data.description || ''}}
               </div>
+              {data.body && (
+                <div className="prose max-w-none">
+                  {this.props.widgetFor('body')}
+                </div>
+              )}
             </div>
             
             {/* Event Images */}

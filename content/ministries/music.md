@@ -1,5 +1,10 @@
 ---
 title: Music Ministry
+menu:
+  main:
+    name: "Music"
+    weight: 53
+    parent: ministries
 featured_image: /images/uploads/anchor-friend-day-2025-03-3072.jpg
 tagline: Praising God through song and worship
 meeting_time: ""

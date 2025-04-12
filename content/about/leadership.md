@@ -8,9 +8,10 @@ content_images:
     alt_text: "Pastor Jason Atwood and Family"
     caption: "Pastor Jason Atwood and Family"
 menu:
-  about:
+  main:
     name: "Leadership"
-    weight: 30
+    weight: 41
+    parent: about
 ---
 
 Pastor Jason Atwood was born and raised in South Texas near Corpus Christi. He was raised in a Christian home and was saved at an early age. During his first year at Texas A&M University in Corpus Christi, he was called to preach at a missions conference in his home church in Beeville, Texas. The next fall he enrolled in Bible college where he met his future wife Aimeé who grew up in a pastor's home in Milwaukee, WI and was saved as a child. Both Pastor and Mrs. Atwood graduated from Fairhaven Baptist College in Chesterton, Indiana with bachelor's degrees. They are blessed to have three boys who love the Lord.

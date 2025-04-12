@@ -11,9 +11,10 @@ content_images:
     alt_text: "2024 Harvest Day Services"
     caption: "2024 Harvest Day Services"
 menu:
-  about:
-    name: "Our Church"
-    weight: 10
+  main:
+    name: "Church"
+    weight: 43
+    parent: about
 ---
 
 Anchor Baptist Church is a local, independent, Baptist church centrally located on the east side of the Salt Lake Valley.

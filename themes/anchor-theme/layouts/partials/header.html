@@ -31,6 +31,7 @@
             <div class="hidden lg:flex items-center space-x-8">
                 {{ $currentPage := . }}
                 {{ range .Site.Menus.main }}
+                {{ $page := .Page }}
                     {{ if .HasChildren }}
                         <div class="relative group">
                             <button class="flex items-center text-white hover:text-brand-dark px-3 py-2">
@@ -42,13 +43,13 @@
                             <div class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                                 <div class="py-1">
                                     {{ range .Children }}
-                                        <a href="{{ .URL }}" class="block px-4 py-2 text-sm text-brand-dark hover:bg-gray-100">{{ .Name }}</a>
+                                        <a href="{{ with $page.Params.external_url }}{{ . }}{{ else }}{{ .URL }}{{ end }}" class="block px-4 py-2 text-sm text-brand-dark hover:bg-gray-100">{{ .Name }}</a>
                                     {{ end }}
                                 </div>
                             </div>
                         </div>
                     {{ else }}
-                        <a href="{{ .URL }}" class="text-white hover:text-brand-dark px-3 py-2 {{ if $currentPage.IsMenuCurrent "main" . }}text-brand-dark{{ end }}">
+                        <a href="{{ with $page.Params.external_url }}{{ . }}{{ else }}{{ .URL }}{{ end }}" class="text-white hover:text-brand-dark px-3 py-2 {{ if $currentPage.IsMenuCurrent "main" . }}text-brand-dark{{ end }}">
                             {{ .Name }}
                         </a>
                     {{ end }}
@@ -80,6 +81,7 @@
             {{ end }}
 
             {{ range .Site.Menus.main }}
+            {{ $page := .Page }}
                 {{ if .HasChildren }}
                     <div class="mobile-dropdown">
                         <button class="w-full text-left px-4 py-2 text-brand-dark hover:bg-gray-100 flex justify-between items-center">
@@ -90,12 +92,12 @@
                         </button>
                         <div class="hidden pl-4">
                             {{ range .Children }}
-                                <a href="{{ .URL }}" class="block px-4 py-2 text-sm text-brand-dark hover:bg-gray-100">{{ .Name }}</a>
+                                <a href="{{ with $page.Params.external_url }}{{ . }}{{ else }}{{ .URL }}{{ end }}" class="block px-4 py-2 text-sm text-brand-dark hover:bg-gray-100">{{ .Name }}</a>
                             {{ end }}
                         </div>
                     </div>
                 {{ else }}
-                    <a href="{{ .URL }}" class="block px-4 py-2 text-brand-dark hover:bg-gray-100">{{ .Name }}</a>
+                    <a href="{{ with $page.Params.external_url }}{{ . }}{{ else }}{{ .URL }}{{ end }}" class="block px-4 py-2 text-brand-dark hover:bg-gray-100">{{ .Name }}</a>
                 {{ end }}
             {{ end }}
         </div>

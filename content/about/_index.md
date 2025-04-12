@@ -1,5 +1,5 @@
 ---
-title: "About Us"
+title: About Us
 description: "Learn more about Anchor Baptist Church, our beliefs, and our leadership"
 featured_image: "/images/uploads/harvest-day-2023-10-1171.jpg"
 tagline: "A church family serving Christ since 1960"
@@ -10,6 +10,14 @@ content_images:
   - image: "/images/uploads/anchor-friend-day-2025-03-3064.jpg"
     alt_text: "Anchor Baptist Church Friend Day celebration"
     caption: "Our Friend Day celebration"
+menu:
+  main:
+    name: "About"
+    weight: 40
+    identifier: about
+  footer:
+    name: "About"
+    weight: 40
 ---
 
 Anchor Baptist Church is a local, independent Baptist church serving the Salt Lake Valley since 1960. We are focused on following the teachings of our Saviour, the Lord Jesus Christ, by reaching our world with the Gospel message.

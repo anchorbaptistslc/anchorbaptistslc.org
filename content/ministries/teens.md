@@ -1,5 +1,10 @@
 ---
 title: Teen Ministry
+menu:
+  main:
+    name: "Teens"
+    weight: 55
+    parent: ministries
 featured_image: /images/uploads/anchor-friend-day-0427.jpg
 tagline: Building the next generation of faithful followers
 meeting_time: Sundays at 10:00 AM

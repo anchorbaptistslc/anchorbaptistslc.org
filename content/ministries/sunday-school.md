@@ -1,5 +1,5 @@
 ---
-title: "Sunday School"
+title: Sunday School
 description: "Sunday School at Anchor Baptist Church"
 weight: 10
 featured_image: "/images/uploads/anchor-friend-day-0427.jpg"
@@ -7,6 +7,11 @@ tagline: "Learning and growing in God's Word together"
 meeting_time: "Sundays at 10:00 AM"
 location: "Various"
 age_group: "All ages"
+menu:
+  main:
+    name: "Sunday School"
+    weight: 51
+    parent: ministries
 ---
 
 # Sunday School

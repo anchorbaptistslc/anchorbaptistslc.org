@@ -1,5 +1,10 @@
 ---
-title: "Missions"
+title: Missions
+menu:
+  main:
+    name: "Missions"
+    weight: 58
+    parent: ministries
 description: "Supporting missionaries and spreading the Gospel worldwide"
 weight: 60
 featured_image: "/images/uploads/anchor-friend-day-0427.jpg"

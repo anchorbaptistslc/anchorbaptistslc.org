@@ -1,5 +1,12 @@
 ---
-title: "Plan Your Visit"
+menu:
+  main:
+    name: "Visit"
+    weight: 20
+  footer:
+    name: "Visit"
+    weight: 20
+title: Plan Your Visit
 description: "Plan your visit to Anchor Baptist Church"
 featured_image: "/images/uploads/anchor-2024-vision-sunday-2024-01-1427.jpg"
 layout: "single"

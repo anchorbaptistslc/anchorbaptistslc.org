@@ -1,5 +1,10 @@
 ---
-title: Adult Programs
+title: Adult Ministries
+menu:
+  main:
+    name: "Adults"
+    weight: 21
+    parent: ministries
 description: Adult programs and activities at Anchor Baptist Church
 weight: 40
 featured_image: /images/uploads/harvest-day-2023-10-1171.jpg

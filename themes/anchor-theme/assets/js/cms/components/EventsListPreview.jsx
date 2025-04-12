@@ -8,7 +8,10 @@ import { HeroSection } from './HeroSection.jsx';
  */
 export const EventsListPreview = createClass({
   getInitialState() {
-    return { events: [] };
+    return {
+      events: [],
+      MarkdownPreview: window.CMS.getWidget('markdown').preview
+    };
   },
   
   componentDidMount() {
@@ -53,7 +56,6 @@ export const EventsListPreview = createClass({
           return aDate - bDate; // Ascending order
         });
         
-        console.log('Processed events:', processedEvents);
         this.setState({ events: processedEvents });
       }).catch(error => {
         console.error('Error fetching events:', error);
@@ -67,6 +69,7 @@ export const EventsListPreview = createClass({
     const entry = this.props.entry;
     const data = entry.getIn(['data']) ? entry.getIn(['data']).toJS() : {};
     const events = this.state.events;
+    const MarkdownPreview = this.state.MarkdownPreview;
     
     return (
       <div className="events-page bg-white">
@@ -95,9 +98,9 @@ export const EventsListPreview = createClass({
                     <div className="mb-4">
                       <p className="text-gray-700">{event.description || ''}</p>
                     </div>
-                    {event.content && (
+                    {event.body && (
                       <div className="prose max-w-none">
-                        {this.props.widgetFor('content')}
+                       <MarkdownPreview value={event.body} getAsset={this.props.getAsset} />
                       </div>
                     )}
                   </div>

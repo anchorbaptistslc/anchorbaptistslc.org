@@ -3,6 +3,12 @@ languageCode = 'en-us'
 title = 'Anchor Baptist Church'
 theme = 'anchor-theme'
 
+# External links
+[params]
+  [params.external_links]
+    youtube = "https://youtube.com/@anchorbaptistslc"
+    tithely = "https://tithe.ly/anchorbaptistslc"
+
 # Disable unused sections
 disableKinds = ["taxonomy"]
 

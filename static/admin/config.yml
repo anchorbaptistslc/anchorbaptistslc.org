@@ -17,6 +17,7 @@ public_folder: "/images/uploads"
 collections:
   - name: "home"
     label: "Home"
+    description: "This is the Homepage editor. Note that events are managed in the Events section."
     files:
       - name: "home"
         file: "content/_index.md"
@@ -65,16 +66,17 @@ collections:
             ]}
 
   - name: "events-overview"
-    label: "Events"
+    label: "Event List"
+    description: "This is the Event list page that clicking an event banner from the homepage takes you to. All active events list here. Note that events are managed in the Events section."
     files:
       - name: "events-index"
-        label: "Events Overview Page"
+        label: "Event List Page"
         file: "content/events/_index.md"
         fields:
           - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "body", widget: "string"}
           - {label: "Tagline", name: "tagline", widget: "string"}
           - {label: "Featured Image", name: "featured_image", widget: "image"}
-          - {label: "Description", name: "body", widget: "markdown"}
           - {label: "Layout", name: "layout", widget: "hidden", default: "events"}
           - {label: "Type", name: "type", widget: "hidden", default: "events"}
           - {label: "Is Event", name: "isEvent", widget: "hidden", default: false}
@@ -84,25 +86,28 @@ collections:
             }}
 
   - name: "events-items"
-    label: "Event Items"
+    label: "Events"
     label_singular: "Event"
+    description: "This is the Event editor. Add or remove events here. Only unexpired events render on the site."
     folder: "content/events"
     create: true
     filter: {field: "isEvent", value: true}
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{slug}} / {{filename}}.{{extension}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Description", name: "description", widget: "string", hint: "Shows in the banner and on the list page."}
       - {label: "Dates", name: "dates", widget: "object", fields: [
-          {label: "Start", name: "start", widget: "datetime", picker_utc: true},
-          {label: "End", name: "end", widget: "datetime", picker_utc: true, required: false}
+          {label: "Start", name: "start", widget: "datetime", picker_utc: true, hint: "Dates and times render with the exact time shown here."},
+          {label: "End", name: "end", widget: "datetime", picker_utc: true, required: false, hint: "Only dates show when using an end date."}
         ]}
-      - {label: "Expiry Date", name: "expiryDate", widget: "datetime", picker_utc: true}
+      - {label: "Expiry Date", name: "expiryDate", widget: "datetime", picker_utc: true, hint: "This is the date we stop showing this event."}
       - {label: "Banner Image", name: "image", widget: "image"}
-      - {label: "Content Images", name: "content_images", widget: "list", required: false, fields: [
+      - {label: "Content Images", name: "content_images", widget: "list", required: false, hint: "These images show in place of the banner on the event list page.", fields: [
           {label: "Image", name: "image", widget: "image"},
           {label: "Caption", name: "caption", widget: "string", required: false}
         ]}
+      - {label: "Body", name: "body", widget: "markdown", required: false, hint: "Optional and shows only on the event list page."}
       - {label: "Layout", name: "layout", widget: "hidden", default: "events"}
       - {label: "Type", name: "type", widget: "hidden", default: "events"}
       - {label: "Is Event", name: "isEvent", widget: "hidden", default: true}
@@ -131,6 +136,26 @@ collections:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt Text", name: "alt_text", widget: "string" }
               - { label: "Caption", name: "caption", widget: "string" }
+          - label: "Menu Configuration"
+            name: "menu"
+            required: false
+            widget: "object"
+            fields:
+              - label: "Main Menu"
+                name: "main"
+                required: false
+                widget: "object"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Weight", name: "weight", widget: "number", hint: "Lower numbers appear first in the menu" }
+                  - { label: "Parent", name: "parent", widget: "string", required: false, hint: "The identifier of the parent menu item (e.g., 'about', 'ministries')" }
+              - label: "Footer Menu"
+                name: "footer"
+                required: false
+                widget: "object"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Weight", name: "weight", widget: "number" }
 
   - name: "the-gospel"
     label: "Salvation"
@@ -152,6 +177,26 @@ collections:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt Text", name: "alt_text", widget: "string" }
               - { label: "Caption", name: "caption", widget: "string" }
+          - label: "Menu Configuration"
+            name: "menu"
+            required: false
+            widget: "object"
+            fields:
+              - label: "Main Menu"
+                name: "main"
+                required: false
+                widget: "object"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Weight", name: "weight", widget: "number", hint: "Lower numbers appear first in the menu" }
+                  - { label: "Parent", name: "parent", widget: "string", required: false, hint: "The identifier of the parent menu item (e.g., 'about', 'ministries')" }
+              - label: "Footer Menu"
+                name: "footer"
+                required: false
+                widget: "object"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Weight", name: "weight", widget: "number" }
 
   - name: "about-pages"
     label: "About Pages"
@@ -172,6 +217,26 @@ collections:
           - { label: "Image", name: "image", widget: "image" }
           - { label: "Alt Text", name: "alt_text", widget: "string" }
           - { label: "Caption", name: "caption", widget: "string" }
+      - label: "Menu Configuration"
+        name: "menu"
+        required: false
+        widget: "object"
+        fields:
+          - label: "Main Menu"
+            name: "main"
+            required: false
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Weight", name: "weight", widget: "number", hint: "Lower numbers appear first in the menu" }
+              - { label: "Parent", name: "parent", widget: "string", default: "about", required: false, hint: "The identifier of the parent menu item (e.g., 'about', 'ministries')" }
+          - label: "Footer Menu"
+            name: "footer"
+            required: false
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Weight", name: "weight", widget: "number" }
 
   - name: "ministry-pages"
     label: "Ministry Pages"
@@ -203,3 +268,23 @@ collections:
           - { label: "Image", name: "image", widget: "image" }
           - { label: "Alt Text", name: "alt_text", widget: "string" }
           - { label: "Caption", name: "caption", widget: "string" }
+      - label: "Menu Configuration"
+        name: "menu"
+        required: false
+        widget: "object"
+        fields:
+          - label: "Main Menu"
+            name: "main"
+            required: false
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Weight", name: "weight", widget: "number", hint: "Lower numbers appear first in the menu" }
+              - { label: "Parent", name: "parent", widget: "string", default: "ministries", required: false, hint: "The identifier of the parent menu item (e.g., 'about', 'ministries')" }
+          - label: "Footer Menu"
+            name: "footer"
+            required: false
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Weight", name: "weight", widget: "number" }

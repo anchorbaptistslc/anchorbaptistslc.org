@@ -1,5 +1,5 @@
 ---
-title: "What We Believe"
+title: What We Believe
 description: "Learn about the core beliefs and doctrines of Anchor Baptist Church"
 featured_image: "/images/uploads/anchor-missions-sunday-am-2024-10-2134.jpg"
 tagline: "Standing firm on God's Word"
@@ -7,9 +7,10 @@ content_images:
   - image: "/images/uploads/anchor-friend-day-2025-03-3131.jpg"
     alt_text: "An open Bible in church"
 menu:
-  about:
-    name: "Our Beliefs"
-    weight: 20
+  main:
+    name: "Beliefs"
+    weight: 42
+    parent: about
 layout: "two-column"
 ---
 

@@ -1,5 +1,10 @@
 ---
 title: Bus Ministry
+menu:
+  main:
+    name: "Bus"
+    weight: 52
+    parent: ministries
 description: Transportation ministry at Anchor Baptist Church
 weight: 12
 featured_image: /images/uploads/anchor-friend-day-0427.jpg

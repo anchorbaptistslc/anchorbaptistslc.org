@@ -1,5 +1,10 @@
 ---
 title: Outreach
+menu:
+  main:
+    name: "Outreach"
+    weight: 57
+    parent: ministries
 featured_image: /images/uploads/anchor-friend-day-0427.jpg
 tagline: Sharing the Gospel across the street and around the world
 meeting_time: ""

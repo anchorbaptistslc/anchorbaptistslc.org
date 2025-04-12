@@ -1,5 +1,12 @@
 ---
-title: "How to Be Saved"
+menu:
+  main:
+    name: "Salvation"
+    weight: 30
+  footer:
+    name: "Salvation"
+    weight: 30
+title: How to Be Saved
 description: "Learn about the Gospel of Jesus Christ and how to be saved"
 featured_image: "/images/uploads/anchor-missions-sunday-am-2024-10-2134.jpg"
 layout: "two-column"

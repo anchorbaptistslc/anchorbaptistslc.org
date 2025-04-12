@@ -1,5 +1,10 @@
 ---
 title: Children's Ministry
+menu:
+  main:
+    name: "Children"
+    weight: 54
+    parent: ministries
 description: Children's programs and activities at Anchor Baptist Church
 weight: 20
 featured_image: /images/uploads/anchor-friend-day-0427.jpg
