@@ -44,6 +44,7 @@ module.exports = {
     extend: {
       colors: {
         brand: {
+          xlight: '#a7b9c8',
           light: '#6E879D', // RGB(110, 135, 157)
           dark: '#1a202c',  // RGB(26,32,44)
           link: '#163258', // RGB(22, 50, 88) - for regular link state
