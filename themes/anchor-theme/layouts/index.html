@@ -1,7 +1,7 @@
 {{ define "main" }}
-<div class="bg-gray-50">
+<div class="bg-brand-xlight">
     <!-- Hero Section -->
-    <div class="relative overflow-hidden z-0">
+    <div class="hero-fixed-bg overflow-hidden z-0">
         <div class="absolute inset-0">
             <img src="{{ partial "image.html" .Params.hero.image }}" 
                  alt="{{ .Params.hero.title }}" 
@@ -25,12 +25,12 @@
             </div>
         </div>
     </div>
-
+    <div class="relative">
     <!-- Upcoming Events -->
     {{ partial "upcoming-events.html" . }}
 
     <!-- Service Times -->
-    <div class="py-16 bg-white">
+    <div class="py-16 bg-white shadow-lg inner-shadow-top">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl mb-12 text-center hero-heading">{{ .Params.worship.title }}</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -55,7 +55,7 @@
     </div>
 
     <!-- Welcome Section -->
-    <div class="py-16 bg-white">
+    <div class="py-16 bg-white shadow-lg">
         <div class="container mx-auto px-4">
             <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
                 <div class="prose lg:prose-lg">
@@ -91,6 +91,7 @@
                 {{ end }}
             </div>
         </div>
+    </div>
     </div>
 </div>
 {{ end }} 

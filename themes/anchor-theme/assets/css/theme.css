@@ -53,6 +53,67 @@
     letter-spacing: 0.02em;
 } 
 
+/* Fixed Background Hero */
+.hero-fixed-bg {
+    position: relative;
+    height: 276px; /* Match the original hero height */
+    overflow: hidden;
+}
+
+.hero-fixed-bg .absolute {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 376px; /* Increased height to match the bottom of the hero viewport */
+    z-index: -10; /* Move it to the very bottom of the stacking order */
+}
+
+.hero-fixed-bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 65%;
+}
+
+.hero-fixed-bg .relative {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive adjustments for hero */
+@media (max-width: 767px) {
+    .hero-fixed-bg {
+        height: 320px; /* Match the original mobile hero height */
+    }
+    .hero-fixed-bg .absolute {
+        height: 495px; /* Increased height for mobile to match the bottom of the hero viewport */
+    }
+}
+
+/* Additional breakpoint for medium screens */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero-fixed-bg {
+        height: 320px; /* Slightly taller for medium screens */
+    }
+    .hero-fixed-bg .absolute {
+        height: 495px; /* Increased height for medium screens */
+    }
+}
+
+/* Additional breakpoint for large screens */
+@media (min-width: 1023px) {
+    .hero-fixed-bg .absolute {
+        height: 420px; /* Moderate height for large screens */
+    }
+}
+
 /* Responsive adjustments */
 @media (min-width: 1280px) and (max-width: 1535px) {
     .logo-container img {
@@ -249,15 +310,15 @@
   .event-card {
     height: 320px; /* Taller on mobile to fit more content */
   }
-  
   .event-description {
-    min-height: 6rem; /* Taller on mobile */
-    max-height: 6rem;
+    min-height: 5rem; /* More space for text on mobile */
+    max-height: 5rem;
     -webkit-line-clamp: 3; /* Allow 3 lines on mobile */
     margin-bottom: 0.75rem; /* Less margin on mobile */
   }
 }
 
+/* Carousel navigation dots */
 .carousel-dot {
   transition: transform 0.2s ease;
 }
@@ -270,6 +331,7 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* Carousel click areas */
 .carousel-click-area {
   /* Invisible areas for clicking, but make them slightly visible on hover in development */
   transition: background-color 0.2s ease;
@@ -283,4 +345,22 @@
   /* Make the carousel container a touch surface */
   touch-action: pan-y;
   user-select: none;
+}
+
+/* Custom Inner Top Shadow */
+.inner-shadow-top {
+    box-shadow: inset 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                inset 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* For stronger shadow effect */
+.inner-shadow-top-lg {
+    box-shadow: inset 0 6px 8px -1px rgba(0, 0, 0, 0.15), 
+                inset 0 3px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* For subtle shadow effect */
+.inner-shadow-top-sm {
+    box-shadow: inset 0 2px 4px -1px rgba(0, 0, 0, 0.05), 
+                inset 0 1px 2px -1px rgba(0, 0, 0, 0.03);
 }

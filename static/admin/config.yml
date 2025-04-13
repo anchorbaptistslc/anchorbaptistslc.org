@@ -46,7 +46,6 @@ collections:
                     ]}
                 ]}
             ]}
-          - {label: "Events Information", name: "events_info", widget: "string", hint: "Events are managed in the Events section and will automatically appear on the homepage based on their dates. This field is for informational purposes only and will not be saved to your content."}
           - {label: "Worship", name: "worship", widget: "object", fields: [
               {label: "Title", name: "title", widget: "string"}
             ]}
