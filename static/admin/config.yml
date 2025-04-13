@@ -134,7 +134,7 @@ collections:
             fields:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt Text", name: "alt_text", widget: "string" }
-              - { label: "Caption", name: "caption", widget: "string" }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
           - label: "Menu Configuration"
             name: "menu"
             required: false
@@ -153,8 +153,8 @@ collections:
                 required: false
                 widget: "object"
                 fields:
-                  - { label: "Name", name: "name", widget: "string" }
-                  - { label: "Weight", name: "weight", widget: "number" }
+                  - { label: "Name", name: "name", widget: "string", required: false }
+                  - { label: "Weight", name: "weight", widget: "number", required: false }
 
   - name: "the-gospel"
     label: "Salvation"
@@ -175,7 +175,7 @@ collections:
             fields:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Alt Text", name: "alt_text", widget: "string" }
-              - { label: "Caption", name: "caption", widget: "string" }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
           - label: "Menu Configuration"
             name: "menu"
             required: false
@@ -194,8 +194,8 @@ collections:
                 required: false
                 widget: "object"
                 fields:
-                  - { label: "Name", name: "name", widget: "string" }
-                  - { label: "Weight", name: "weight", widget: "number" }
+                  - { label: "Name", name: "name", widget: "string", required: false }
+                  - { label: "Weight", name: "weight", widget: "number", required: false }
 
   - name: "about-pages"
     label: "About Pages"
@@ -215,7 +215,7 @@ collections:
         fields:
           - { label: "Image", name: "image", widget: "image" }
           - { label: "Alt Text", name: "alt_text", widget: "string" }
-          - { label: "Caption", name: "caption", widget: "string" }
+          - { label: "Caption", name: "caption", widget: "string", required: false }
       - label: "Menu Configuration"
         name: "menu"
         required: false
@@ -234,8 +234,8 @@ collections:
             required: false
             widget: "object"
             fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Weight", name: "weight", widget: "number" }
+              - { label: "Name", name: "name", widget: "string", required: false }
+              - { label: "Weight", name: "weight", widget: "number", required: false }
 
   - name: "ministry-pages"
     label: "Ministry Pages"
@@ -266,7 +266,7 @@ collections:
         fields:
           - { label: "Image", name: "image", widget: "image" }
           - { label: "Alt Text", name: "alt_text", widget: "string" }
-          - { label: "Caption", name: "caption", widget: "string" }
+          - { label: "Caption", name: "caption", widget: "string", required: false }
       - label: "Menu Configuration"
         name: "menu"
         required: false
@@ -285,5 +285,5 @@ collections:
             required: false
             widget: "object"
             fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Weight", name: "weight", widget: "number" }
+              - { label: "Name", name: "name", widget: "string", required: false }
+              - { label: "Weight", name: "weight", widget: "number", required: false }
