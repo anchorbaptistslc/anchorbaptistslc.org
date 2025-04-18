@@ -139,7 +139,7 @@ collections:
             fields:
               - { label: "Name", name: "name", widget: "string", required: false }
               - { label: "Weight", name: "weight", widget: "number", required: false, hint: "Lower numbers appear first in the menu" }
-              - { label: "Parent", name: "parent", widget: "string", required: false, hint: "The identifier of the parent menu item (e.g., 'about', 'ministries')" }
+              - { label: "Parent", name: "parent", widget: "select", required: false, options: ["about", "ministries"], hint: "Parent menu" }
           - label: "Footer Menu"
             name: "footer"
             required: false
@@ -200,6 +200,7 @@ collections:
     folder: "content/about"
     create: true
     fields:
+      - { label: "Page Layout", name: "layout", widget: "select", required: false, options: ["single", "two-column"]}
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string", hint: "Used for SEO metadata - keep it concise and on a single line" }
       - { label: "Featured Image", name: "featured_image", widget: "image" }
@@ -225,7 +226,7 @@ collections:
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Weight", name: "weight", widget: "number", hint: "Lower numbers appear first in the menu" }
-              - { label: "Parent", name: "parent", widget: "select", default: "about", required: false, options: ["about", "ministries"], hint: "Parent menu" }
+              - { label: "Parent", name: "parent", widget: "select", default: "about", required: false, options: ["about"], hint: "Parent menu" }
           - label: "Footer Menu"
             name: "footer"
             required: false
@@ -241,6 +242,7 @@ collections:
     folder: "content/ministries"
     create: true
     fields:
+      - { label: "Page Layout", name: "layout", widget: "select", required: false, options: ["single", "two-column"]}
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string", hint: "Used for SEO metadata - keep it concise and on a single line" }
       - { label: "Featured Image", name: "featured_image", widget: "image" }
@@ -277,7 +279,7 @@ collections:
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Weight", name: "weight", widget: "number", hint: "Lower numbers appear first in the menu" }
-              - { label: "Parent", name: "parent", widget: "select", default: "ministries", required: false, options: ["about", "ministries"], hint: "Parent menu" }
+              - { label: "Parent", name: "parent", widget: "select", default: "ministries", required: false, options: ["ministries"], hint: "Parent menu" }
           - label: "Footer Menu"
             name: "footer"
             required: false
