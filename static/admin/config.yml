@@ -92,7 +92,7 @@ collections:
     create: true
     filter: {field: "isEvent", value: true}
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    summary: "{{slug}} / {{filename}}.{{extension}}"
+    summary: "{{title}} / {{filename}}.{{extension}}"
     sortable_fields: ["title", "dates.start", "expiryDate"]
     fields:
       - {label: "Title", name: "title", widget: "string"}
@@ -155,6 +155,7 @@ collections:
     create: true
     folder: "content"
     filter: {field: "type", value: "page"}
+    summary: "[{{menu.main.weight}}] /{{filename}}/ - {{title}}"
     sortable_fields: ["menu.main.weight", "title"]
     fields:
       - { label: "Type", name: "type", widget: "hidden", default: "page"}
@@ -198,6 +199,8 @@ collections:
     label_singular: "About Page"
     description: "These are the About section pages."
     folder: "content/about"
+    sortable_fields: ["menu.main.weight", "title"]
+    summary: "[{{menu.main.weight}}] /about/{{filename}}/ - {{title}}"
     create: true
     fields:
       - { label: "Page Layout", name: "layout", widget: "select", required: false, options: ["single", "two-column"]}
@@ -225,7 +228,7 @@ collections:
             widget: "object"
             fields:
               - { label: "Name", name: "name", widget: "string" }
-              - { label: "Weight", name: "weight", widget: "number", hint: "Lower numbers appear first in the menu" }
+              - { label: "Weight", name: "weight", widget: "number", required: false, hint: "Lower numbers appear first in the menu" }
               - { label: "Parent", name: "parent", widget: "select", default: "about", required: false, options: ["about"], hint: "Parent menu" }
           - label: "Footer Menu"
             name: "footer"
@@ -240,6 +243,8 @@ collections:
     label_singular: "Ministry Page"
     description: "These are the Ministry section pages."
     folder: "content/ministries"
+    sortable_fields: ["menu.main.weight", "title"]
+    summary: "[{{menu.main.weight}}] /ministries/{{filename}}/ - {{title}}"
     create: true
     fields:
       - { label: "Page Layout", name: "layout", widget: "select", required: false, options: ["single", "two-column"]}
@@ -278,7 +283,7 @@ collections:
             widget: "object"
             fields:
               - { label: "Name", name: "name", widget: "string" }
-              - { label: "Weight", name: "weight", widget: "number", hint: "Lower numbers appear first in the menu" }
+              - { label: "Weight", name: "weight", widget: "number", required: false, hint: "Lower numbers appear first in the menu" }
               - { label: "Parent", name: "parent", widget: "select", default: "ministries", required: false, options: ["ministries"], hint: "Parent menu" }
           - label: "Footer Menu"
             name: "footer"
