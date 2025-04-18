@@ -42,14 +42,13 @@
         window.addEventListener('load', () => {
             // Register preview templates
             CMS.registerPreviewTemplate('home', window.HomePreview);
-            CMS.registerPreviewTemplate('plan-your-visit', window.MinistryPreview);
-            CMS.registerPreviewTemplate('the-gospel', window.MinistryPreview);
-            CMS.registerPreviewTemplate('ministries', window.MinistryPreview);
-            CMS.registerPreviewTemplate('ministry-pages', window.MinistryPreview);
+            CMS.registerPreviewTemplate('events-index', window.EventsListPreview);
+            CMS.registerPreviewTemplate('events-items', window.EventPreview);
+            CMS.registerPreviewTemplate('main-pages', window.MinistryPreview);
             CMS.registerPreviewTemplate('about', window.MinistryPreview); // Using same template as ministries since layout is similar
             CMS.registerPreviewTemplate('about-pages', window.MinistryPreview);
-            CMS.registerPreviewTemplate('events-items', window.EventPreview);
-            CMS.registerPreviewTemplate('events-index', window.EventsListPreview);
+            CMS.registerPreviewTemplate('ministries', window.MinistryPreview);
+            CMS.registerPreviewTemplate('ministry-pages', window.MinistryPreview);
         });
     </script>
 </body>

@@ -1,4 +1,5 @@
 ---
+type: link
 title: Watch Live
 external_url: "https://www.youtube.com/@anchorbaptistchurchslc/streams"
 menu:

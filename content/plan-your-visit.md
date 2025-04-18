@@ -1,4 +1,5 @@
 ---
+type: page
 menu:
   main:
     name: "Visit"
