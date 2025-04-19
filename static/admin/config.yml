@@ -92,7 +92,8 @@ collections:
     create: true
     filter: {field: "isEvent", value: true}
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    summary: "{{slug}} / {{filename}}.{{extension}}"
+    summary: "{{title}} / {{filename}}.{{extension}}"
+    sortable_fields: ["title", "dates.start", "expiryDate"]
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "string", hint: "Shows in the banner and on the list page."}
@@ -115,94 +116,94 @@ collections:
           render: false
         }}
 
-  - name: "plan-your-visit"
-    label: "Visit"
-    files:
-      - name: "plan-your-visit"
-        file: "content/plan-your-visit.md"
-        label: "Plan Your Visit"
+  - name: "menu-items"
+    label: "Menu Links"
+    label_singular: "Link"
+    description: "These are links that show in the menus. They are not a full pages on the site. Use these to have menu items that link to external places such as Youtube."
+    create: true
+    folder: "content"
+    filter: {field: "type", value: "link"}
+    fields:
+      - {label: "Type", name: "type", widget: "hidden", default: "link"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "URL", name: "external_url", widget: "string"}
+      - label: "Menu Configuration"
+        name: "menu"
+        required: false
+        widget: "object"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "string", hint: "Used for SEO metadata - keep it concise and on a single line" }
-          - { label: "Featured Image", name: "featured_image", widget: "image" }
-          - { label: "Tagline", name: "tagline", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-          - label: "Content Images"
-            name: "content_images"
-            required: false
-            widget: "list"
-            fields:
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Alt Text", name: "alt_text", widget: "string" }
-              - { label: "Caption", name: "caption", widget: "string", required: false }
-          - label: "Menu Configuration"
-            name: "menu"
+          - label: "Main Menu"
+            name: "main"
             required: false
             widget: "object"
             fields:
-              - label: "Main Menu"
-                name: "main"
-                required: false
-                widget: "object"
-                fields:
-                  - { label: "Name", name: "name", widget: "string" }
-                  - { label: "Weight", name: "weight", widget: "number", hint: "Lower numbers appear first in the menu" }
-                  - { label: "Parent", name: "parent", widget: "string", required: false, hint: "The identifier of the parent menu item (e.g., 'about', 'ministries')" }
-              - label: "Footer Menu"
-                name: "footer"
-                required: false
-                widget: "object"
-                fields:
-                  - { label: "Name", name: "name", widget: "string", required: false }
-                  - { label: "Weight", name: "weight", widget: "number", required: false }
+              - { label: "Name", name: "name", widget: "string", required: false }
+              - { label: "Weight", name: "weight", widget: "number", required: false, hint: "Lower numbers appear first in the menu" }
+              - { label: "Parent", name: "parent", widget: "select", required: false, options: ["about", "ministries"], hint: "Parent menu" }
+          - label: "Footer Menu"
+            name: "footer"
+            required: false
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string", required: false }
+              - { label: "Weight", name: "weight", widget: "number", required: false }
 
-  - name: "the-gospel"
-    label: "Salvation"
-    files:
-      - name: "the-gospel"
-        file: "content/the-gospel.md"
-        label: "The Gospel"
+  - name: "main-pages"
+    label: "Main Pages"
+    label_singular: "Page"
+    description: "These are the pages at the top level of the site content structure."
+    create: true
+    folder: "content"
+    filter: {field: "type", value: "page"}
+    summary: "[{{menu.main.weight}}] /{{filename}}/ - {{title}}"
+    sortable_fields: ["menu.main.weight", "title"]
+    fields:
+      - { label: "Type", name: "type", widget: "hidden", default: "page"}
+      - { label: "Page Layout", name: "layout", widget: "select", default: "single", options: ["single", "two-column"]}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", hint: "Used for SEO metadata - keep it concise and on a single line" }
+      - { label: "Featured Image", name: "featured_image", widget: "image" }
+      - { label: "Tagline", name: "tagline", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Content Images"
+        name: "content_images"
+        required: false
+        widget: "list"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "string", hint: "Used for SEO metadata - keep it concise and on a single line" }
-          - { label: "Featured Image", name: "featured_image", widget: "image" }
-          - { label: "Tagline", name: "tagline", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
-          - label: "Content Images"
-            name: "content_images"
-            required: false
-            widget: "list"
-            fields:
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Alt Text", name: "alt_text", widget: "string" }
-              - { label: "Caption", name: "caption", widget: "string", required: false }
-          - label: "Menu Configuration"
-            name: "menu"
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Alt Text", name: "alt_text", widget: "string" }
+          - { label: "Caption", name: "caption", widget: "string", required: false }
+      - label: "Menu Configuration"
+        name: "menu"
+        required: false
+        widget: "object"
+        fields:
+          - label: "Main Menu"
+            name: "main"
             required: false
             widget: "object"
             fields:
-              - label: "Main Menu"
-                name: "main"
-                required: false
-                widget: "object"
-                fields:
-                  - { label: "Name", name: "name", widget: "string" }
-                  - { label: "Weight", name: "weight", widget: "number", hint: "Lower numbers appear first in the menu" }
-                  - { label: "Parent", name: "parent", widget: "string", required: false, hint: "The identifier of the parent menu item (e.g., 'about', 'ministries')" }
-              - label: "Footer Menu"
-                name: "footer"
-                required: false
-                widget: "object"
-                fields:
-                  - { label: "Name", name: "name", widget: "string", required: false }
-                  - { label: "Weight", name: "weight", widget: "number", required: false }
+              - { label: "Name", name: "name", widget: "string", required: false }
+              - { label: "Weight", name: "weight", widget: "number", required: false, hint: "Lower numbers appear first in the menu" }
+              - { label: "Parent", name: "parent", widget: "select", required: false, options: ["about", "ministries"], hint: "Parent menu" }
+          - label: "Footer Menu"
+            name: "footer"
+            required: false
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string", required: false }
+              - { label: "Weight", name: "weight", widget: "number", required: false }
 
   - name: "about-pages"
     label: "About Pages"
     label_singular: "About Page"
+    description: "These are the About section pages."
     folder: "content/about"
+    sortable_fields: ["menu.main.weight", "title"]
+    summary: "[{{menu.main.weight}}] /about/{{filename}}/ - {{title}}"
     create: true
     fields:
+      - { label: "Page Layout", name: "layout", widget: "select", required: false, options: ["single", "two-column"]}
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string", hint: "Used for SEO metadata - keep it concise and on a single line" }
       - { label: "Featured Image", name: "featured_image", widget: "image" }
@@ -227,8 +228,8 @@ collections:
             widget: "object"
             fields:
               - { label: "Name", name: "name", widget: "string" }
-              - { label: "Weight", name: "weight", widget: "number", hint: "Lower numbers appear first in the menu" }
-              - { label: "Parent", name: "parent", widget: "string", default: "about", required: false, hint: "The identifier of the parent menu item (e.g., 'about', 'ministries')" }
+              - { label: "Weight", name: "weight", widget: "number", required: false, hint: "Lower numbers appear first in the menu" }
+              - { label: "Parent", name: "parent", widget: "select", default: "about", required: false, options: ["about"], hint: "Parent menu" }
           - label: "Footer Menu"
             name: "footer"
             required: false
@@ -240,9 +241,13 @@ collections:
   - name: "ministry-pages"
     label: "Ministry Pages"
     label_singular: "Ministry Page"
+    description: "These are the Ministry section pages."
     folder: "content/ministries"
+    sortable_fields: ["menu.main.weight", "title"]
+    summary: "[{{menu.main.weight}}] /ministries/{{filename}}/ - {{title}}"
     create: true
     fields:
+      - { label: "Page Layout", name: "layout", widget: "select", required: false, options: ["single", "two-column"]}
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string", hint: "Used for SEO metadata - keep it concise and on a single line" }
       - { label: "Featured Image", name: "featured_image", widget: "image" }
@@ -278,8 +283,8 @@ collections:
             widget: "object"
             fields:
               - { label: "Name", name: "name", widget: "string" }
-              - { label: "Weight", name: "weight", widget: "number", hint: "Lower numbers appear first in the menu" }
-              - { label: "Parent", name: "parent", widget: "string", default: "ministries", required: false, hint: "The identifier of the parent menu item (e.g., 'about', 'ministries')" }
+              - { label: "Weight", name: "weight", widget: "number", required: false, hint: "Lower numbers appear first in the menu" }
+              - { label: "Parent", name: "parent", widget: "select", default: "ministries", required: false, options: ["ministries"], hint: "Parent menu" }
           - label: "Footer Menu"
             name: "footer"
             required: false

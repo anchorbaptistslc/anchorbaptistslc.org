@@ -1,4 +1,5 @@
 ---
+type: link
 title: Give Online
 external_url: "https://tithe.ly/give?c=2694797" 
 menu:

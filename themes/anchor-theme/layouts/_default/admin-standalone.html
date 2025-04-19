@@ -11,6 +11,18 @@
       [class*="StyledAuthenticationPage"] {
         background: #1a202c;
       }
+      /*
+      Use anchor-theme brand-light as the Decap CMS icon background color
+      so it stands out and is visible
+      */
+      [class*="StyledAuthenticationPage"] [class*="IconWrapper-NetlifyCreditIcon"] {
+        background-color: #6E879D;
+        width: 100%;
+        height: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        bottom: 0px;
+      }
     </style>
 </head>
 <body>
@@ -42,14 +54,14 @@
         window.addEventListener('load', () => {
             // Register preview templates
             CMS.registerPreviewTemplate('home', window.HomePreview);
-            CMS.registerPreviewTemplate('plan-your-visit', window.MinistryPreview);
-            CMS.registerPreviewTemplate('the-gospel', window.MinistryPreview);
-            CMS.registerPreviewTemplate('ministries', window.MinistryPreview);
-            CMS.registerPreviewTemplate('ministry-pages', window.MinistryPreview);
+            CMS.registerPreviewTemplate('events-index', window.EventsListPreview);
+            CMS.registerPreviewTemplate('events-items', window.EventPreview);
+            CMS.registerPreviewTemplate('main-pages', window.MinistryPreview);
             CMS.registerPreviewTemplate('about', window.MinistryPreview); // Using same template as ministries since layout is similar
             CMS.registerPreviewTemplate('about-pages', window.MinistryPreview);
-            CMS.registerPreviewTemplate('events-items', window.EventPreview);
-            CMS.registerPreviewTemplate('events-index', window.EventsListPreview);
+            CMS.registerPreviewTemplate('ministries', window.MinistryPreview);
+            CMS.registerPreviewTemplate('ministry-pages', window.MinistryPreview);
+            CMS.registerPreviewTemplate('menu-items', window.MenuPreview);
         });
     </script>
 </body>
