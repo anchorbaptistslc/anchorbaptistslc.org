@@ -1,0 +1,11 @@
+{{ $path := .Destination }}
+{{ $alt := .Text }}
+
+{{ $imgUrl := partial "image.html" (dict "path" $path "width" "1000") }}
+
+<img src="{{ $imgUrl }}"
+     alt="{{ $alt }}"
+     class="rounded-lg shadow-md"
+     loading="lazy"
+     width="1000"
+     decoding="async">
