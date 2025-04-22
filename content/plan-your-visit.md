@@ -16,7 +16,7 @@ content_images:
     alt_text: 2024 Harvest Day Services
   - image: /images/uploads/anchor-easter-sunday-2025-04-3233.jpeg
     alt_text: 2024 Missions Conference
-  - image: /images/uploads/anchor-missions-sunday-pm-2024-10-2271.jpg
+  - image: /images/uploads/anchor-easter-sunday-2025-04-3226.jpeg
     alt_text: 2024 Missions Conference
 menu:
   main:
