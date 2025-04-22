@@ -14,7 +14,7 @@ content_images:
     caption: Families and people of all ages welcome
   - image: /images/uploads/anchor-harvest-day-2024-10-2602.jpg
     alt_text: 2024 Harvest Day Services
-  - image: /images/uploads/anchor-missions-monday-2024-10-2338.jpg
+  - image: /images/uploads/anchor-easter-sunday-2025-04-3233.jpeg
     alt_text: 2024 Missions Conference
   - image: /images/uploads/anchor-missions-sunday-pm-2024-10-2271.jpg
     alt_text: 2024 Missions Conference
