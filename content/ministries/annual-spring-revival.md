@@ -12,6 +12,7 @@ menu:
   main:
     parent: ministries
     name: Spring Revival
+    weight: 69
 ---
 Make plans now to join us for this exciting week of revival preaching, spirit-filled singing, and encouraging fellowship!
 
