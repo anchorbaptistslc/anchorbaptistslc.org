@@ -1,5 +1,5 @@
 ---
-layout: two-column
+layout: single
 title: Annual Spring Revival
 description: Anchor Baptist Church hosts an Annual Spring Revival for pastors and workers
 featured_image: /images/uploads/anchor-friend-day-2025-03-3093.jpeg
