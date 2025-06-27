@@ -5,7 +5,7 @@ description: Anchor Baptist Church Spring Revival
 featured_image: /images/uploads/anchor-friend-day-2025-03-3093.jpeg
 tagline: April 26-29, 2026
 content_images:
-  - image: /images/uploads/nice-work-2.png
+  - image: /images/uploads/nice-work.png
     alt_text: Spring Revival
 menu:
   main:
