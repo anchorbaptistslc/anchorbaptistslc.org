@@ -1,16 +1,16 @@
 ---
 layout: single
-title: Spring Revival
-description: Anchor Baptist Church Spring Revival
-featured_image: /images/uploads/anchor-friend-day-2025-03-3093.jpeg
+title: Mountain West Preaching Conference
+description: Anchor Baptist Church Mountain West Preaching Conference
+featured_image: /images/uploads/anchor-easter-2024-04-1642.jpg
 tagline: April 26-29, 2026
 content_images:
-  - image: /images/uploads/1.png
-    alt_text: Spring Revival
+  - image: /images/uploads/3.png
+    alt_text: Mountain West Preaching Conference
 menu:
   main:
     parent: ministries
-    name: Spring Revival
+    name: Mountain West Preaching Conference
 ---
 Join us for this exciting week of revival preaching, Spirit-filled singing, and encouraging fellowship!
 
