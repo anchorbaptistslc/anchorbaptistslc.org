@@ -1,9 +1,9 @@
 ---
 title: Neighbor Sunday
-description: Sunday, September 28 - 11:00 AM
+description: Be our guest for this special Fall Sunday!
 dates:
-  end: 2025-09-28T14:29:00.000Z
-  start: 2025-09-26T14:32:00.000Z
+  end: ""
+  start: 2025-09-28T11:00:00.000Z
 expiryDate: 2025-09-28T14:29:00.000Z
 image: /images/uploads/anchor-friend-day-0427.jpg
 content_images:
