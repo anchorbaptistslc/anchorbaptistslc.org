@@ -1,4 +1,9 @@
 ---
+params:
+  show_title: false
+  events_section:
+    show_heading: true
+    heading: Upcoming Events
 hero:
   title: Welcome to Anchor Baptist Church
   tagline: Lifting up Jesus in Salt Lake City, Utah
@@ -13,7 +18,7 @@ hero:
 worship:
   title: Join Us for Worship
 welcome:
-  image: /images/uploads/pastor-and-family.jpg
+  image: /images/uploads/img_0265.jpeg
   image_alt: Pastor Jason Atwood and Family
 featured:
   image: /images/uploads/anchor-spring-revival-2023-04-1121.jpg
@@ -31,11 +36,6 @@ featured:
       description: Find your place in our church family and serve the Lord with us.
       link_text: See Our Ministries →
       url: /ministries/
-params:
-  show_title: false
-  events_section:
-    show_heading: true
-    heading: "Upcoming Events"
 ---
 
 Anchor Baptist Church is a local, independent, Baptist church centrally located on the east side of the Salt Lake Valley.
