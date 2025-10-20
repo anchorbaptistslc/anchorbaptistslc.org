@@ -1,15 +1,15 @@
 ---
-title: Church Leadership
+title: Our Pastor
 description: Meet Pastor Jason Atwood and the leadership team of Anchor Baptist Church
 featured_image: /images/uploads/anchor-missions-sunday-am-2024-10-2134.jpg
-tagline: Following God's call in the Salt Lake Valley
+tagline: Jason Atwood
 content_images:
   - image: /images/uploads/img_0265.jpeg
     alt_text: Pastor Jason Atwood and Family
     caption: Pastor Jason Atwood and Family
 menu:
   main:
-    name: Leadership
+    name: Our Pastor
     weight: 41
     parent: about
 ---
