@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: two-column
 title: Our Staff
 description: Meet Pastor Jason Atwood and the leadership team of Anchor Baptist Church
 featured_image: /images/uploads/anchor-missions-sunday-am-2024-10-2134.jpg
