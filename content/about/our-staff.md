@@ -19,8 +19,4 @@ menu:
 ---
 **Caleb Henry serves as Youth Pastor** at Anchor Baptist Church, where he and his wife, Megan, faithfully invest in the lives of teens and young children through Bible teaching, discipleship, and outreach.  Together, they also serve in the bus ministry, reaching families throughout our community.  The Henrys joined Anchor in 2025 and have a heart to see young people grow in their walk with the Lord and live boldly for the Lord Jesus Christ.
 
-
-
-
-
-**Jordan Lendt serves as the Music Director** at Anchor Baptist Church, where he and his wife Samantha use their talents to encourage and build Christ-honoring worship and service.  Together, they also lead the 20' and 30's Sunday School Class, helping young adults build strong foundations in faith and fellowship.  The Lendts have one daughter and a sincere desire to see others grow in their love for the Lord and commitment to His work.
+**Jordan Lendt serves as the Music Director** at Anchor Baptist Church, where he and his wife Samantha use their talents to encourage and build Christ-honoring worship and service.  Together, they also lead the 20' and 30's Sunday School Class, helping young adults build strong foundations in faith and fellowship.  The Lendts have served at Anchor since 2017.  They currently have one daughter.
