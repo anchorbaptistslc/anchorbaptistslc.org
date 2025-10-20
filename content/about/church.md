@@ -1,19 +1,19 @@
 ---
-title: "Welcome to Anchor Baptist Church"
-description: "Learn about Anchor Baptist Church and our mission in Salt Lake City"
-featured_image: "/images/uploads/anchor-missions-sunday-am-2024-10-2134.jpg"
-tagline: "Lifting Up Jesus"
+title: Welcome to Anchor Baptist Church
+description: Learn about Anchor Baptist Church and our mission in Salt Lake City
+featured_image: /images/uploads/anchor-missions-sunday-am-2024-10-2134.jpg
+tagline: Lifting Up Jesus
 content_images:
-  - image: "/images/uploads/anchor-friend-day-2025-03-3064.jpg"
-    alt_text: "2025 Friend Day Services"
-    caption: "2025 Friend Day Services"
-  - image: "/images/uploads/anchor-harvest-day-2024-10-2586.jpg"
-    alt_text: "2024 Harvest Day Services"
-    caption: "2024 Harvest Day Services"
+  - image: /images/uploads/anchor-friend-day-2025-03-3064.jpg
+    alt_text: 2025 Friend Day Services
+    caption: 2025 Friend Day Services
+  - image: /images/uploads/anchor-harvest-day-2024-10-2586.jpg
+    alt_text: 2024 Harvest Day Services
+    caption: 2024 Harvest Day Services
 menu:
   main:
-    name: "Church"
-    weight: 43
+    name: Church
+    weight: 44
     parent: about
 ---
 
