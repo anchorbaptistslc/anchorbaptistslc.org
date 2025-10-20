@@ -5,7 +5,7 @@ description: Meet Pastor Jason Atwood and the leadership team of Anchor Baptist 
 featured_image: /images/uploads/anchor-missions-sunday-am-2024-10-2134.jpg
 tagline: Jason Atwood
 content_images:
-  - image: /images/uploads/img_0265.jpeg
+  - image: /images/uploads/img_4628.jpg
     alt_text: Pastor Jason Atwood and Family
     caption: Pastor Jason Atwood and Family
 menu:
