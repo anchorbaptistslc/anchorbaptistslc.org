@@ -1,16 +1,15 @@
 ---
 title: Adult Ministries
+description: Adult programs and activities at Anchor Baptist Church
+featured_image: /images/uploads/harvest-day-2023-10-1171.jpg
 menu:
   main:
-    name: "Adults"
+    name: Adults
     weight: 21
     parent: ministries
-description: Adult programs and activities at Anchor Baptist Church
 weight: 40
-featured_image: /images/uploads/harvest-day-2023-10-1171.jpg
 tagline: Growing in faith through fellowship and Bible study
 ---
-
 ## Adult Bible Classes
 
 ### Anchor Bible Class
@@ -23,13 +22,21 @@ Teachers: Richard Smith
 
 ### Starting Point Bible Class
 
-Starting on September 4, 2022, the StaringPoint Bible Class is a rotating 13 week adult Sunday school class, designed for new members and new believers. Whether you join us on week one or week seven, stay for all thirteen and then find your place at Anchor Baptist Church!
+The StaringPoint Bible Class is a rotating 13 week adult Sunday school class, designed for believers of any age group. Whether you join us on week one or week seven, stay for all thirteen and then find your place at Anchor Baptist Church!
 
-We meet every Sunday morning at 10:00 AM in the Fellowship Hall.
+We meet every Sunday morning at 10:00 AM on the 2nd Floor of the Admin. Building.
 
 Join us at 9:30 am in the Fellowship Hall for breakfast and coffee!
 
-Teachers: Pastor and Mrs. Atwood
+Teachers: Pastor Atwood
+
+### 20's and 30's Bible Class
+
+The 20's and 30's Bible class began in the Fall of 2025 with a desire to help and equip singles and couples in this challenging stage of life.  This class will encourage you with fellowship and with sound Bible teaching designed to strengthen your walk with God.
+
+Teachers: Jordan Lendt
+
+
 
 ## Senior Saints Ministry
 
