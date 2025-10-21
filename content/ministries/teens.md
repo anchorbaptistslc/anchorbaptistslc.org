@@ -5,7 +5,16 @@ featured_image: /images/uploads/anchor-friend-day-0427.jpg
 tagline: Building the next generation of faithful followers
 meeting_time: Sundays at 10:00 AM
 location: Teen Room
-leaders: []
+leaders:
+  - name: Caleb and Megan Henry
+    role: Youth Pastor
+    bio: Caleb Henry serves as Youth Pastor at Anchor Baptist Church, where he and
+      his wife, Megan, faithfully invest in the lives of teens and young
+      children through Bible teaching, discipleship, and outreach.  Together,
+      they also serve in the bus ministry, reaching families throughout our
+      community.  The Henrys joined Anchor in 2025 and have a heart to see young
+      people grow in their walk with the Lord and live boldly for the Lord Jesus
+      Christ.
 weight: 30
 age_group: 7th through 12th Grade
 menu:
