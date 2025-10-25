@@ -17,6 +17,7 @@ hero:
       url: /plan-your-visit/
 worship:
   title: Join Us for Worship
+  subtitle: Deaf and Spanish interpretation available
 welcome:
   image: /images/uploads/img_0265.jpeg
   image_alt: Pastor Jason Atwood and Family

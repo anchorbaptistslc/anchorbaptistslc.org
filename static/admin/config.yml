@@ -47,7 +47,8 @@ collections:
                 ]}
             ]}
           - {label: "Worship", name: "worship", widget: "object", fields: [
-              {label: "Title", name: "title", widget: "string"}
+              {label: "Title", name: "title", widget: "string"},
+              {label: "Subtitle", name: "subtitle", widget: "string", required: false, hint: "Optional text displayed under the worship title (e.g., 'Deaf and Spanish interpretation available')"}
             ]}
           - {label: "Body", name: "body", widget: "markdown"}
           - {label: "Welcome", name: "welcome", widget: "object", fields: [

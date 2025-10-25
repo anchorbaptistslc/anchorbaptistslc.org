@@ -211,6 +211,9 @@ export const HomePreview = createClass({
             <h2 className="text-3xl mb-12 text-center hero-heading">
               {worship.title || ''}
             </h2>
+            <p className="text-base text-gray-600 font-normal text-center -mt-10 mb-12">
+              {worship.subtitle || ''}
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center p-6 bg-gray-50 rounded-lg">
                 <h3 className="font-medium mb-2 tracking-[0.05em]" style={{ fontSize: '16px' }}>
