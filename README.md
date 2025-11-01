@@ -66,6 +66,60 @@ We use Image Magick and Exiftool in the production build to capture any images i
 non-sRGB color profiles (i.e. Adobe RGB) and re-encode the webp images with the same color profile as the original.
 This ensure the site images retain the color of the original image intent.
 
+## Automated Deployments
+
+The site automatically redeploys every Tuesday at 8:00 AM Mountain Standard Time (3:00 PM UTC) to ensure:
+- Expired events are removed from the site
+- Content updates are published without manual intervention
+
+This is implemented using a Netlify Scheduled Function that triggers a build hook. The function is located at `netlify/functions/scheduled-deploy.js`.
+
+### How It Works
+
+- **Schedule**: Every Tuesday at 3:00 PM UTC (8:00 AM MST / 7:00 AM MDT)
+- **Implementation**: Netlify Scheduled Function with cron schedule `0 15 * * 2`
+- **Trigger Method**: POST request to Netlify Build Hook
+- **Configuration**: Uses environment variable for build hook URL
+
+### Setup Instructions
+
+1. **Get Build Hook URL** from Netlify:
+   - Go to Netlify Dashboard > Site Settings > Build & Deploy > Build Hooks
+   - Create a new build hook (or use existing one)
+   - Copy the full URL (e.g., `https://api.netlify.com/build_hooks/YOUR_HOOK_ID`)
+
+2. **Set Environment Variable** in Netlify:
+   - Go to Netlify Dashboard > Site Settings > Environment Variables
+   - Add variable: `NETLIFY_BUILD_HOOK_URL`
+   - Value: Paste the build hook URL from step 1
+   - Scopes: Select "All" or "Functions"
+
+3. **For Local Testing** (optional):
+   - Copy `.env.example` to `.env`
+   - Add your build hook URL to `.env`
+   - **Never commit `.env` to git** (already in `.gitignore`)
+
+### Monitoring Deployments
+
+- Check function logs in the Netlify dashboard under Functions
+- View deployment history in the Netlify dashboard under Deploys
+- Failed deployments will appear in function logs with error details
+
+### Modifying the Schedule
+
+To change the deployment schedule, edit the cron expression in `netlify/functions/scheduled-deploy.js`:
+
+```javascript
+export default schedule("0 15 * * 2", handler); // Tuesday at 3pm UTC
+```
+
+Cron format: `minute hour day-of-month month day-of-week` (in UTC)
+
+Examples:
+- Daily at 3pm UTC: `0 15 * * *`
+- Monday & Thursday at 3pm UTC: `0 15 * * 1,4`
+- First of month at 3pm UTC: `0 15 1 * *`
+
 ## Content Management
 
 The site uses Hugo archetypes to maintain consistent content structure. These templates help ensure that new content follows the established patterns:
