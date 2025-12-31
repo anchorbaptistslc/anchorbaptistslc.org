@@ -126,8 +126,8 @@ sections:
 # SEO
 menu:
   main:
-    parent: "Ministries"
-    name: "Academy"
+    parent: ministries
+    name: Academy
     weight: 10
 ---
 

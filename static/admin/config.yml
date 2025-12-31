@@ -448,8 +448,8 @@ collections:
                 name: "main"
                 widget: "object"
                 fields:
-                  - {label: "Parent", name: "parent", widget: "string", default: "Ministries"}
+                  - {label: "Parent", name: "parent", widget: "string", default: "ministries", hint: "Menu identifier (lowercase 'ministries' for Ministries dropdown)"}
                   - {label: "Name", name: "name", widget: "string", default: "Academy"}
-                  - {label: "Weight", name: "weight", widget: "number", default: 10}
+                  - {label: "Weight", name: "weight", widget: "number", default: 10, hint: "Lower numbers appear first in menu"}
 
           - {label: "Body", name: "body", widget: "markdown", required: false, hint: "Optional additional content"}
