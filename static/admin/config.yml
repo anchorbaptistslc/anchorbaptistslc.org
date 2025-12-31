@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: anchorbaptistslc/anchorbaptistslc.org
-  branch: main
+  branch: academy
   use_graphql: true
   auth_url: https://github.com/login/oauth/authorize
   auth_redirect_uri: https://api.netlify.com/auth/done
