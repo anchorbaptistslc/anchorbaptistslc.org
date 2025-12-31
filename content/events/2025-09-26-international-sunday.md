@@ -9,7 +9,7 @@ image: /images/uploads/1.png
 layout: events
 type: events
 isEvent: true
-_build:
+build:
   list: true
   render: false
 ---

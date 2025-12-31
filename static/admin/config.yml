@@ -80,7 +80,7 @@ collections:
           - {label: "Layout", name: "layout", widget: "hidden", default: "events"}
           - {label: "Type", name: "type", widget: "hidden", default: "events"}
           - {label: "Is Event", name: "isEvent", widget: "hidden", default: false}
-          - {label: "Build Config", name: "_build", widget: "hidden", default: {
+          - {label: "Build Config", name: "build", widget: "hidden", default: {
               list: true,
               render: true
             }}
@@ -112,7 +112,7 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "events"}
       - {label: "Type", name: "type", widget: "hidden", default: "events"}
       - {label: "Is Event", name: "isEvent", widget: "hidden", default: true}
-      - {label: "Build Config", name: "_build", widget: "hidden", default: {
+      - {label: "Build Config", name: "build", widget: "hidden", default: {
           list: true,
           render: false
         }}
@@ -293,3 +293,163 @@ collections:
             fields:
               - { label: "Name", name: "name", widget: "string", required: false }
               - { label: "Weight", name: "weight", widget: "number", required: false }
+
+  - name: "academy"
+    label: "Academy"
+    description: "Anchor Baptist Academy page - K-6th grade Christian school mini-site"
+    files:
+      - file: "content/academy/_index.md"
+        label: "Academy Page"
+        name: "academy_page"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "string", hint: "Used for SEO metadata"}
+          - {label: "Type", name: "type", widget: "hidden", default: "academy"}
+          - {label: "Layout", name: "layout", widget: "hidden", default: "single"}
+
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Tagline", name: "tagline", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - label: "Primary CTA"
+                name: "cta_primary"
+                widget: "object"
+                fields:
+                  - {label: "Text", name: "text", widget: "string"}
+                  - {label: "URL", name: "url", widget: "string", hint: "Use #section-name for anchor links"}
+              - label: "Secondary CTA"
+                name: "cta_secondary"
+                widget: "object"
+                fields:
+                  - {label: "Text", name: "text", widget: "string"}
+                  - {label: "URL", name: "url", widget: "string", hint: "Use #section-name for anchor links"}
+
+          - label: "Sub-Navigation"
+            name: "subnav"
+            widget: "list"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Anchor", name: "anchor", widget: "string", hint: "Section ID without the # (e.g., 'about')"}
+
+          - label: "About Section"
+            name: "about"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Content", name: "content", widget: "markdown"}
+              - {label: "Image", name: "image", widget: "image", required: false}
+              - label: "Subsections"
+                name: "subsections"
+                widget: "list"
+                required: false
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Content", name: "content", widget: "markdown"}
+
+          - label: "Academics Section"
+            name: "academics"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Content", name: "content", widget: "markdown"}
+              - label: "Features"
+                name: "features"
+                widget: "list"
+                required: false
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Icon", name: "icon", widget: "select", options: ["book", "users", "graduation-cap"], hint: "Icon to display"}
+
+          - label: "Admissions Section"
+            name: "admissions"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Content", name: "content", widget: "markdown"}
+              - label: "Steps"
+                name: "steps"
+                widget: "list"
+                required: false
+                fields:
+                  - {label: "Number", name: "number", widget: "number", value_type: "int", min: 1, max: 10}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+
+          - label: "Tuition Section"
+            name: "tuition"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Content", name: "content", widget: "markdown"}
+              - label: "Tuition Rates"
+                name: "rates"
+                widget: "list"
+                required: false
+                fields:
+                  - {label: "Grade", name: "grade", widget: "string"}
+                  - {label: "Cost", name: "cost", widget: "string"}
+              - label: "Payment Plans"
+                name: "payment_plans"
+                widget: "list"
+                required: false
+                field: {label: "Plan", name: "plan", widget: "string"}
+              - label: "Financial Aid"
+                name: "financial_aid"
+                widget: "object"
+                required: false
+                fields:
+                  - {label: "Content", name: "content", widget: "markdown"}
+
+          - label: "Policies Section"
+            name: "policies"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Content", name: "content", widget: "markdown"}
+              - label: "Documents"
+                name: "documents"
+                widget: "list"
+                required: false
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "File", name: "file", widget: "file", hint: "Upload PDF or link to existing file"}
+
+          - label: "Contact Section"
+            name: "contact"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Office Hours", name: "office_hours", widget: "string"}
+              - {label: "Phone", name: "phone", widget: "string"}
+              - {label: "Email", name: "email", widget: "string"}
+              - {label: "Location", name: "location", widget: "string"}
+              - {label: "Content", name: "content", widget: "markdown"}
+
+          - label: "Menu Configuration"
+            name: "menu"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Main Menu"
+                name: "main"
+                widget: "object"
+                fields:
+                  - {label: "Parent", name: "parent", widget: "string", default: "Ministries"}
+                  - {label: "Name", name: "name", widget: "string", default: "Academy"}
+                  - {label: "Weight", name: "weight", widget: "number", default: 10}
+
+          - label: "Sections"
+            name: "sections"
+            widget: "hidden"
+
+          - {label: "Body", name: "body", widget: "markdown", required: false, hint: "Optional additional content"}

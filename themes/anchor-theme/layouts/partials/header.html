@@ -43,13 +43,14 @@
                             <div class="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                                 <div class="py-1">
                                     {{ range .Children }}
-                                        <a href="{{ with $page.Params.external_url }}{{ . }}{{ else }}{{ .URL }}{{ end }}" class="block px-4 py-2 text-sm text-brand-dark hover:bg-gray-100">{{ .Name }}</a>
+                                        {{ $childPage := .Page }}
+                                        <a href="{{ if and $childPage $childPage.Params.external_url }}{{ $childPage.Params.external_url }}{{ else }}{{ .URL }}{{ end }}" class="block px-4 py-2 text-sm text-brand-dark hover:bg-gray-100">{{ .Name }}</a>
                                     {{ end }}
                                 </div>
                             </div>
                         </div>
                     {{ else }}
-                        <a href="{{ with $page.Params.external_url }}{{ . }}{{ else }}{{ .URL }}{{ end }}" class="text-white hover:text-brand-dark px-3 py-2 {{ if $currentPage.IsMenuCurrent "main" . }}text-brand-dark{{ end }}">
+                        <a href="{{ if and $page $page.Params.external_url }}{{ $page.Params.external_url }}{{ else }}{{ .URL }}{{ end }}" class="text-white hover:text-brand-dark px-3 py-2 {{ if $currentPage.IsMenuCurrent "main" . }}text-brand-dark{{ end }}">
                             {{ .Name }}
                         </a>
                     {{ end }}
@@ -92,12 +93,13 @@
                         </button>
                         <div class="hidden pl-4">
                             {{ range .Children }}
-                                <a href="{{ with $page.Params.external_url }}{{ . }}{{ else }}{{ .URL }}{{ end }}" class="block px-4 py-2 text-sm text-brand-dark hover:bg-gray-100">{{ .Name }}</a>
+                                {{ $childPage := .Page }}
+                                <a href="{{ if and $childPage $childPage.Params.external_url }}{{ $childPage.Params.external_url }}{{ else }}{{ .URL }}{{ end }}" class="block px-4 py-2 text-sm text-brand-dark hover:bg-gray-100">{{ .Name }}</a>
                             {{ end }}
                         </div>
                     </div>
                 {{ else }}
-                    <a href="{{ with $page.Params.external_url }}{{ . }}{{ else }}{{ .URL }}{{ end }}" class="block px-4 py-2 text-brand-dark hover:bg-gray-100">{{ .Name }}</a>
+                    <a href="{{ if and $page $page.Params.external_url }}{{ $page.Params.external_url }}{{ else }}{{ .URL }}{{ end }}" class="block px-4 py-2 text-brand-dark hover:bg-gray-100">{{ .Name }}</a>
                 {{ end }}
             {{ end }}
         </div>

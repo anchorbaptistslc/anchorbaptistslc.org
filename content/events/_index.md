@@ -4,7 +4,7 @@ tagline: "Join us for our upcoming events and activities"
 featured_image: "/images/uploads/anchor-friend-day-2025-03-3070.jpg"
 layout: "events"
 type: "events"
-_build:
+build:
   list: true
   render: true
 isEvent: false
