@@ -300,7 +300,7 @@ collections:
     files:
       - file: "content/academy/_index.md"
         label: "Academy Page"
-        name: "academy_page"
+        name: "academy-page"
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Description", name: "description", widget: "string", hint: "Used for SEO metadata"}
