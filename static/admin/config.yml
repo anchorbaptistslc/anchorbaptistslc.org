@@ -334,106 +334,110 @@ collections:
               - {label: "Label", name: "label", widget: "string"}
               - {label: "Anchor", name: "anchor", widget: "string", hint: "Section ID without the # (e.g., 'about')"}
 
-          - label: "About Section"
-            name: "about"
+          - label: "Content Sections"
+            name: "sections"
             widget: "object"
-            collapsed: true
             fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Content", name: "content", widget: "markdown"}
-              - {label: "Image", name: "image", widget: "image", required: false}
-              - label: "Subsections"
-                name: "subsections"
-                widget: "list"
-                required: false
-                fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Content", name: "content", widget: "markdown"}
-
-          - label: "Academics Section"
-            name: "academics"
-            widget: "object"
-            collapsed: true
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Content", name: "content", widget: "markdown"}
-              - label: "Features"
-                name: "features"
-                widget: "list"
-                required: false
-                fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Description", name: "description", widget: "text"}
-                  - {label: "Icon", name: "icon", widget: "select", options: ["book", "users", "graduation-cap"], hint: "Icon to display"}
-
-          - label: "Admissions Section"
-            name: "admissions"
-            widget: "object"
-            collapsed: true
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Content", name: "content", widget: "markdown"}
-              - label: "Steps"
-                name: "steps"
-                widget: "list"
-                required: false
-                fields:
-                  - {label: "Number", name: "number", widget: "number", value_type: "int", min: 1, max: 10}
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Description", name: "description", widget: "text"}
-
-          - label: "Tuition Section"
-            name: "tuition"
-            widget: "object"
-            collapsed: true
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Content", name: "content", widget: "markdown"}
-              - label: "Tuition Rates"
-                name: "rates"
-                widget: "list"
-                required: false
-                fields:
-                  - {label: "Grade", name: "grade", widget: "string"}
-                  - {label: "Cost", name: "cost", widget: "string"}
-              - label: "Payment Plans"
-                name: "payment_plans"
-                widget: "list"
-                required: false
-                field: {label: "Plan", name: "plan", widget: "string"}
-              - label: "Financial Aid"
-                name: "financial_aid"
+              - label: "About Section"
+                name: "about"
                 widget: "object"
-                required: false
-                fields:
-                  - {label: "Content", name: "content", widget: "markdown"}
-
-          - label: "Policies Section"
-            name: "policies"
-            widget: "object"
-            collapsed: true
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Content", name: "content", widget: "markdown"}
-              - label: "Documents"
-                name: "documents"
-                widget: "list"
-                required: false
+                collapsed: true
                 fields:
                   - {label: "Title", name: "title", widget: "string"}
-                  - {label: "File", name: "file", widget: "file", hint: "Upload PDF or link to existing file"}
+                  - {label: "Content", name: "content", widget: "markdown"}
+                  - {label: "Image", name: "image", widget: "image", required: false}
+                  - label: "Subsections"
+                    name: "subsections"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - {label: "Title", name: "title", widget: "string"}
+                      - {label: "Content", name: "content", widget: "markdown"}
 
-          - label: "Contact Section"
-            name: "contact"
-            widget: "object"
-            collapsed: true
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Office Hours", name: "office_hours", widget: "string"}
-              - {label: "Phone", name: "phone", widget: "string"}
-              - {label: "Email", name: "email", widget: "string"}
-              - {label: "Location", name: "location", widget: "string"}
-              - {label: "Content", name: "content", widget: "markdown"}
+              - label: "Academics Section"
+                name: "academics"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Content", name: "content", widget: "markdown"}
+                  - label: "Features"
+                    name: "features"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - {label: "Title", name: "title", widget: "string"}
+                      - {label: "Description", name: "description", widget: "text"}
+                      - {label: "Icon", name: "icon", widget: "select", options: ["book", "users", "graduation-cap"], hint: "Icon to display"}
+
+              - label: "Admissions Section"
+                name: "admissions"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Content", name: "content", widget: "markdown"}
+                  - label: "Steps"
+                    name: "steps"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - {label: "Number", name: "number", widget: "number", value_type: "int", min: 1, max: 10}
+                      - {label: "Title", name: "title", widget: "string"}
+                      - {label: "Description", name: "description", widget: "text"}
+
+              - label: "Tuition Section"
+                name: "tuition"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Content", name: "content", widget: "markdown"}
+                  - label: "Tuition Rates"
+                    name: "rates"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - {label: "Grade", name: "grade", widget: "string"}
+                      - {label: "Cost", name: "cost", widget: "string"}
+                  - label: "Payment Plans"
+                    name: "payment_plans"
+                    widget: "list"
+                    required: false
+                    field: {label: "Plan", name: "plan", widget: "string"}
+                  - label: "Financial Aid"
+                    name: "financial_aid"
+                    widget: "object"
+                    required: false
+                    fields:
+                      - {label: "Content", name: "content", widget: "markdown"}
+
+              - label: "Policies Section"
+                name: "policies"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Content", name: "content", widget: "markdown"}
+                  - label: "Documents"
+                    name: "documents"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - {label: "Title", name: "title", widget: "string"}
+                      - {label: "File", name: "file", widget: "file", hint: "Upload PDF or link to existing file"}
+
+              - label: "Contact Section"
+                name: "contact"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Office Hours", name: "office_hours", widget: "string"}
+                  - {label: "Phone", name: "phone", widget: "string"}
+                  - {label: "Email", name: "email", widget: "string"}
+                  - {label: "Location", name: "location", widget: "string"}
+                  - {label: "Content", name: "content", widget: "markdown"}
 
           - label: "Menu Configuration"
             name: "menu"
@@ -447,9 +451,5 @@ collections:
                   - {label: "Parent", name: "parent", widget: "string", default: "Ministries"}
                   - {label: "Name", name: "name", widget: "string", default: "Academy"}
                   - {label: "Weight", name: "weight", widget: "number", default: 10}
-
-          - label: "Sections"
-            name: "sections"
-            widget: "hidden"
 
           - {label: "Body", name: "body", widget: "markdown", required: false, hint: "Optional additional content"}
