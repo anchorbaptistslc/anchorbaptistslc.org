@@ -5,24 +5,24 @@
 
     {{/* About Section */}}
     {{ with .Params.sections.about }}
-    <section id="about" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
+    <section id="about" class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">{{ .title }}</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8 text-brand-dark text-center">{{ .title }}</h2>
 
                 {{/* Main About Content */}}
                 {{ if .content }}
-                <div class="prose max-w-none mb-8">
+                <div class="prose md:prose-lg max-w-none mb-8 md:mb-12 text-center mx-auto max-w-4xl">
                     {{ .content | markdownify }}
                 </div>
                 {{ end }}
 
                 {{/* About Image */}}
                 {{ with .image }}
-                <div class="mb-8">
+                <div class="mb-16">
                     <img src="{{ partial "image.html" (dict "path" . "width" "1200") }}"
                          alt="About Anchor Baptist Academy"
-                         class="rounded-lg shadow-lg w-full">
+                         class="rounded-lg shadow-2xl w-full object-cover max-h-96">
                 </div>
                 {{ end }}
 
@@ -30,9 +30,9 @@
                 {{ with .subsections }}
                 <div class="grid md:grid-cols-3 gap-8 mt-12">
                     {{ range . }}
-                    <div class="bg-gray-50 rounded-lg p-6">
-                        <h3 class="text-xl font-bold mb-3 text-brand-dark">{{ .title }}</h3>
-                        <div class="prose prose-sm">
+                    <div class="bg-gray-50 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300 border-t-4 border-brand-light">
+                        <h3 class="text-2xl font-bold mb-4 text-brand-dark">{{ .title }}</h3>
+                        <div class="prose prose-sm text-gray-700">
                             {{ .content | markdownify }}
                         </div>
                     </div>
@@ -46,13 +46,13 @@
 
     {{/* Academics Section */}}
     {{ with .Params.sections.academics }}
-    <section id="academics" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
+    <section id="academics" class="py-12 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">{{ .title }}</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8 text-brand-dark text-center">{{ .title }}</h2>
 
                 {{ if .content }}
-                <div class="prose max-w-none mb-12">
+                <div class="prose md:prose-lg max-w-none mb-12 md:mb-16 text-center mx-auto max-w-4xl">
                     {{ .content | markdownify }}
                 </div>
                 {{ end }}
@@ -61,12 +61,26 @@
                 {{ with .features }}
                 <div class="grid md:grid-cols-3 gap-8">
                     {{ range . }}
-                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-                        {{/* Icon placeholder - will be enhanced later */}}
-                        <div class="text-4xl mb-4 text-brand-light">
-                            {{ if eq .icon "book" }}📚{{ end }}
-                            {{ if eq .icon "users" }}👥{{ end }}
-                            {{ if eq .icon "graduation-cap" }}🎓{{ end }}
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                        {{/* Icon SVGs */}}
+                        <div class="flex justify-center mb-4">
+                            {{ if eq .icon "book" }}
+                            <svg class="w-16 h-16 text-brand-light" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                            {{ end }}
+                            {{ if eq .icon "users" }}
+                            <svg class="w-16 h-16 text-brand-light" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                            {{ end }}
+                            {{ if eq .icon "graduation-cap" }}
+                            <svg class="w-16 h-16 text-brand-light" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+                            </svg>
+                            {{ end }}
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-brand-dark">{{ .title }}</h3>
                         <p class="text-gray-700">{{ .description }}</p>
@@ -81,13 +95,13 @@
 
     {{/* Admissions Section */}}
     {{ with .Params.sections.admissions }}
-    <section id="admissions" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
+    <section id="admissions" class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">{{ .title }}</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8 text-brand-dark text-center">{{ .title }}</h2>
 
                 {{ if .content }}
-                <div class="prose max-w-none mb-12">
+                <div class="prose md:prose-lg max-w-none mb-12 md:mb-16 text-center mx-auto max-w-4xl">
                     {{ .content | markdownify }}
                 </div>
                 {{ end }}
@@ -113,13 +127,13 @@
 
     {{/* Tuition Section */}}
     {{ with .Params.sections.tuition }}
-    <section id="tuition" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
+    <section id="tuition" class="py-12 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">{{ .title }}</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8 text-brand-dark text-center">{{ .title }}</h2>
 
                 {{ if .content }}
-                <div class="prose max-w-none mb-12">
+                <div class="prose md:prose-lg max-w-none mb-12 md:mb-16 text-center">
                     {{ .content | markdownify }}
                 </div>
                 {{ end }}
@@ -143,10 +157,12 @@
                 {{ with .payment_plans }}
                 <div class="mb-12">
                     <h3 class="text-2xl font-bold mb-6 text-brand-dark">Payment Plans</h3>
-                    <ul class="space-y-2 bg-white p-6 rounded-lg shadow">
+                    <ul class="space-y-3 bg-white p-6 rounded-lg shadow">
                         {{ range . }}
                         <li class="flex items-start">
-                            <span class="text-brand-light mr-2">✓</span>
+                            <svg class="w-5 h-5 text-brand-light mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
                             <span>{{ . }}</span>
                         </li>
                         {{ end }}
@@ -170,13 +186,13 @@
 
     {{/* Policies Section */}}
     {{ with .Params.sections.policies }}
-    <section id="policies" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
+    <section id="policies" class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">{{ .title }}</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8 text-brand-dark text-center">{{ .title }}</h2>
 
                 {{ if .content }}
-                <div class="prose max-w-none mb-12">
+                <div class="prose md:prose-lg max-w-none mb-8 md:mb-12 text-center">
                     {{ .content | markdownify }}
                 </div>
                 {{ end }}
@@ -186,10 +202,12 @@
                 <div class="grid md:grid-cols-2 gap-4">
                     {{ range . }}
                     <a href="{{ .file }}"
-                       class="flex items-center bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors"
+                       class="flex items-center bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-colors group"
                        target="_blank">
-                        <span class="text-3xl mr-4">📄</span>
-                        <span class="font-semibold text-brand-link hover:text-brand-linkHover">
+                        <svg class="w-8 h-8 mr-4 text-brand-light group-hover:text-brand-dark transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                        <span class="font-semibold text-brand-link group-hover:text-brand-linkHover transition-colors">
                             {{ .title }}
                         </span>
                     </a>
@@ -203,10 +221,10 @@
 
     {{/* Contact Section */}}
     {{ with .Params.sections.contact }}
-    <section id="contact" class="py-16 bg-brand-dark text-white">
-        <div class="container mx-auto px-4">
+    <section id="contact" class="py-12 md:py-16 bg-brand-dark text-white">
+        <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">{{ .title }}</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">{{ .title }}</h2>
 
                 <div class="grid md:grid-cols-2 gap-8 mb-8">
                     <div>
@@ -263,9 +281,9 @@
 
     {{/* Additional markdown content if provided */}}
     {{ if .Content }}
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto prose">
+    <section class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto prose md:prose-lg">
                 {{ .Content }}
             </div>
         </div>

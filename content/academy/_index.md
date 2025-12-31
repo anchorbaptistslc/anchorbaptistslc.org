@@ -84,21 +84,17 @@ sections:
   tuition:
     title: "Tuition & Financial Aid"
     content: |
-      We strive to make Christian education affordable for families. Our tuition rates are competitive, and we offer various payment plans to help manage costs throughout the school year.
+      We strive to make Christian education affordable for families. Our tuition is set at $8,000 per year per student, which aligns with the Utah Fits All Scholarship program to maximize scholarship benefits for qualifying families.
     rates:
-      - grade: "Kindergarten"
-        cost: "$4,500/year"
-      - grade: "1st-3rd Grade"
-        cost: "$4,800/year"
-      - grade: "4th-6th Grade"
-        cost: "$5,000/year"
+      - grade: "All Grades (K-6th)"
+        cost: "$8,000/year"
     payment_plans:
       - "Annual (5% discount)"
       - "Semester"
       - "Monthly (10 months, August-May)"
     financial_aid:
       content: |
-        Limited financial assistance is available for families who demonstrate need. Please contact the academy office to inquire about scholarship opportunities and application procedures.
+        Anchor Baptist Academy participates in the **Utah Fits All Scholarship** program, which provides educational funding for eligible Utah students. Our tuition is set to match the scholarship amount, making quality Christian education accessible to families who qualify. We partner with Odyssey to streamline the scholarship application and administration process. For more information about the Utah Fits All Scholarship and eligibility requirements, please contact our office or visit [schools.utah.gov/utahfitsallscholarship](https://schools.utah.gov/utahfitsallscholarship).
 
   policies:
     title: "Policies & Handbooks"
