@@ -249,12 +249,12 @@
     background-size: 100% auto;
     background-position: bottom;
     background-repeat: no-repeat;
-    padding-bottom: 250px;
+    padding-bottom: 170px;
 }
 
 @media (min-width: 768px) {
     .footer-skyline {
-        padding-bottom: 600px;
+        padding-bottom: 510px;
     }
 }
 
