@@ -120,22 +120,21 @@ sections:
       Scholarship program to maximize scholarship benefits for qualifying
       families.
     rates:
-      - grade: All Grades (K-6th)
+      - grade: All Grades (K4-6th)
         cost: $8,000/year
     payment_plans:
-      - Annual (5% discount)
-      - Semester
       - Monthly (10 months, August-May)
+      - Scholarship
     financial_aid:
-      content: >
-        Anchor Baptist Academy participates in the **Utah Fits All Scholarship**
-        program, which provides educational funding for eligible Utah students.
-        Our tuition is set to match the scholarship amount, making quality
-        Christian education accessible to families who qualify. We partner with
-        Odyssey to streamline the scholarship application and administration
-        process. For more information about the Utah Fits All Scholarship and
-        eligibility requirements, please contact our office or visit
-        [schools.utah.gov/utahfitsallscholarship](https://schools.utah.gov/utahfitsallscholarship).
+      content: Anchor Baptist Academy participates in the **Utah Fits All
+        Scholarship** program, which provides educational funding for eligible
+        Utah students. Our tuition is set to match the scholarship amount,
+        making quality Christian education accessible to families who qualify.
+        We partner with Odyssey to streamline the scholarship application and
+        administration process. For more information about the Utah Fits All
+        Scholarship and eligibility requirements, please contact our office or
+        visit the [Utah Fits All Scholarship Website managed by
+        Odyssey](https://support.withodyssey.com/hc/en-us/requests/new?ticket_form_id=36956696281883).
   policies:
     title: Policies & Handbooks
     content: >
@@ -154,9 +153,9 @@ sections:
   contact:
     title: Contact Us
     office_hours: Monday-Friday, 8:00 AM - 3:30 PM
-    phone: (801) 555-1234
+    phone: (801) 801-272-9405
     email: academy@anchorbaptistslc.org
-    location: Same location as Anchor Baptist Church
+    location: 1880 E 5600 S, 84121
     content: >
       We would love to hear from you! Whether you have questions about our
       program, would like to schedule a tour, or want to learn more about
