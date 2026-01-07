@@ -23,7 +23,7 @@ The website serves as the online presence for Anchor Baptist Church, providing:
 
 ### Prerequisites
 
-- [Hugo Extended](https://gohugo.io/installation/) (v0.136.5 or later)
+- [Hugo Extended](https://gohugo.io/installation/) (v0.153.5 or later)
 - [Node.js](https://nodejs.org/) (v18 or later)
 - [npm](https://www.npmjs.com/) (usually comes with Node.js)
 - [Image Magick](https://imagemagick.org) (On MacOS: `brew install imagemagick`)
@@ -141,7 +141,30 @@ The site uses Hugo archetypes to maintain consistent content structure. These te
    hugo new --kind about about/your-page.md
    ```
 
+4. **Academy Page** (K-6th grade school mini-site)
+   ```bash
+   hugo new --kind academy academy/_index.md
+   ```
+   The academy page is a single-page mini-site with sections for About, Academics, Admissions, Tuition, Policies, and Contact.
+
 Each archetype includes pre-configured frontmatter with the necessary fields and structure. See the [theme documentation](themes/anchor-theme/README.md) for more details about each content type.
+
+### Logos and Graphics
+
+The site includes several logos and graphics for branding and special occasions:
+
+**Main Logos:**
+- `logo-anchor-white.png` / `logo-anchor-yellow.png` - Standard church logos
+- `logo-anchor-60th-text.png` - 60th anniversary logo
+- `logo-anchor-60th-text-lifting-up-jesus.png` - 60th anniversary with tagline
+- `logo-anchor-2026-making-a-difference.png` - 2026 annual theme logo
+
+**Graphics:**
+- `city-skyline-graphic.png` - Salt Lake City skyline footer graphic
+- `city-skyline-making-a-difference.png` - Skyline with 2026 theme
+- `city-skyline-65-years.png` - Skyline with 65 years celebration
+
+Logos and graphics are located in `themes/anchor-theme/assets/images/` and `themes/anchor-theme/assets/images/graphics/`.
 
 ## Project Structure
 
