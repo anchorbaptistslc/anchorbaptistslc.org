@@ -17,9 +17,9 @@ tagline: Growing in faith through fellowship and Bible study
 
 ![](/images/uploads/screenshot-2026-01-07-at-12.51.56 pm.png)
 
-The Anchor Bible Class meets every Sunday morning in the Auditorium at 10:00 am for a time of Bible Study and challenging application.
+The Anchor Bible Class meets every Sunday morning in the Auditorium at 10:00 AM for a time of Bible Study and challenging application.
 
-Join us at 9:30 am in the Fellowship Hall for breakfast and coffee!
+Join us at 9:30 AM in the Fellowship Hall for breakfast and coffee!
 
 Teacher: Richard Smith
 
@@ -31,7 +31,7 @@ The Starting Point Bible Class is an adult Sunday school class, designed for bel
 
 We meet every Sunday morning at 10:00 AM on the 2nd Floor of the Admin. Building in the South Classroom.
 
-Join us at 9:30 am in the Fellowship Hall for breakfast and coffee!
+Join us at 9:30 AM in the Fellowship Hall for breakfast and coffee!
 
 Teacher: Pastor Atwood
 
