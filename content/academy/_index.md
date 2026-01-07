@@ -5,7 +5,7 @@ type: academy
 layout: single
 hero:
   title: Anchor Baptist Academy
-  tagline: Christ-Centered Education for K-6th Grade
+  tagline: a ministry of Anchor Baptist Church
   image: /images/uploads/anchor-missions-sunday-am-2024-10-2134.jpg
   cta_primary:
     text: Schedule a Tour
