@@ -163,6 +163,7 @@ The site includes several logos and graphics for branding and special occasions:
 - `city-skyline-graphic.png` - Salt Lake City skyline footer graphic
 - `city-skyline-making-a-difference.png` - Skyline with 2026 theme
 - `city-skyline-65-years.png` - Skyline with 65 years celebration
+- `city-skyline-lifting-up-jesus.png` - Skyline with permanent theme
 
 Logos and graphics are located in `themes/anchor-theme/assets/images/` and `themes/anchor-theme/assets/images/graphics/`.
 

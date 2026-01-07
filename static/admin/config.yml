@@ -10,7 +10,7 @@ backend:
 local_backend: true
 local_backend_url: http://localhost:8081/api/v1
 
-logo_url: /images/logo-anchor-2026-making-a-difference.png
+logo_url: /images/logo-anchor-60th-text-lifting-up-jesus.png
 media_folder: "assets/images/uploads"
 public_folder: "/images/uploads"
 

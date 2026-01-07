@@ -167,7 +167,7 @@ themes/anchor-theme/
 │   ├── css/
 │   ├── images/
 │   │   └── logo-anchor-60th-text.jpg
-│   │   └── logo-anchor-white.jpg
+│   │   └── logo-anchor-yellow.jpg
 │   │   └── logo.jpg
 │   └── js/
 │       └── search.js
