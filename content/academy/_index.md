@@ -77,8 +77,9 @@ sections:
       attention and instruction tailored to each student's needs.
     features:
       - title: Biblical Curriculum
-        description: Every subject is taught from a Biblical worldview, helping students
-          see how God's truth applies to all areas of life and learning.
+        description: Primarily using the Abeka curriculum, every subject is taught from
+          a Biblical worldview, helping students see how God's truth applies to
+          all areas of life and learning.
         icon: book
       - title: Small Class Sizes
         description: Our low student-to-teacher ratio ensures personalized attention and
@@ -128,9 +129,9 @@ sections:
     financial_aid:
       content: Anchor Baptist Academy participates in the **Utah Fits All
         Scholarship** program, which provides educational funding for eligible
-        Utah students. Our tuition is set to match the scholarship amount,
-        making quality Christian education accessible to families who qualify.
-        We partner with Odyssey to streamline the scholarship application and
+        Utah students. Our tuition aligns with the scholarship amount, making
+        quality Christian education accessible to families who qualify. We
+        partner with Odyssey to streamline the scholarship application and
         administration process. For more information about the Utah Fits All
         Scholarship and eligibility requirements, please contact our office or
         visit the [Utah Fits All Scholarship Website managed by
