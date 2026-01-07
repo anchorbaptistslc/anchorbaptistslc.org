@@ -63,7 +63,7 @@ sections:
         content: Anchor Baptist Academy was founded as a ministry of Anchor Baptist
           Church to provide families in Salt Lake City with an affordable,
           Christ-centered educational option.  We are looking forward to opening
-          our doors in the Fall of 2026!
+          our doors in the fall of 2026!
       - title: Our Staff
         content: Our dedicated staff members are committed Christians who love children
           and are passionate about Christian education. Each teacher brings
