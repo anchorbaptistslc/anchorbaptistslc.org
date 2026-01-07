@@ -2,6 +2,7 @@
 title: Adult Ministries
 description: Adult programs and activities at Anchor Baptist Church
 featured_image: /images/uploads/harvest-day-2023-10-1171.jpg
+content_images: []
 menu:
   main:
     name: Adults
@@ -14,27 +15,43 @@ tagline: Growing in faith through fellowship and Bible study
 
 ### Anchor Bible Class
 
+![](/images/uploads/screenshot-2026-01-07-at-12.51.56 pm.png)
+
 The Anchor Bible Class meets every Sunday morning in the Auditorium at 10:00 am for a time of Bible Study and challenging application.
 
 Join us at 9:30 am in the Fellowship Hall for breakfast and coffee!
 
-Teachers: Richard Smith
+Teacher: Richard Smith
 
 ### Starting Point Bible Class
 
-The Starting Point Bible Class is a rotating 13 week adult Sunday school class, designed for believers of any age group. Whether you join us on week one or week seven, stay for all thirteen and then find your place at Anchor Baptist Church!
+![](/images/uploads/screenshot-2026-01-07-at-12.50.29 pm.png)
 
-We meet every Sunday morning at 10:00 AM on the 2nd Floor of the Admin. Building.
+The Starting Point Bible Class is an adult Sunday school class, designed for believers of any age group. Join us at any time to study the Word of God in depth.
+
+We meet every Sunday morning at 10:00 AM on the 2nd Floor of the Admin. Building in the South Classroom.
 
 Join us at 9:30 am in the Fellowship Hall for breakfast and coffee!
 
-Teachers: Pastor Atwood
+Teacher: Pastor Atwood
 
 ### 20's and 30's Crossroads Bible Class
 
+![](/images/uploads/screenshot-2026-01-07-at-12.50.17 pm.png)
+
 The 20's and 30's Bible class began in the Fall of 2025 with a desire to help and equip singles and couples in this challenging stage of life.  This class will encourage you with fellowship and with sound Bible teaching designed to strengthen your walk with God.
 
-Teachers: Jordan Lendt
+We meet every Sunday morning at 10:00 AM on the 2nd Floor of the Admin. Building in the North Classroom.
+
+Teacher: Jordan Lendt
+
+### Chinese Bible Class
+
+![](/images/uploads/screenshot-2026-01-07-at-12.49.59 pm.png)
+
+Our Chinese Bible Class meets every Sunday morning at 10:00 AM for Bible study and discipleship.  Taught by Xuming Wang, students of all ages will learn the Word of God in thier own language.
+
+Teacher: Xuming Wang
 
 ## Senior Saints Ministry
 
