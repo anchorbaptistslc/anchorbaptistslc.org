@@ -8,7 +8,7 @@ layout: "single"
 hero:
   title: "Anchor Baptist Academy"
   tagline: "Christ-Centered Education for K-6th Grade"
-  image: "/images/uploads/academy-hero.jpg"
+  image: "/images/uploads/anchor-missions-sunday-am-2024-10-2134.jpg"
   cta_primary:
     text: "Schedule a Tour"
     url: "#contact"
@@ -39,7 +39,7 @@ sections:
       Anchor Baptist Academy provides Christ-centered education for students in Kindergarten through 6th grade. Our mission is to partner with parents in training children to love God, love learning, and love others.
 
       We believe that education should be grounded in Biblical truth and that every subject should be taught from a Christian worldview. Our experienced teachers are committed to academic excellence while nurturing the spiritual growth of each student.
-    image: "/images/uploads/about-academy.jpg"
+    image: "/images/uploads/anchor-missions-sunday-am-2024-10-2134.jpg"
     subsections:
       - title: "Our Mission"
         content: "Our mission is to provide quality Christian education that develops students spiritually, academically, physically, and socially. We seek to prepare children to impact their world for Christ."
@@ -127,4 +127,4 @@ menu:
     weight: 10
 ---
 
-Additional page content can be added here if needed for a multi-page approach. This markdown content will appear after the structured sections on the page.
+&nbsp;
