@@ -1,7 +1,7 @@
 {{ with .Params.hero }}
 <div class="academy-hero relative">
     {{/* Hero Background Image with Overlay */}}
-    <div class="relative h-48 md:h-64 overflow-hidden">
+    <div class="relative h-80 md:h-64 overflow-hidden">
         {{ with .image }}
         <img src="{{ partial "image.html" (dict "path" . "width" "1920") }}"
              alt="{{ $.Title }}"
