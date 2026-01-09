@@ -14,7 +14,7 @@ content_images:
   - image: /images/uploads/spring-revival-2025-2.png
     alt_text: Spring Revival
 isEvent: true
-_build:
+build:
   list: true
   render: false
 ---
