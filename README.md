@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/838733ea-fab2-4283-918d-7bff63e4c47a/deploy-status)](https://app.netlify.com/sites/anchorbaptistslc/deploys)
 
-This is the official website for Anchor Baptist Church in Salt Lake City, Utah, built using [Hugo](https://gohugo.io/), a fast and modern static site generator.
+The official website for Anchor Baptist Church in Salt Lake City, Utah, built using [Hugo](https://gohugo.io/), a fast and modern static site generator.
 
 ## About
 
