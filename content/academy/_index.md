@@ -117,8 +117,20 @@ sections:
     title: Tuition & Financial Aid
     content: ""
     rates:
-      - grade: All Grades (K4-12th)
+      - grade: Half day & K4 full day
+        cost: $8,500/year
+      - grade: K-6th Grade
+        cost: $7,900/year
+      - grade: 7th-12th Grade
         cost: $8,000/year
+      - grade: OTHER FEES
+        cost: " "
+      - grade: Early registration (until May 31)
+        cost: $150 per student
+      - grade: Late registration (after May 31)
+        cost: $300 per student
+      - grade: Book fee
+        cost: $150 per student
     payment_plans:
       - Monthly (10 months, August-May)
       - Scholarship
