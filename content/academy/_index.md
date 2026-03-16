@@ -141,7 +141,11 @@ sections:
         Utah students.  For more information about the Utah Fits All Scholarship
         and eligibility requirements, please contact our office or visit the
         [Utah Fits All Scholarship Website managed by
-        Odyssey](https://support.withodyssey.com/hc/en-us/requests/new?ticket_form_id=36956696281883).
+        Odyssey](https://support.withodyssey.com/hc/en-us/requests/new?ticket_form_id=36956696281883).  Students
+        receiving the scholarship understand that no portion of the scholarship
+        funds will be returned to the parent for educational expenses.  The
+        school's tuition cost fees and refund policies are identical for
+        scholarship students and regularly enrolled students.
 
         ![](<>)
 
