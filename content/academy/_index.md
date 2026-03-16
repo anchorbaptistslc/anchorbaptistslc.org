@@ -167,8 +167,8 @@ sections:
       review the following documents for detailed information about our academy
       policies and expectations.
     documents:
-      - title: Parent Handbook 2024-25
-        file: /documents/parent-handbook.pdf
+      - title: 2026-2027 Student Handbook
+        file: /images/uploads/anchor-2024-vision-sunday-2024-01-1427.jpg
   contact:
     title: Contact Us
     office_hours: Monday-Friday, 8:00 AM - 3:30 PM
