@@ -1,6 +1,6 @@
 ---
 title: Anchor Baptist Academy
-description: K-6th grade Christian education in Salt Lake City
+description: K4-12th grade Christian education in Salt Lake City
 type: academy
 layout: single
 hero:
@@ -121,7 +121,7 @@ sections:
       Scholarship program to maximize scholarship benefits for qualifying
       families.
     rates:
-      - grade: All Grades (K4-6th)
+      - grade: All Grades (K4-12th)
         cost: $8,000/year
     payment_plans:
       - Monthly (10 months, August-May)
