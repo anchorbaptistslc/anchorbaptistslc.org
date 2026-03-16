@@ -11,7 +11,7 @@ content_images:
 layout: events
 type: events
 isEvent: true
-_build:
+build:
   list: true
   render: false
 ---

@@ -23,6 +23,7 @@ Thumbs.db
 # IDE/Editor
 .idea/
 .vscode/
+.claude/*.local.*
 *.swp
 *.swo
 *~

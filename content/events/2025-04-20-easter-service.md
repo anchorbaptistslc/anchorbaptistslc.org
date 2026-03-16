@@ -8,7 +8,7 @@ dates:
 expiryDate: 2025-04-21T00:00:00.000Z
 image: /images/uploads/anchor-friend-day-2025-03-3070.jpg
 isEvent: true
-_build:
+build:
   list: true
   render: false
 ---
