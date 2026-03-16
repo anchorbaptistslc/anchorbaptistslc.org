@@ -34,22 +34,16 @@ sections:
       in the absolute authority of God’s Word.
 
 
+      ![](/images/uploads/aba-official-logo.png)
+
+
       We hold the Scriptures as our final authority in all matters of faith and practice, providing clear doctrinal instruction rooted in historic Baptist beliefs.
-
-
-
 
 
       We maintain high academic standards while intentionally integrating faith into daily instruction, character development, and discipline. We seek to partner with families who desire unity between home, church, and school, and who support biblical teaching and moral standards. 
 
 
-
-
-
       Education at Anchor is more than academics—it is discipleship. Every subject is taught through a biblical worldview, affirming truth as objective and revealed by God. Our purpose is to train Christian servants who know the Gospel, think biblically, live with conviction, and serve Christ faithfully.
-
-
-
 
 
       Anchor Baptist Academy exists to glorify God by preparing students for lifelong faithfulness, service, and excellence—academically, spiritually, and morally.
