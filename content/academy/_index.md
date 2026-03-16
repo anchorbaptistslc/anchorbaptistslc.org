@@ -115,11 +115,7 @@ sections:
           registration fee to secure your child's place.
   tuition:
     title: Tuition & Financial Aid
-    content: >
-      We strive to make Christian education affordable for families. Our tuition
-      is set at $8,000 per year per student, which aligns with the Utah Fits All
-      Scholarship program to maximize scholarship benefits for qualifying
-      families.
+    content: ""
     rates:
       - grade: All Grades (K4-12th)
         cost: $8,000/year
@@ -127,43 +123,49 @@ sections:
       - Monthly (10 months, August-May)
       - Scholarship
     financial_aid:
-      content: Anchor Baptist Academy participates in the **Utah Fits All
+      content: >-
+        Anchor Baptist Academy is applying to participate in the **Utah Fits All
         Scholarship** program, which provides educational funding for eligible
-        Utah students. Our tuition aligns with the scholarship amount, making
-        quality Christian education accessible to families who qualify. We
-        partner with Odyssey to streamline the scholarship application and
-        administration process. For more information about the Utah Fits All
-        Scholarship and eligibility requirements, please contact our office or
-        visit the [Utah Fits All Scholarship Website managed by
+        Utah students.  For more information about the Utah Fits All Scholarship
+        and eligibility requirements, please contact our office or visit the
+        [Utah Fits All Scholarship Website managed by
         Odyssey](https://support.withodyssey.com/hc/en-us/requests/new?ticket_form_id=36956696281883).
+
+        ![](<>)
+
+
+        \##Tuition Assistance##
+
+        Our school is committed to making education accessible to families from a variety of financial backgrounds.  While the school maintains a single published tuition rate for all students, **limited tuition assistance may be available to families demonstrating financial need.**
+
+
+        Awards are based on demonstrated need and available funds.
   policies:
     title: Policies & Handbooks
-    content: >
-      We believe that a successful educational experience requires partnership
-      between the school and home. Our policies are designed to maintain a safe,
-      orderly, and Christ-honoring learning environment. Please review the
-      following documents for detailed information about our academy policies
-      and expectations.
+    content: We believe that a successful educational experience requires
+      partnership between the school and home. Our policies are designed to
+      maintain a safe, orderly, and Christ-honoring learning environment. Please
+      review the following documents for detailed information about our academy
+      policies and expectations.
     documents:
       - title: Parent Handbook 2024-25
         file: /documents/parent-handbook.pdf
-      - title: Statement of Cooperation
-        file: /documents/statement-of-cooperation.pdf
-      - title: Dress Code Guidelines
-        file: /documents/dress-code.pdf
   contact:
     title: Contact Us
     office_hours: Monday-Friday, 8:00 AM - 3:30 PM
     phone: (801) 801-272-9405
     email: academy@anchorbaptistslc.org
     location: 1880 E 5600 S, 84121
-    content: >
+    content: >-
       We would love to hear from you! Whether you have questions about our
       program, would like to schedule a tour, or want to learn more about
       enrollment, please don't hesitate to reach out.
 
 
       You can contact us by phone during office hours, send us an email anytime, or use the contact form below. We look forward to connecting with you and your family!
+
+
+      *Anchor Baptist Academy admits students of any race, sex, disability, color, national and ethnic origin to all the rights, privileges, programs, and activities generally accorded or made available to students at the school. It does not discriminate on the basis of race, sex, disability, color, national and ethnic origin in administration of its educational policies, admissions policies, scholarship and loan programs, and athletic and other school-administered programs.*
 menu:
   main:
     parent: ministries
