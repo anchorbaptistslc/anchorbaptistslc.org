@@ -34,9 +34,6 @@ sections:
       in the absolute authority of God’s Word.
 
 
-      ![](/images/uploads/aba-official-logo.png)
-
-
       We hold the Scriptures as our final authority in all matters of faith and practice, providing clear doctrinal instruction rooted in historic Baptist beliefs.
 
 
