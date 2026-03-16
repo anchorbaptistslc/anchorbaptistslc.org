@@ -125,9 +125,9 @@ sections:
         cost: $8,000/year
       - grade: OTHER FEES
         cost: " "
-      - grade: Early registration (until May 31)
+      - grade: Early registration (until June 15)
         cost: $150 per student
-      - grade: Late registration (after May 31)
+      - grade: Late registration (after June 15)
         cost: $300 per student
       - grade: Book fee
         cost: $150 per student
@@ -146,11 +146,15 @@ sections:
         ![](<>)
 
 
-
         Our school is committed to making education accessible to families from a variety of financial backgrounds.  **Limited tuition assistance may be available to families demonstrating financial need.**  Families with multiple children enrolled may be eligible for a **multi-student family discount**.
 
 
         Awards are based on demonstrated need and available funds.
+
+
+
+
+        Registration fees are non-refundable. Tuition refunds are calculated based on the academic term in which a student withdraws, with refunds issued for the unused portion of the school year (such as remaining quarters or semesters). These policies apply equally to all students, and any unused Utah Fits All scholarship funds will be returned to the student’s scholarship account as required by state law.
   policies:
     title: Policies & Handbooks
     content: We believe that a successful educational experience requires
