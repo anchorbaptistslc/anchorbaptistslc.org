@@ -134,9 +134,8 @@ sections:
         ![](<>)
 
 
-        \##Tuition Assistance##
 
-        Our school is committed to making education accessible to families from a variety of financial backgrounds.  While the school maintains a single published tuition rate for all students, **limited tuition assistance may be available to families demonstrating financial need.**
+        Our school is committed to making education accessible to families from a variety of financial backgrounds.  **Limited tuition assistance may be available to families demonstrating financial need.**  Families with multiple children enrolled may be eligible for a **multi-student family discount**.
 
 
         Awards are based on demonstrated need and available funds.
