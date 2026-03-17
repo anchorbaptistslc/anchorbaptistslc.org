@@ -31,7 +31,7 @@ sections:
     title: About Our Academy
     content: >-
       <p style="text-align:center;">
-        <img src="{{ "images/uploads/aba-official-logo.jpg" | relURL }}" width="200">
+        <img src="{{ "/images/uploads/aba-official-logo.jpg" | relURL }}" width="200">
       </p>
 
 
