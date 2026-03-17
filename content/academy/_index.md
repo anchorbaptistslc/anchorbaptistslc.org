@@ -30,8 +30,10 @@ sections:
   about:
     title: About Our Academy
     content: >-
-      Anchor Baptist Academy is a Christ-centered ministry of education grounded
-      in the absolute authority of God’s Word.
+      ![](/images/uploads/5.svg)
+
+
+      Anchor Baptist Academy is a Christ-centered ministry of education grounded in the absolute authority of God’s Word.
 
 
       We hold the Scriptures as our final authority in all matters of faith and practice, providing clear doctrinal instruction rooted in historic Baptist beliefs.
@@ -159,7 +161,7 @@ sections:
       policies and expectations.
     documents:
       - title: 2026-2027 Student Handbook
-        file: https://1drv.ms/b/c/e2b1e3b8297d7401/IQBy2AE4UgB-T5pKZuKitVpdAbiE-XcCvpbZT7kgHUBhrEo?e=ozaPKM
+        file: /images/uploads/aba_student_handbook_2026-2027.pdf
   contact:
     title: Contact Us
     office_hours: Monday-Friday, 8:00 AM - 3:30 PM
