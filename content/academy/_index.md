@@ -159,9 +159,7 @@ sections:
       maintain a safe, orderly, and Christ-honoring learning environment. Please
       review the following documents for detailed information about our academy
       policies and expectations.
-    documents:
-      - title: 2026-2027 Student Handbook
-        file: /images/uploads/aba_student_handbook_2026-2027.pdf
+    documents: []
   contact:
     title: Contact Us
     office_hours: Monday-Friday, 8:00 AM - 3:30 PM
