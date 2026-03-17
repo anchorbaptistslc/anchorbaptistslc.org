@@ -30,8 +30,8 @@ sections:
   about:
     title: About Our Academy
     content: >-
-      <p align="center">
-        <img src="{{ '/images/uploads/aba-official-logo.jpg' | relative_url }}" width="200">
+      <p style="text-align:center;">
+        <img src="{{ "images/uploads/aba-official-logo.jpg" | relURL }}" width="200">
       </p>
 
 
