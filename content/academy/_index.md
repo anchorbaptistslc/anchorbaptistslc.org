@@ -30,7 +30,8 @@ sections:
   about:
     title: About Our Academy
     content: >-
-      ![](/images/uploads/aba-official-logo.jpg)
+      <img src="/images/uploads/aba-official-logo.jpg" style="width:200px;
+      display:block; margin:0 auto;">
 
 
       Anchor Baptist Academy is a Christ-centered ministry of education grounded in the absolute authority of God’s Word.
