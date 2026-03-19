@@ -8,10 +8,10 @@ tagline: Every visitor is an honored guest
 content_images:
   - image: /images/uploads/anchor-easter-sunday-2025-04-3183.jpg
     alt_text: 2025 Friend Day Services
-    caption: Welcoming greeters
-  - image: /images/uploads/anchor-harvest-day-2024-10-2699.jpg
+    caption: ""
+  - image: /images/uploads/dsc06604.jpeg
     alt_text: 2024 Harvest Day Services
-    caption: Families and people of all ages welcome
+    caption: ""
   - image: /images/uploads/anchor-harvest-day-2024-10-2602.jpg
     alt_text: 2024 Harvest Day Services
   - image: /images/uploads/anchor-easter-sunday-2025-04-3233.jpeg
