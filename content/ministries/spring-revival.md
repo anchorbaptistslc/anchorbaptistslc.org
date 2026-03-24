@@ -14,9 +14,45 @@ menu:
 ---
 Join us for this exciting week of revival preaching, Spirit-filled singing, and encouraging fellowship!
 
-Registration is FREE.
+## Information
+-Registration is FREE.
 
-Senior pastors who pre-register receive a free hotel night.
+-Senior pastors who pre-register receive a free hotel night.
+
+-Join the Monday evening and Tuesday conference orchestra!
+
+-Pastors and full-time Christian workers dinner to follow Monday and Tuesday evening services
+
+-Tuesday breakfast and catered luncheon
+
+## Schedule
+### Sunday
+
+   9:30 AM - Breakfast Fellowship
+
+   9:45 AM - Prayer Meeting
+
+   10:00 AM - Sunday school for all ages
+
+   11:00 AM - Evangelist Dave McCracken
+
+   6:00 PM - Evangelist Dave McCracken 
+
+### Monday
+   7:00 PM - Evangelist Dave McCracken (Pastors and full-time Christian workers dinner to follow)
+
+### Tuesday
+   9:15-9:45 AM - Breakfast (served in the Fellowship Hall)
+
+   10:00 AM - Pastor Joel Haynes
+
+   12:00 PM - Lunch
+
+   7:00 PM - Dr. R. B. Ouellette (Pastors and full-time Christian workers dinner to follow)
+
+### Wednesday
+
+   7:00 PM - Evangelist Dave McCracken
 
 ## Event Registration
 
