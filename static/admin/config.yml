@@ -425,7 +425,7 @@ collections:
                     required: false
                     fields:
                       - {label: "Title", name: "title", widget: "string"}
-                      - {label: "File", name: "file", widget: "file", hint: "Upload PDF or link to existing file"}
+                      - {label: "File", name: "file", widget: "file", hint: "Upload PDF or link to existing file", media_folder: "/static/files/uploads", public_folder: "/files/uploads"}
 
               - label: "Contact Section"
                 name: "contact"
