@@ -159,7 +159,7 @@ sections:
       policies and expectations.
     documents:
       - title: 2026-2027 Student Handbook
-        file: /files/uploads/aba_student_handbook_2026-2027.pdf
+        file: /files/uploads/aba_student_handbook_2026-2027-2.pdf
   contact:
     title: Contact Us
     office_hours: Monday-Friday, 8:00 AM - 3:30 PM
