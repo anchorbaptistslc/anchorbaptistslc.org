@@ -108,20 +108,26 @@ sections:
     title: Tuition & Financial Aid
     content: ""
     rates:
-      - grade: Half day & K4 full day
-        cost: $8,500/year
-      - grade: K-6th Grade
-        cost: $7,900/year
+      - grade: K4 (Pre-Kindergarten, Half-Day Program)
+        cost: $6,200/year
+      - grade: K4 (Pre-Kindergarten, Full-Day Program)
+        cost: $7,600/year
+      - grade: Kindergarten (Full-Day), Grades 1-6
+        cost: $7,600/year
       - grade: 7th-12th Grade
-        cost: $8,000/year
+        cost: $7,600/year
       - grade: OTHER FEES
         cost: " "
-      - grade: Early registration (until June 15)
-        cost: $150 per student
-      - grade: Late registration (after June 15)
-        cost: $300 per student
-      - grade: Book fee
-        cost: $150 per student
+      - grade: Application Fee (new students)
+        cost: $50 (non-refundable)
+      - grade: Registration (per student)
+        cost: $150 (non-refundable)
+      - grade: Curriculum & Book Fee (per student)
+        cost: $150 (non-refundable)
+      - grade: Testing Fee (per student)
+        cost: $25 (non-refundable)
+      - grade: Technology Fee (grades 7-12)
+        cost: $100 (non-refundable)
     payment_plans:
       - Monthly (10 months, August-May)
       - Scholarship
@@ -141,12 +147,19 @@ sections:
         ![](<>)
 
 
-        Our school is committed to making education accessible to families from a variety of financial backgrounds.  **Limited tuition assistance may be available to families demonstrating financial need.**  Families with multiple children enrolled may be eligible for a **multi-student family discount**.
+        Our school is committed to making education accessible to families from a variety of financial backgrounds.  **Limited tuition assistance may be available to families demonstrating financial need.**  Families with multiple children enrolled are eligible for a **multi-student family discount**.
+
+
+        \-2nd child: 10% off tuition
+
+
+        \-3rd child: 15% off tuition
+
+
+        \-4th child: 20% off tuition 
 
 
         Awards are based on demonstrated need and available funds.
-
-
 
 
         Registration fees are non-refundable. Tuition refunds are calculated based on the academic term in which a student withdraws, with refunds issued for the unused portion of the school year (such as remaining quarters or semesters). These policies apply equally to all students, and any unused Utah Fits All scholarship funds will be returned to the student’s scholarship account as required by state law.
