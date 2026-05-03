@@ -108,11 +108,11 @@ sections:
     title: Tuition & Financial Aid
     content: ""
     rates:
-      - grade: K4 (Pre-Kindergarten, Half-Day Program)
+      - grade: K4 (Pre-Kindergarten) & Kindergarten Half-Day Program
         cost: $6,200/year
-      - grade: K4 (Pre-Kindergarten, Full-Day Program)
+      - grade: K4 (Pre-Kindergarten) & Kindergarten Full-Day Program
         cost: $7,600/year
-      - grade: Kindergarten (Full-Day), Grades 1-6
+      - grade: 1st-6th Grade
         cost: $7,600/year
       - grade: 7th-12th Grade
         cost: $7,600/year
