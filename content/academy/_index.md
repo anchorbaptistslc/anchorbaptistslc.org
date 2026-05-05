@@ -89,13 +89,13 @@ sections:
       questions you may have about our academy.
     steps:
       - number: 1
-        title: Schedule a Tour
-        description: Contact us to schedule a visit. We'll show you our facilities and
-          answer your questions about our program.
-      - number: 2
         title: Submit Application
         description: Complete and submit the application form along with any required
           documents. Applications are reviewed as they are received.
+      - number: 2
+        title: Schedule a Tour
+        description: Contact us to schedule a visit. We'll show you our facilities and
+          answer your questions about our program.
       - number: 3
         title: Family Interview
         description: We'll meet with your family to discuss your child's educational
