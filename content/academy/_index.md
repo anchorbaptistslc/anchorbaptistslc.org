@@ -82,16 +82,18 @@ sections:
         icon: graduation-cap
   admissions:
     title: Admissions Process
-    content: >
-      We welcome families who are committed to Christian education and who
-      desire to partner with us in training their children. Our admission
-      process is designed to help us get to know your family and answer any
-      questions you may have about our academy.
+    content: We welcome families who are committed to Christian education and who
+      desire to partner with us in training their children. Our admission and
+      [application](https://form.jotform.com/261238260832050) process is
+      designed to help us get to know your family and answer any questions you
+      may have about our academy.
     steps:
       - number: 1
         title: Submit Application
         description: Complete and submit the application form along with any required
-          documents. Applications are reviewed as they are received.
+          documents. Applications are reviewed as they are received.  To apply,
+          please scroll to the bottom of our website and click the "Online
+          Application" link.
       - number: 2
         title: Schedule a Tour
         description: Contact us to schedule a visit. We'll show you our facilities and
