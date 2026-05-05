@@ -61,16 +61,16 @@ sections:
           years of experience and a heart for ministry.
   academics:
     title: Academics
-    content: >
-      At Anchor Baptist Academy, we provide a rigorous, Bible-based curriculum
-      designed to challenge students academically while building a strong
-      foundation of faith. Our small class sizes allow for individualized
-      attention and instruction tailored to each student's needs.
+    content: At Anchor Baptist Academy, we provide a rigorous, Bible-based
+      curriculum, centered on a Biblical worldview, designed to challenge
+      students academically while building a strong foundation of faith. Our
+      small class sizes allow for individualized attention and instruction
+      tailored to each student's needs.
     features:
       - title: Biblical Curriculum
-        description: Primarily using the Abeka curriculum, every subject is taught from
-          a Biblical worldview, helping students see how God's truth applies to
-          all areas of life and learning.
+        description: In kindergarten, we use Abeka to build a strong phonics foundation.
+          In the elementary and upper grades, we use Bob Jones University Press
+          to emphasize critical thinking and STEM learning.
         icon: book
       - title: Small Class Sizes
         description: Our low student-to-teacher ratio ensures personalized attention and
