@@ -135,11 +135,11 @@ sections:
       - Scholarship
     financial_aid:
       content: >-
-        Anchor Baptist Academy is applying to participate in the **Utah Fits All
-        Scholarship** program, which provides educational funding for eligible
-        Utah students.  For more information about the Utah Fits All Scholarship
-        and eligibility requirements, please contact our office or visit the
-        [Utah Fits All Scholarship Website managed by
+        Anchor Baptist Academy accepts the **Utah Fits All Scholarship**, which
+        provides educational funding for eligible Utah students.  For more
+        information about the Utah Fits All Scholarship and eligibility
+        requirements, please contact our office or visit the [Utah Fits All
+        Scholarship Website managed by
         Odyssey](https://support.withodyssey.com/hc/en-us/requests/new?ticket_form_id=36956696281883).  Students
         receiving the scholarship understand that no portion of the scholarship
         funds will be returned to the parent for educational expenses.  The
