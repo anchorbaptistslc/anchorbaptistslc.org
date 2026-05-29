@@ -1,6 +1,5 @@
 import { EventCard } from './EventCard.jsx';
 import { PreviewHeader } from './PreviewHeader.jsx';
-
 /**
  * HomePreview component for the CMS
  * Displays a preview of the homepage with events carousel
