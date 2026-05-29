@@ -1,7 +1,6 @@
 import { formatDate } from '../utils/dateFormatters.js';
 import { EventCard } from './EventCard.jsx';
 import { PreviewHeader } from './PreviewHeader.jsx';
-
 /**
  * EventPreview component for the CMS
  * Displays a preview of an individual event
@@ -61,7 +60,7 @@ export const EventPreview = createClass({
               
               {/* Description */}
               <div className="prose max-w-none">
-                {data.description || ''}}
+                {data.description || ''}
               </div>
               {data.body && (
                 <div className="prose max-w-none">

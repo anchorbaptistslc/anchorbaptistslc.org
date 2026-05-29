@@ -1,7 +1,4 @@
-/**
- * AcademyPreview component for the CMS
- * Displays a preview of the academy page with all sections
- */
+
 export const AcademyPreview = createClass({
   render() {
     const entry = this.props.entry;

@@ -1,5 +1,4 @@
 import { HeroSection } from './HeroSection.jsx';
-
 /**
  * MinistryPreview component for the CMS
  * Displays a preview of a ministry page

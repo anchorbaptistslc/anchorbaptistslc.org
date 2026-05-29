@@ -1,5 +1,4 @@
 import { formatDate } from '../utils/dateFormatters.js';
-
 /**
  * EventCard component for displaying event information in a consistent format
  * Used across multiple preview components
