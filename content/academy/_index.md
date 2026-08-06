@@ -178,7 +178,7 @@ sections:
       - title: "Online Application "
         file: https://form.jotform.com/261238260832050
       - title: Uniform Information
-        file: /files/uploads/k4-4th-grade-uniforms-3.pdf
+        file: /files/uploads/dress-code-2026-2027.pdf
   contact:
     title: Contact Us
     office_hours: Monday-Friday, 8:00 AM - 3:30 PM
