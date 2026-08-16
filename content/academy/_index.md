@@ -179,6 +179,8 @@ sections:
         file: https://form.jotform.com/261238260832050
       - title: Uniform Information
         file: /files/uploads/dress-code-2026-2027.pdf
+      - title: Absence Notification Request
+        file: https://form.jotform.com/262176100261142
   contact:
     title: Contact Us
     office_hours: Monday-Friday, 8:00 AM - 3:30 PM
