@@ -12,4 +12,8 @@ menu:
     parent: ministries
     name: Mountain West Preaching Conference
 ---
+Registration is now open!  [Click here!](https://form.jotform.com/262586212935058)
+
+
+
 Make plans to join us for this exciting week of revival preaching, Spirit-filled singing, and encouraging fellowship!
