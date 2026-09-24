@@ -9,8 +9,6 @@ menu:
     name: University Outreach
     weight: 44
 ---
-### **Coming soon!**  
+### **Coming soon!**
 
-
-
-A weekly Bible study on the University of Utah campus designed to gives students a place to belong, a connection to Christ, and growth in God's Word.
+A weekly Bible study on the University of Utah campus designed to give students a place to belong, a connection to Christ, and growth in God's Word.
