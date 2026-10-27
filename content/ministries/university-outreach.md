@@ -1,10 +1,12 @@
 ---
+layout: single
 title: University Outreach
 description: Outreach programs on our local university campuses
 featured_image: /images/uploads/images-1-.jpeg
 tagline: Connecting students to Christ
 meeting_time: Tuesdays @ 6:30 PM
 location: Student Union Room 312
+age_group: ""
 leaders: []
 menu:
   main:
