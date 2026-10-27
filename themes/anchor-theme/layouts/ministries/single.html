@@ -86,35 +86,49 @@
 
             <!-- Sidebar -->
             <div class="lg:col-span-1">
-                <!-- Get Involved Box -->
-                <div class="bg-brand-dark text-white rounded-lg p-8 mb-8">
-                    <h2 class="text-2xl font-medium mb-4">Get Involved</h2>
-                    <p class="mb-6">Interested in joining or learning more about this ministry?</p>
-                    {{ with .Params.contact_email }}
-                    <a href="mailto:{{ . }}" class="inline-block bg-white text-brand-dark px-6 py-2 rounded-lg font-semibold hover:bg-gray-100">
-                        Contact Ministry Leader
-                    </a>
-                    {{ else }}
-                    <a href="mailto:{{ .Site.Params.email }}" class="inline-block bg-white text-brand-dark px-6 py-2 rounded-lg font-semibold hover:bg-gray-100">
-                        Contact Us
-                    </a>
-                    {{ end }}
+                <!-- Get in Touch Box -->
+                <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+                    <h2 class="text-xl font-medium mb-4">Get in Touch</h2>
+                    <p class="mb-4">Have questions? We're here to help.</p>
+                    <div class="space-y-2">
+                        <p>
+                            <strong>Phone:</strong><br>
+                            <a href="tel:{{ .Site.Params.phone }}" class="hover:text-brand-link">
+                                {{ .Site.Params.phone }}
+                            </a>
+                        </p>
+                        <p>
+                            <strong>Email:</strong><br>
+                            <a href="mailto:{{ .Site.Params.email }}" class="hover:text-brand-link">
+                                {{ .Site.Params.email }}
+                            </a>
+                        </p>
+                        <p>
+                            <strong>Address:</strong><br>
+                            {{ .Site.Params.address.full }}
+                        </p>
+                    </div>
                 </div>
 
                 <!-- Other Ministries -->
                 <div class="bg-white rounded-lg shadow-md p-6">
                     <h2 class="text-xl font-bold mb-4 text-gray-900">Ministries</h2>
                     <div class="space-y-4">
-                        {{ $ministries := .Site.GetPage "/ministries" }}
-                        {{ range sort $ministries.Pages "Weight" "asc" }}
+                        {{ range .Site.Menus.main }}
+                        {{ if eq .Identifier "ministries" }}
+                        {{ range .Children }}
                         <div class="border-b border-gray-200 pb-4 last:border-0">
                             <h3 class="text-lg font-semibold mb-2">
-                                <a href="{{ .RelPermalink }}" class="text-gray-900 hover:text-brand-blue-800">{{ .Title }}</a>
+                                <a href="{{ .URL }}" class="text-gray-900 hover:text-brand-blue-800">{{ .Name }}</a>
                             </h3>
+                            {{ with .Page }}
                             {{ with .Description }}
                             <p class="text-gray-600 text-sm">{{ . }}</p>
                             {{ end }}
+                            {{ end }}
                         </div>
+                        {{ end }}
+                        {{ end }}
                         {{ end }}
                     </div>
                 </div>
